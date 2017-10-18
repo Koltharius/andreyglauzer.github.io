@@ -14,7 +14,7 @@ rm -rf _site
 mkdir _site
 
 # clone remote repo to "_site"
-#git clone https://${GH_TOKEN}@github.com/andreyglauzer/andreyglauzer.github.io.git --branch master _site
+git clone https://${GH_TOKEN}@github.com/andreyglauzer/andreyglauzer.github.io.git --branch source _site
 
 # build with Jekyll into "_site"
 pwd
@@ -24,9 +24,9 @@ echo "fazendo o bundle exec jekyll build"
 bundle exec jekyll build
 echo "Passou"
 # push
-#cd _site
-#git config user.email "nglauzer@gmail.com"
-#git config user.name "Andrey Glauzer"
-#git add -A
-#git commit -a -m "Travis #$TRAVIS_BUILD_NUMBER"
-#git push --force origin master
+cd _site
+git config user.email "nglauzer@gmail.com"
+git config user.name "Andrey Glauzer"
+git add -A
+git commit -a -m "Travis #$TRAVIS_BUILD_NUMBER"
+git push --force origin master
