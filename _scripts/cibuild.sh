@@ -17,8 +17,10 @@ mkdir _site
 #git clone https://${GH_TOKEN}@github.com/andreyglauzer/andreyglauzer.github.io.git --branch master _site
 
 # build with Jekyll into "_site"
-bundle exec jekyll build
 
+echo "fazendo o bundle exec jekyll build"
+bundle exec jekyll build
+echo "Passou"
 # push
 #cd _site
 #git config user.email "nglauzer@gmail.com"
