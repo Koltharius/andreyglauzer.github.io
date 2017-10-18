@@ -22,7 +22,7 @@ notifications:
 
 script:
   - chmod +x ./_scripts/cibuild.sh
-  - bundle exec jekyll build --config _config.yml
+  - jekyll build --config _config.yml
 
 
 sudo: false
