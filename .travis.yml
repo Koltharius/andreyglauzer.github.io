@@ -3,6 +3,7 @@ rvm:
   - 2.3.1
 
 install:
+  - gem install bundle
   - bundle install
   - gem install jekyll
   - gem install jekyll-sitemap
