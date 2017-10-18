@@ -1,0 +1,26 @@
+---
+layout: projetos
+title: Projetos
+description: Alguns projetos que eu desenvolvi, ou que estou desenvolvendo.
+---
+
+<div class="alert" data-v-27d568c2="" data-v-74b29a38="">Oops, essa página ainda está sendo construida, por favor entre mas não repare na bagunça.</div>
+
+
+{% for info_projetos in site.info_projetos %}
+	<div class="project-list">
+		<article>
+			<div class="sobre-projeto">
+				<h3>{{info_projetos.nome}}</h3>
+				<p>{{info_projetos.descricao}}</p>
+				<p>	
+					<b>Data: </b>{{info_projetos.data}}</br>
+					<b>URL: </b><a href="{{info_projetos.url}}">{{info_projetos.url}}</a>
+				</p>
+			</div>
+			<div class="foto-projeto">
+				<img class="foto-fim" src="{{info_projetos.imagem}}">
+			</div>
+		</article>
+	</div>
+{% endfor %}

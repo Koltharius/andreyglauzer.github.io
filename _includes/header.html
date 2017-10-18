@@ -1,0 +1,93 @@
+<div class="header-background pageHeader--background">
+    <figure  itemprop="image" itemscope="itemscope" itemtype="http://schema.org/ImageObject" class="pageHeader__image">
+        <meta data-v-dfab16f4="" itemprop="url" content="{% if page.image.url %}{{ page.image.url }}{% else %}{{ site.cover }}{% endif %}">
+        <img data-v-dfab16f4="" src="{% if page.image.url %}{{ page.image.url }}{% else %}{{ site.cover }}{% endif %}">
+    </figure>    
+    <header id="header">
+    	<ul class="menu-header">
+    		<li>
+    			<a href="#pesquisar" class="thumbnail"><i class="fa fa-search" aria-hidden="true"></i></a>
+    		</li>
+    		<li>
+    			<a href="/">Home</a>
+    		</li>
+    			<!-- Nav pages -->
+    		  {% for page in site.pages %}
+    		    {% if page.layout == "page" %}
+    		    <li>
+    		      <a href="{% if site.baseurl == "/" %}{{ page.url }}{% else %}{{ page.url | prepend: site.baseurl }}{% endif %}" title="{{ page.title }}">{{ page.title }}</a>
+    		    </li>
+    		    {% endif %}
+    		  {% endfor %}
+              <li>
+                <a href="/projetos">Projetos</a>
+            </li>
+    	</ul>
+        <div class="header-nome esconde">
+        	<h3>Hello! I'm</h3>
+            <a class="teste" href="{{ site.baseurl }}">
+              <h1 class="animate"><span>Andrey</span> Glauzer</h1>
+            </a>
+            <br />
+            <i class="fa fa-coffee" aria-hidden="true"></i>
+        </div>
+        <div class="header-posts esconde-header-posts">
+            
+            <div class="alinhamento-header-posts">
+                <h2>{{ page.title }}</h2>
+                
+                <ol>
+                    <li>
+                        <a href="/">Home</a>
+                        <span data-v-a16d01e6="" class="breadcrumb__divider">»</span>
+                    </li>
+                    <li>
+                        <a href="{% if site.baseurl == "/" %}{{ page.url }}{% else %}{{ page.url | prepend: site.baseurl }}{% endif %}">{{ page.title }}</a>
+                    </li>
+                </ol>
+                <span class="descricao">{{ page.description }}</span>
+            </div>
+        </div>
+    </header>
+</div>
+</div>
+<style type="text/css">
+.arquivos {
+    padding-right: 30rem;
+}
+.thumbnail {
+  max-width: 40%;
+}
+/** LIGHTBOX MARKUP **/
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    top: 0;
+    left: 0;
+    background-color: #f8f8e6;
+    -webkit-transition: opacity .3s ease;
+    transition: opacity .3s ease;
+    overflow-y: auto;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    margin-top: 2%;
+}
+
+.lightbox:target {
+    outline: none;
+    display: block;
+}
+</style>
+
+
+<div class="lightbox" id="pesquisar">
+    {% include search.html %}
+</div>

@@ -1,0 +1,54 @@
+# Site settings
+title: Andrey Glauzer | BLOG
+description: "Um blog sobre coisas novas que estou aprendendo."
+url: "https://andreyglauzer.com"
+author:
+  name: "Andrey Glauzer"
+  email: "nglauzer@gmail.com"
+  url: "https://andreyglauzer.com"
+
+# Build settings
+baseurl: / # Change this to your relative path (ex: /blog/), or leave just a /
+markdown: kramdown
+source: .
+destination: ./_site
+permalink: /:title
+paginate: 8
+paginate_path: /page:num/
+
+# Default values
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Plugins
+gems:
+  - jekyll-paginate
+
+# Custom variables
+version: "1.1.0"
+
+# Options
+custom_header: false
+custom_nav_footer: false
+reverse: false
+
+
+# Projetos
+
+info_projetos:
+  - nome: Projeto Cortexiphan
+    url: https://github.com/andreyglauzer/cortexiphan
+    data: Agosto de 2017
+    imagem: img/projetos/cortexiphan.png
+    descricao: Projeto escrito em Python, que faz Webcrwaling no youtube, coletando canais e playlists de cursos de T.I. O código é totalmente open source sob licença MIT.
+  
+  - nome: Projeto Pybook
+    url: https://github.com/andreyglauzer/pybook
+    data: Outubro de 2017
+    imagem: img/projetos/pybook.png
+    descricao: Projeto escrito em python e fazer Webcrwaling no skoob coletando os livros de categorias, como mais lidos, mais abandonados etc.. Pesquisando seus preços, coletando informações sobre os livros e seus autores, e coleta site para donwload dos livros em EPUB, MOB e PDF. O código é totalmente open source sob licença MIT.
