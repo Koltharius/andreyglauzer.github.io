@@ -2,9 +2,6 @@ language: ruby
 rvm:
 - 2.1
 
-# Assume bundler is being used, therefore
-# the `install` step will run `bundle install` by default.
-script: ./_script/cibuild.sh
 
 # branch whitelist, only for GitHub Pages
 branches:
