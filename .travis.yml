@@ -26,7 +26,8 @@ notifications:
 
 script:
   - chmod +x ./_scripts/cibuild.sh
-  - ./_scripts/cibuild.sh
+  - cd _scripts/
+  - ./cibuild.sh
 
 sudo: false
 
