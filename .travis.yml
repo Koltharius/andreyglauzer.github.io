@@ -11,8 +11,16 @@ script: ./_script/cibuild.sh
 
 # branch whitelist, only for GitHub Pages
 branches:
-  only:
+  except:
   - master
+
+# Deployment config
+deploy:
+  provider: script
+  script: "./_scripts/cibuild.sh"
+  skip_cleanup: false
+  on:
+    branch: source
 
 env:
   global:
