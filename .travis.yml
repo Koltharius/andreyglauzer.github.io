@@ -7,7 +7,6 @@ install:
   - gem install jekyll
   - gem install jekyll-sitemap
   - gem install emoji_for_jekyll
-  - bundle install
 
 branches:
   except:
