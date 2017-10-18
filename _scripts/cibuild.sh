@@ -25,7 +25,6 @@ bundle exec jekyll build
 echo "Passou"
 # push
 cd _site
-git checkout master
 git config --global user.email "nglauzer@gmail.com"
 git config --global user.name "Andrey Glauzer"
 git add -A
