@@ -3,7 +3,6 @@ rvm:
   - 2.3.1
 
 install:
-  - sudo apt-get install clang make ruby-dev libffi-dev
   - gem install bundle
   - gem install jekyll
   - gem install jekyll-sitemap
