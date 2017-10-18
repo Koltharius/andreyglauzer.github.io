@@ -1,1 +1,0 @@
-# andreyglauzer.github.io
