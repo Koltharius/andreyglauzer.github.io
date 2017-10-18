@@ -25,4 +25,4 @@ git config user.email "nglauzer@gmail.com"
 git config user.name "Andrey Glauzer"
 git add --all
 git commit -a -m "Travis #$TRAVIS_BUILD_NUMBER"
-git push --force origin gh-pages
+git push --force origin source
