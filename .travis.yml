@@ -25,8 +25,8 @@ notifications:
     on_failure: always
 
 script:
-  - chmod +x _scripts/cibuild.sh
-  - _scripts/cibuild.sh
+  - chmod +x ./_scripts/cibuild.sh
+  - ./_scripts/cibuild.sh
 
 sudo: false
 
