@@ -9,8 +9,9 @@ install:
   - gem install emoji_for_jekyll
 
 branches:
-  only:
-    - master
+  except:
+  - master
+
 
 notifications:
   email:
@@ -24,6 +25,7 @@ script:
   - _scripts/cibuild.sh
 
 sudo: false
+
 addons:
   apt:
     packages:
