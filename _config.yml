@@ -2,18 +2,13 @@
 
 title: Andrey Glauzer | Analista de Suporte / Analista de Segurança da Informação em Barueri/SP
 description: "Um blog sobre coisas novas que estou aprendendo."
-url: "https://andreyglauzer.com"
-author:
-  name: "Andrey Glauzer"
-  email: "nglauzer@gmail.com"
-  url: "https://andreyglauzer.com"
+baseurl: ""
+url: ""
+
 
 
 # Configurações da Build
-baseurl: /
 markdown: kramdown
-source: .
-destination: ./_site
-permalink: /:title
-paginate: 8
-paginate_path: /page:num/
+theme: minima
+plugins:
+  - jekyll-feed
