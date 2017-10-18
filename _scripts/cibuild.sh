@@ -28,5 +28,5 @@ cd _site
 git config user.email "nglauzer@gmail.com"
 git config user.name "Andrey Glauzer"
 git add -A
-git commit -a -m "Travis #$TRAVIS_BUILD_NUMBER"
-git push --force origin master
+git commit -m "Travis #$TRAVIS_BUILD_NUMBER"
+git push origin master
