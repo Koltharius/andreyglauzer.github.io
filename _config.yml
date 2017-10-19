@@ -1,31 +1,61 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+# Configurações do Site.
+title: Andrey Glauzer | Analista de Suporte / Analista de Segurança da Informação em Barueri/SP
+description: "Um blog sobre coisas novas que estou aprendendo ou interessado, e para fixar tudo que estou praticando."
+url: "http://www.jacoporabolini.com/emerald"
+author:
+  name: "Andrey Glauzer"
+  email: "nglauzer@gmail.com"
 
-# Site settings
-title: Your awesome title
-email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
-twitter_username: Taffyer 
-github_username:  wild-flame 
+# Configurações da Build
 
-# Build settings
+baseurl: ""
 markdown: kramdown
-kramdown:
-  input: GFM
+source: .
+destination: ./_site
+permalink: /:title
+paginate: 8
+paginate_path: /page:num/
 
-# Third-party services
-# just leave someone empty to disable it
-# google_analytics: 
-disqus_shortname:
+# Convigurações Padrões
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
 
-# used this for post_excerpt at index_page
-excerpt_separator: <!--description-->
+# Plugins que eu utilizo
+gems:
+  - jekyll-paginate
+
+# Versão do site.
+version: "1.1.0"
+
+collections:
+    themes:
+        output: true
+        permalink: /jekyll-themes/:path/
+
+
+# Projetos
+projetos:
+  - nome: andreyglauzer.com
+    imagem: andreyglauzer.png
+    descricao: Meu blog pessoal, desenvolvido com GitHub Pages, com a ajuda o Jekyll <3.
+    url: https://github.com/andreyglauzer/andreyglauzer.github.io
+    data: Janeiro de 2016
+    invert: true
+
+  - nome: Cortexiphan
+    imagem: cortexiphan.png
+    descricao: Projeto desenvolvido em Python, que faz coleta no youtube, juntando informações de canais e playlists de cursos focados na área de T.I
+    url: https://github.com/andreyglauzer/cortexiphan
+    data: Agosto de 2017
+
+  - nome: pybook
+    imagem: pybook.png
+    descricao: Projeto escrito em Python, que coleta o maximo de informações de outros sites, com base nos livros mais lidos do site Skoob, coletando como link para download do arquivo, descrição Livro/Autor, menor preço etc..
+    url: https://github.com/andreyglauzer/pyboob
+    data: Setembro de 2016
+    invert: true

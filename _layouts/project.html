@@ -1,0 +1,35 @@
+---
+layout: default
+---
+<style type="text/css">.grid--1of2 > .grid__column {-webkit-box-flex: 0;-ms-flex: 0 0 45% !important;flex: 0 0 45% !important;}</style>
+
+<div  class="container">
+   <div  class="alert">Oops, essa página ainda está sendo construida, por favor entre mas não repare na bagunça.</div>
+   <div  class="project-list">
+      {% for projetos in site.projetos %}
+            <article {% if projetos.invert == true %} class="project grid grid--1of2 project--invert" {% else %} class="project grid grid--1of2"{% endif %} >
+               <div class="project__content grid__column">
+                  <h2 class="project__title"><a  href="{{ projetos.url }}" target="_blank">Projeto {{ projetos.nome }}</a></h2>
+                  <p class="project__description">{{ projetos.descricao }}</p>
+                  <div  class="project__meta">
+                     <span  class="project__date">
+                        <strong >Data: </strong>{{ projetos.data }}</span><br >
+                        <span class="project__url"><strong >URL: </strong>
+                           <a href="{{ projetos.url }}" target="_blank">{{ projetos.url }}</a>
+                        </span>
+                  </div>
+               </div>
+               <figure class="project__thumbnail grid__column">
+                  <a href="{{ projetos.url }}" target="_blank">
+                     <img src="img/projetos/{{ projetos.imagem }}" alt="Thumbnail de: Projeto {{ projetos.nome }}">
+                  </a>
+               </figure>
+            </article>
+
+      {% endfor %} 
+   </div>
+   <!---->
+</div>
+
+
+     

@@ -1,0 +1,35 @@
+{% include nav-menu.html %}
+
+<header id="header" class="pageHeader pageHeader--background">
+	<article itemscope="itemscope" itemtype="http://schema.org/NewsArticle" class="article">
+		<figure itemprop="image" itemscope="itemscope" itemtype="http://schema.org/ImageObject" class="pageHeader__image">
+			<meta itemprop="url" content="{{ page.img_background }}">
+			<img src="{{ page.img_background }}" alt="{{ page.title }}" />
+		</figure>
+		<div class="info-header">
+			<h1 class="pageHeader__title">{{ page.title }}</h1>
+			<ol itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList" class="breadcrumb">
+				<li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem" class="breadcrumb__item">
+					<a  href="/" class="breadcrumb__link nuxt-link-active" title="Home" itemprop="item">
+						<span itemprop="name">Home</span>
+						<meta  itemprop="position" content="1">
+					</a>
+					<span class="breadcrumb__divider">»</span>
+				</li>
+				
+				<li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem" class="breadcrumb__item">
+					<a class="breadcrumb__link nuxt-link-exact-active nuxt-link-active breadcrumb__link--active" title="{{ page.title }}" itemprop="item" href="{% if site.baseurl == "/" %}{{ page.url }}{% else %}{{ page.url | prepend: site.baseurl }}{% endif %}">
+					<span itemprop="name">{{ page.title }}</span>
+					<meta itemprop="position" content="2">
+					</a>
+				</li>
+
+			</ol>
+			<p itemprop="description" class="pageHeader__description">{{ page.description }}</p>
+			<div data-v-669fd401="" class="pageHeader__meta">
+
+				<span data-v-669fd401="">Publicado em {{ page.data }}, por <span data-v-669fd401="" itemprop="author">Andrey Glauzer</span>
+			</div>
+		</div>
+	</span>
+</header>

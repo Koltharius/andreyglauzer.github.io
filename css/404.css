@@ -1,0 +1,168 @@
+
+.navbar__nav-link.nuxt-link-exact-active:after, .navbar__nav-link:hover:after {
+    width: 50%;
+    left: 0;
+    background: #cffbe2;
+}
+
+.navbar__nav{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar__nav-item{
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: -.01em;
+}
+
+.navbar__nav-item:not(:last-child):after {
+    content: "\2022";
+    color: #fff;
+    margin-left: 15px;
+}
+
+.navbar__nav-link.nuxt-link-exact-active, .navbar__nav-link:hover {
+    color: #cffbe2;
+}
+
+
+
+.navbar__nav-link:after {
+    z-index: 3;
+    left: 0;
+    -webkit-transition: all .2s cubic-bezier(.29,.18,.26,.83);
+    transition: all .2s cubic-bezier(.29,.18,.26,.83);
+    content: "";
+    display: block;
+    position: absolute;
+    top: calc(100% + 5px);
+    width: 0;
+    height: 3px;
+}
+
+.navbar__nav-link{
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: .8px;
+    letter-spacing: .05rem;
+    font-size: 14px;
+    font-size: .875rem;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.navbar__nav-item:not(:last-child):after {
+    content: "\2022";
+    color: #fff;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.header__back:hover span{
+  opacity:1;
+  -webkit-transform:translateZ(0);
+  transform:translateZ(0)
+}
+
+.header__back{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+a:active, a:focus, a:hover {
+    text-decoration: none;
+}
+
+a:focus {
+    outline: 3px solid rgba(0,111,182,.7);
+    outline-offset: 2px;
+}
+
+.header__back span, .header__back svg{
+    line-height: 1;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.header__back span{
+    opacity: 0;
+    color: #fff;
+    margin-left: 12.8px;
+    margin-left: .8rem;
+    -webkit-transform: translate3d(-100%,0,0);
+    transform: translate3d(-100%,0,0);
+    -webkit-transition: opacity .2s cubic-bezier(.29,.18,.26,.83),-webkit-transform .2s cubic-bezier(.29,.18,.26,.83);
+    transition: opacity .2s cubic-bezier(.29,.18,.26,.83),-webkit-transform .2s cubic-bezier(.29,.18,.26,.83);
+    transition: transform .2s cubic-bezier(.29,.18,.26,.83),opacity .2s cubic-bezier(.29,.18,.26,.83);
+    transition: transform .2s cubic-bezier(.29,.18,.26,.83),opacity .2s cubic-bezier(.29,.18,.26,.83),-webkit-transform .2s cubic-bezier(.29,.18,.26,.83);
+}
+
+header.header{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    min-height: 100px;
+    padding: 0 32px;
+    padding: 0 2rem;
+}
+
+  /* Styles of the 404 page of my website. */
+
+body {
+    background: #081421;
+    color: #d3d7de;
+    font-family: "Courier new";
+    font-size: 18px;
+    line-height: 1.5em;
+  cursor: default;
+}
+
+.code-area {
+    position: absolute;
+    width: 320px;
+  min-width: 320px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.code-area > span {
+    display: block;
+}
+
+@media screen and (max-width: 320px) {
+    .code-area {
+    font-size: 5vw;
+    min-width: auto;
+        width: 95%;
+    margin: auto;
+    padding: 5px;
+    padding-left: 10px;
+    line-height: 6.5vw;
+    }
+}
