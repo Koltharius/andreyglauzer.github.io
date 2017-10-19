@@ -1,0 +1,123 @@
+[
+  
+    {
+      "tags" : "Scripts",
+      "title" : "Automatizando Login com Python",
+      "url" : "http://www.jacoporabolini.com/emerald/automatizando-login-com-pythton",
+      "date" : "Outubro de 2017",
+      "description" : "",
+      "content" : "Executando o Auto Login"
+      
+    } ,
+  
+    {
+      "tags" : "Python",
+      "title" : "Fazendo Backup de OST/PST do Outlook",
+      "url" : "http://www.jacoporabolini.com/emerald/fazendo-backup-de-ost-pst-do-outlook",
+      "date" : "Outubro de 2017",
+      "description" : "",
+      "content" : "Utilizando"
+      
+    } ,
+  
+    {
+      "tags" : "SonicWall, Zabbix, SNMP",
+      "title" : "Monitorando SonicWall com Zabbix",
+      "url" : "http://www.jacoporabolini.com/emerald/monitorando-sonicwall-com-zabbix",
+      "date" : "Outubro de 2017",
+      "description" : "",
+      "content" : "SonicWall &amp;amp; Zabbix"
+      
+    } ,
+  
+    {
+      "tags" : "SonicWall, Firewall",
+      "title" : "Limitar banda de internet no SonicWall",
+      "url" : "http://www.jacoporabolini.com/emerald/limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall",
+      "date" : "Setembro de 2017",
+      "description" : "",
+      "content" : "A história por traz disso."
+      
+    } ,
+  
+    {
+      "tags" : "Security, Scripts",
+      "title" : "Quebrando senhas com o THC Hydra",
+      "url" : "http://www.jacoporabolini.com/emerald/quebrando-senhas-com-o-thc-hydra",
+      "date" : "Agosto de 2017",
+      "description" : "",
+      "content" : "THC Hydra"
+      
+    } ,
+  
+    {
+      "tags" : "Python, Scripts",
+      "title" : "Usando BeatifulSoup no meu dia-a-dia",
+      "url" : "http://www.jacoporabolini.com/emerald/usando-beatifulsoup-no-meu-dia-a-dia",
+      "date" : "Agosto de 2017",
+      "description" : "",
+      "content" : "Python"
+      
+    } ,
+  
+    {
+      "tags" : "Powershell, Scripts",
+      "title" : "Relatório do Active Directory com Powershell",
+      "url" : "http://www.jacoporabolini.com/emerald/relatorio-do-active-directory-com-powershell",
+      "date" : "Julho de 2017",
+      "description" : "",
+      "content" : "Active Directory"
+      
+    } ,
+  
+    {
+      "tags" : "Scripts, Python",
+      "title" : "Automatizando tarefas diarias com python",
+      "url" : "http://www.jacoporabolini.com/emerald/automatizando-tarefas-diarias-com-python",
+      "date" : "Julho de 2017",
+      "description" : "",
+      "content" : "Como usar o ponto.py"
+      
+    } ,
+  
+    {
+      "tags" : "SonicWall, Firewall",
+      "title" : "Como criar regras no SonicWall",
+      "url" : "http://www.jacoporabolini.com/emerald/criando-regras-de-redirecionamento-no-sonicwall",
+      "date" : "Julho de 2017",
+      "description" : "",
+      "content" : "O SonicWall"
+      
+    } ,
+  
+    {
+      "tags" : "Life, Blog",
+      "title" : "Vou voltar aos poucos com o BLOG!",
+      "url" : "http://www.jacoporabolini.com/emerald/voltando-aos-pucos",
+      "date" : "Julho de 2016",
+      "description" : "",
+      "content" : "Já faz um bom tempo que eu havia abandonado a ideia do blog, estava um pouco desanimado e quase sem tempo para estudar e praticar coisas novas."
+      
+    } ,
+  
+    {
+      "tags" : "Segurança, Dicas",
+      "title" : "Analisando vulnerabilidades com sqlmap",
+      "url" : "http://www.jacoporabolini.com/emerald/analisando-vulnerabilidades-com-sqlmap",
+      "date" : "Fevereiro de 2016",
+      "description" : "",
+      "content" : "SQL Injection"
+      
+    } ,
+  
+    {
+      "tags" : "Segurança, Wirelless",
+      "title" : "Redes Wi-Fi e seus aspectos de segurança",
+      "url" : "http://www.jacoporabolini.com/emerald/redes-wifi-aspectos-de-seguranca",
+      "date" : "Fevereiro de 2016",
+      "description" : "",
+      "content" : "Um pouco sobre Wi-Fi"
+      
+    } 
+  
+]

@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<!-- Meta -->
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<meta name="generator" content="Jekyll">
+
+	<title>Limitar banda de internet no SonicWall</title>
+	<link rel="stylesheet"  href="/css/font-awesome/css/font-awesome.min.css">
+
+	<!-- CSS & fonts -->
+	<link rel="stylesheet" href="/css/main.css">
+	<link href="//fonts.googleapis.com/css?family=Suez+One|Ubuntu:300,400,500,700" rel="stylesheet" data-n-head="true">
+
+	<!-- RSS -->
+	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" />
+
+	<!-- Icons -->
+
+	<link rel="apple-touch-icon" sizes="57x57" href="/img/logo/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/img/logo/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/img/logo/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/img/logo/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/img/logo/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/img/logo/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/img/logo/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/img/logo/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/img/logo/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/img/logo/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/img/logo/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/img/logo/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/img/logo/favicon-16x16.png">
+	<link rel="manifest" href="/img/logo/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/img/logo/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+</head>
+
+
+  <body>
+    <div id="wrap">
+        <!-- IF para definir o HEADER -->
+        
+          <header data-v-ae5c0adc="" class="header">
+   <a data-v-ae5c0adc="" href="/" class="header__back nuxt-link-active">
+      <svg data-v-ae5c0adc="" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left">
+         <line data-v-ae5c0adc="" x1="20" y1="12" x2="4" y2="12"></line>
+         <polyline data-v-ae5c0adc="" points="10 18 4 12 10 6"></polyline>
+      </svg>
+      <span>Ir para Home</span>
+   </a>
+   <div data-v-ae5c0adc="">
+      <nav role="navigation" class="navbar">
+         <ul role="menu" class="navbar__nav">
+            <li class="navbar__nav-item navbar__nav-item--search">
+               <div class="inner search__box">
+  <a href="#modal" role="link" class="navbar__nav-link">
+    <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="#ffffff">
+      <title class="search-icon">Search icon</title>
+      <path  fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"></path>
+    </svg>
+  </a>
+</div>
+<div class="modal" id="modal">
+  <div class="search__box">
+    <a class="modal--close" href="#">&times;</a>
+      <svg data-v-38ac2332="" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="#404756" class="search__icon"><title data-v-38ac2332="" id="searchicon">Search icon</title><path data-v-38ac2332="" fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"></path></svg>
+      <input type="text" id="search-input" class="search__input" placeholder="Digite algo..." autofocus>
+
+      <ul id="results-container"></ul>
+  </div>
+</div>
+<script src="js/simple-jekyll-search.min.js"></script>
+<script>
+SimpleJekyllSearch({
+  searchInput: document.getElementById('search-input'),
+  resultsContainer: document.getElementById('results-container'),
+  json: '/search.json'
+})
+</script>
+            </li>
+            <li data-v-2651ba95="" role="menuitem" class="navbar__nav-item">
+            	<a href="/" class="navbar__nav-link" title="Sobre" role="link">Home</a>
+            </li>
+            <li data-v-2651ba95="" role="menuitem" class="navbar__nav-item">
+               <a href="/projetos" class="navbar__nav-link" title="Sobre" role="link">Projetos</a>
+            </li>
+            <!-- FOR para gerar os intens do menu. -->
+            
+			    
+			 
+			    
+			    <li role="menuitem" class="navbar__nav-item">
+			    	<a role="link" class="navbar__nav-link" href="/about" title="Sobre">Sobre</a>
+			    </li>
+			    
+			 
+			    
+			 
+			    
+			 
+			    
+			 
+			    
+			 
+			    
+			 
+			    
+			 
+			    
+			 
+         </ul>
+      </nav>
+      <!---->
+   </div>
+</header>
+
+
+
+<header id="header" class="pageHeader pageHeader--background">
+	<article itemscope="itemscope" itemtype="http://schema.org/NewsArticle" class="article">
+		<figure itemprop="image" itemscope="itemscope" itemtype="http://schema.org/ImageObject" class="pageHeader__image">
+			<meta itemprop="url" content="img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/sonicwall-banner.png">
+			<img src="img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/sonicwall-banner.png" alt="Limitar banda de internet no SonicWall" />
+		</figure>
+		<div class="info-header">
+			<h1 class="pageHeader__title">Limitar banda de internet no SonicWall</h1>
+			<ol itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList" class="breadcrumb">
+				<li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem" class="breadcrumb__item">
+					<a  href="/" class="breadcrumb__link nuxt-link-active" title="Home" itemprop="item">
+						<span itemprop="name">Home</span>
+						<meta  itemprop="position" content="1">
+					</a>
+					<span class="breadcrumb__divider">»</span>
+				</li>
+				
+				<li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem" class="breadcrumb__item">
+					<a class="breadcrumb__link nuxt-link-exact-active nuxt-link-active breadcrumb__link--active" title="Limitar banda de internet no SonicWall" itemprop="item" href="/limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall">
+					<span itemprop="name">Limitar banda de internet no SonicWall</span>
+					<meta itemprop="position" content="2">
+					</a>
+				</li>
+
+			</ol>
+			<p itemprop="description" class="pageHeader__description">Passo à passo de como criar regras de BWM no Sonicwall, deixando a rede bem segmentada e com menos gargalo, evitando o consumo descessário da banda de internet.</p>
+			<div data-v-669fd401="" class="pageHeader__meta">
+
+				<span data-v-669fd401="">Publicado em Setembro de 2017, por <span data-v-669fd401="" itemprop="author">Andrey Glauzer</span>
+			</div>
+		</div>
+	</span>
+</header>
+
+        
+
+        <!-- Main content -->
+    	  <div class="container">
+          <div class="grid grid--1of2">
+        			<article id="post-page">
+	<div class="content">
+		<h2 id="a-história-por-traz-disso">A história por traz disso.</h2>
+
+<p>Algumas semanas à traz estava com um pequeno problema que de alguma maneira, a minha internet estava horrivelmente lenta, e eu não conseguia encontrar onde estava o problema, no monitoramento do meu link estava sempre consumindo quase que 100% da banda.</p>
+
+<h2 id="o-foco-da-situação">O foco da situação</h2>
+
+<p>Então dando uma fuçada no SonicWall Analyzer, consegui identificar o foco do problema, que era uma máquina que ficava na portaria cujo seu foco era somente controlar o DVR, porém ela estava enviando diariamente mais de 60GB, como é possível ver na figura à baixo</p>
+
+<p><img src="img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/01.PNG" alt="SonicWall" /></p>
+
+<p>Essa máquina estava enviando tudo isso, porque em outro site, se faz a necessidade de monitorar as câmeras, da matriz, então eu não poderia simplesmente desligar à máquina, logo a solução mais simples foi reduzir o consumo de banda só dessa máquina.</p>
+
+<h2 id="iniciando-o-processo-de-criação-da-regra">Iniciando o processo de criação da regra.</h2>
+
+<p>Bom para começar fiz esse procedimento em um TZ105, que eu acredito que não tenha muita diferença dos outros, primeiro será necessário ativar o BWM (Bandwidth Management), para isso você tem que ir em <code class="highlighter-rouge">Firewall Settings &gt; BWM</code> e marcar a opção <code class="highlighter-rouge">Advanced</code> e depois <code class="highlighter-rouge">Accept</code> , como na imagem à baixo.</p>
+
+<p><img src="img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/02.PNG" alt="SonicWall" /></p>
+
+<h3 id="ativando-bwm">Ativando BWM</h3>
+
+<p>Após ativar o modo <code class="highlighter-rouge">Advanced</code> do BWM, precisamos definir a largura de banda direto na interface, para isso você deve ir em <code class="highlighter-rouge">Network &gt; Interfaces</code>, como mostra a imagem à baixo:</p>
+
+<p><img src="img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/03.PNG" alt="SonicWall" /></p>
+
+<h3 id="configurando-a-interface">Configurando a interface.</h3>
+
+<p>Clique em <code class="highlighter-rouge">Editar</code>, na interface de WAN da sua rede, caso você tenha mais de um LINK recomendo que faça nos dois, caso aconteça um Failover e o outro LINK assuma, já como a janela de edição do LINK aberta, vá até a aba <code class="highlighter-rouge">Advanced</code> marque <code class="highlighter-rouge">Enable Interface Egress Bandwith Limitatios &amp; Enable Interface Ingress Bandwitdh Limitarion</code> e determine qual será o uso da Interface.</p>
+
+<p><img src="img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/04.PNG" alt="SonicWall" /></p>
+
+<h3 id="criando-objetos-bwm">Criando objetos BWM</h3>
+
+<p>Com o <code class="highlighter-rouge">BWM</code> ativado e a interface WAN configurada, vamos criar um Objeto, que determine a quantidade que nossa máquina alvo vai poder usar, para isso vá em <code class="highlighter-rouge">Firewall &gt; Bandwitdh Objects</code>.</p>
+
+<p><img src="img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/06.PNG" alt="SonicWall" /></p>
+
+<p>Clique em adicionar, e defina de acordo com a maneira que você deseja limitar à banda.</p>
+
+<p><img src="img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/07.PNG" alt="SonicWall" /></p>
+
+<p><img src="img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/08.PNG" alt="SonicWall" /></p>
+
+<p>Após criar o Objeto determinando a quantidade de banda que à máquina vai usar, será necessário criar a regra, apontando justamente para os processos que fizemos á cima, para isso vá em <code class="highlighter-rouge">Firewall &gt; Access Rules</code>, e clique em LAN to WAN.</p>
+
+<p><img src="img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/09.PNG" alt="SonicWall" /></p>
+
+<p><img src="img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/10.PNG" alt="SonicWall" /></p>
+
+<h3 id="aplicando-a-regra">Aplicando a regra</h3>
+
+<p>Agora vamos criar a nossa regra, então portas de destino são todas, serviços são todos, a origem é o objeto com o IP/MAC da portaria, os destinos são todos, com isso parte da nossa regra está criada.</p>
+
+<p><img src="img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/12.PNG" alt="SonicWall" /></p>
+
+<p>Agora vá na aba <code class="highlighter-rouge">BWM</code>, marque as duas opções e selecione em ambas o objeto que criamos, onde determinamos qual será o tamanho da banda que a máquina vai utilizar.</p>
+
+<p><img src="img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/13.PNG" alt="SonicWall" /></p>
+
+<p>E abaixo é possível ver como a regra fica.</p>
+
+<p><img src="img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/14.PNG" alt="SonicWall" /></p>
+
+<h2 id="conclusão">Conclusão.</h2>
+
+<p>Criando regras assim bem segmentadas, conseguimos deixar a nossa rede com menos gargalo e consumo, principalmente onde a origem não tem a necessidade de uma banda maior que o necessário.</p>
+
+
+		<div id="coment" class="comments">
+	<div class="content-coment">
+		<h3 data-v-dd8644c2="">Comentários para: <span class="opacity">"Limitar banda de internet no SonicWall"</span></h3>
+		<div id="disqus_thread"></div>
+		<script>
+
+		/**
+		 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+		 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
+		/*
+		var disqus_config = function () {
+		    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+		    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		};
+		*/
+		(function() { // DON'T EDIT BELOW THIS LINE
+		    var d = document, s = d.createElement('script');
+		    s.src = '//andreyglauzer-1.disqus.com/embed.js';
+		    s.setAttribute('data-timestamp', +new Date());
+		    (d.head || d.body).appendChild(s);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                    
+	</div>
+</div>
+
+<style type="text/css">
+
+.comments{
+    background-color: #fff;
+    border-top: 1.12px solid rgba(64,71,86,.1);
+    border-top: .07rem solid rgba(64,71,86,.1);
+    padding: 30px 0 0;
+    padding: 1.875rem 0 0;
+    margin-top: 30px;
+    margin-top: 1.875rem;
+
+div.alinhamento-header-posts{
+    padding-top: 3rem;
+}
+
+div#coment{
+    background-color: #fff;
+    padding: 30px 0;
+    margin-top: 15px;
+}
+div.content-coment h3 span.opacity{
+        opacity: .6;
+    font-weight: 500;
+}
+div.content-coment{
+    max-width: 768px;
+    max-width: 48rem;
+    display: block;
+    margin:0 auto;
+}
+</style>
+	</div>
+</article>
+
+
+          </div>
+    		
+    		  <!-- Definicação de paginação -->
+          
+
+    	  </div>
+    	    
+    	    <!-- Footer -->
+    	    <footer>
+	Made with ♥ by <a target="_blank" href="https:/github.com/andreyglauzer/">Andrey Glauzer</a>, using <a href="">Jekyll</a>. This is an open <a target="_blank" href="https:/github.com/andreyglauzer/andreyglauzer.github.io/">source code</a>. Version 1.1.0.
+</footer>
+
+    	    <!-- Script -->
+          <script src="/js/main.js"></script>	
+
+  	</div>
+  </body>
+</html>

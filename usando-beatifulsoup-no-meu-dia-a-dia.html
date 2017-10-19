@@ -1,0 +1,373 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<!-- Meta -->
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<meta name="generator" content="Jekyll">
+
+	<title>Usando BeatifulSoup no meu dia-a-dia</title>
+	<link rel="stylesheet"  href="/css/font-awesome/css/font-awesome.min.css">
+
+	<!-- CSS & fonts -->
+	<link rel="stylesheet" href="/css/main.css">
+	<link href="//fonts.googleapis.com/css?family=Suez+One|Ubuntu:300,400,500,700" rel="stylesheet" data-n-head="true">
+
+	<!-- RSS -->
+	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" />
+
+	<!-- Icons -->
+
+	<link rel="apple-touch-icon" sizes="57x57" href="/img/logo/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/img/logo/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/img/logo/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/img/logo/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/img/logo/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/img/logo/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/img/logo/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/img/logo/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/img/logo/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/img/logo/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/img/logo/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/img/logo/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/img/logo/favicon-16x16.png">
+	<link rel="manifest" href="/img/logo/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/img/logo/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+</head>
+
+
+  <body>
+    <div id="wrap">
+        <!-- IF para definir o HEADER -->
+        
+          <header data-v-ae5c0adc="" class="header">
+   <a data-v-ae5c0adc="" href="/" class="header__back nuxt-link-active">
+      <svg data-v-ae5c0adc="" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left">
+         <line data-v-ae5c0adc="" x1="20" y1="12" x2="4" y2="12"></line>
+         <polyline data-v-ae5c0adc="" points="10 18 4 12 10 6"></polyline>
+      </svg>
+      <span>Ir para Home</span>
+   </a>
+   <div data-v-ae5c0adc="">
+      <nav role="navigation" class="navbar">
+         <ul role="menu" class="navbar__nav">
+            <li class="navbar__nav-item navbar__nav-item--search">
+               <div class="inner search__box">
+  <a href="#modal" role="link" class="navbar__nav-link">
+    <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="#ffffff">
+      <title class="search-icon">Search icon</title>
+      <path  fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"></path>
+    </svg>
+  </a>
+</div>
+<div class="modal" id="modal">
+  <div class="search__box">
+    <a class="modal--close" href="#">&times;</a>
+      <svg data-v-38ac2332="" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="#404756" class="search__icon"><title data-v-38ac2332="" id="searchicon">Search icon</title><path data-v-38ac2332="" fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"></path></svg>
+      <input type="text" id="search-input" class="search__input" placeholder="Digite algo..." autofocus>
+
+      <ul id="results-container"></ul>
+  </div>
+</div>
+<script src="js/simple-jekyll-search.min.js"></script>
+<script>
+SimpleJekyllSearch({
+  searchInput: document.getElementById('search-input'),
+  resultsContainer: document.getElementById('results-container'),
+  json: '/search.json'
+})
+</script>
+            </li>
+            <li data-v-2651ba95="" role="menuitem" class="navbar__nav-item">
+            	<a href="/" class="navbar__nav-link" title="Sobre" role="link">Home</a>
+            </li>
+            <li data-v-2651ba95="" role="menuitem" class="navbar__nav-item">
+               <a href="/projetos" class="navbar__nav-link" title="Sobre" role="link">Projetos</a>
+            </li>
+            <!-- FOR para gerar os intens do menu. -->
+            
+			    
+			 
+			    
+			    <li role="menuitem" class="navbar__nav-item">
+			    	<a role="link" class="navbar__nav-link" href="/about" title="Sobre">Sobre</a>
+			    </li>
+			    
+			 
+			    
+			 
+			    
+			 
+			    
+			 
+			    
+			 
+			    
+			 
+			    
+			 
+			    
+			 
+         </ul>
+      </nav>
+      <!---->
+   </div>
+</header>
+
+
+
+<header id="header" class="pageHeader pageHeader--background">
+	<article itemscope="itemscope" itemtype="http://schema.org/NewsArticle" class="article">
+		<figure itemprop="image" itemscope="itemscope" itemtype="http://schema.org/ImageObject" class="pageHeader__image">
+			<meta itemprop="url" content="img/posts/2017-08-11-usando-beatifulsoup-no-meu-dia-a-dia/scraping.jpg">
+			<img src="img/posts/2017-08-11-usando-beatifulsoup-no-meu-dia-a-dia/scraping.jpg" alt="Usando BeatifulSoup no meu dia-a-dia" />
+		</figure>
+		<div class="info-header">
+			<h1 class="pageHeader__title">Usando BeatifulSoup no meu dia-a-dia</h1>
+			<ol itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList" class="breadcrumb">
+				<li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem" class="breadcrumb__item">
+					<a  href="/" class="breadcrumb__link nuxt-link-active" title="Home" itemprop="item">
+						<span itemprop="name">Home</span>
+						<meta  itemprop="position" content="1">
+					</a>
+					<span class="breadcrumb__divider">»</span>
+				</li>
+				
+				<li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem" class="breadcrumb__item">
+					<a class="breadcrumb__link nuxt-link-exact-active nuxt-link-active breadcrumb__link--active" title="Usando BeatifulSoup no meu dia-a-dia" itemprop="item" href="/usando-beatifulsoup-no-meu-dia-a-dia">
+					<span itemprop="name">Usando BeatifulSoup no meu dia-a-dia</span>
+					<meta itemprop="position" content="2">
+					</a>
+				</li>
+
+			</ol>
+			<p itemprop="description" class="pageHeader__description">Um pouco de como ando utilizando o BeatifulSoup no meu dia-a-dia!</p>
+			<div data-v-669fd401="" class="pageHeader__meta">
+
+				<span data-v-669fd401="">Publicado em Agosto de 2017, por <span data-v-669fd401="" itemprop="author">Andrey Glauzer</span>
+			</div>
+		</div>
+	</span>
+</header>
+
+        
+
+        <!-- Main content -->
+    	  <div class="container">
+          <div class="grid grid--1of2">
+        			<article id="post-page">
+	<div class="content">
+		<h2 id="python">Python</h2>
+
+<p>Fala jovens, tudo em ordem? Hoje vou mostrar para vocês como raspagem de dados usando Python anda me ajudando com algumas tarefas, principalmente com as que incluem coleta de informação para usar em outros locais.</p>
+
+<p><img src="img/posts/2017-08-11-usando-beatifulsoup-no-meu-dia-a-dia/scraping.jpg" alt="scraping" /></p>
+
+<h2 id="introdução">Introdução</h2>
+
+<p>Como assim raspagem? Simples, vamos supor que você acessa um determinado site todos os dias, somente para ver/ler alguma informação desse site, para depois usar essa informação em qualquer outra coisa. Agora imagina automatizar isso, tudo pelo terminal, sem precisar passar por propagandas entre outras coisas. Existe diversas maneiras em que você pode usar raspagem para te ajudar, e eu vou explicar como vem me ajudando.</p>
+
+<p>Bom, tudo começou com uma conversa entre amigos, onde foi questionado como seria útil ter os canais de vídeo aulas do Youtube centralizado em um único local, sem precisar passar por resultados inúteis.</p>
+
+<p>Foi aí então que eu pensei em fazer uma raspagem no Youtube, para coletar canais com vídeo aulas de cursos específicos e centralizar esses resultados em uma única página. Mas agora imagine a frustação que seria copiar cada um desses canais e colar um por um em uma página, para fazer ela o seu banco de dados, cansativo né?</p>
+
+<h2 id="o-script">O script</h2>
+
+<p>Agora chega de história e vamos para a ação, antes de começar dá uma olhada no resultado final <a href="https://andreyglauzer.com/cortexiphan" class="link-exteno">Cortexiphan</a>. Agora já visto como ficaria, vamos dar uma olhada no nosso script e entender como tudo funciona e background.</p>
+
+<p>Primeiro foi necessário centralizar todos os tipos de cursos que eu gostaria de ter nessa página em uma variável, ficando assim.</p>
+
+<h3 id="palavras-chaves">Palavras chaves</h3>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">categorias</span> <span class="o">=</span> <span class="p">[</span><span class="s">"NodeJS"</span><span class="p">,</span> <span class="s">"AngularJS"</span><span class="p">,</span> <span class="s">"PHP"</span><span class="p">,</span> <span class="s">"Zend Framework"</span><span class="p">,</span> <span class="s">"MBA"</span><span class="p">,</span> <span class="s">"Docker"</span><span class="p">,</span> <span class="s">"Zabbix"</span><span class="p">,</span> <span class="s">"CakePHP"</span><span class="p">,</span> <span class="s">"Linux"</span><span class="p">,</span> <span class="s">"LPI"</span><span class="p">,</span> <span class="s">"MongoDB"</span><span class="p">,</span> <span class="s">"React"</span><span class="p">,</span> <span class="s">"Redux"</span><span class="p">,</span> <span class="s">"Silex"</span><span class="p">,</span> <span class="s">"Slim"</span><span class="p">,</span> <span class="s">"Laravel"</span><span class="p">,</span> <span class="s">"Django"</span><span class="p">,</span> <span class="s">"Inglês"</span><span class="p">,</span> <span class="s">"Python"</span><span class="p">,</span> <span class="s">"Marketing"</span><span class="p">,</span> <span class="s">"Vagrant"</span><span class="p">,</span> <span class="s">"Jenkins"</span><span class="p">,</span> <span class="s">"Machine Learning"</span><span class="p">,</span> <span class="s">"Symfony"</span><span class="p">,</span> <span class="s">"Amazon AWS"</span><span class="p">,</span> <span class="s">"Ruby"</span><span class="p">,</span> <span class="s">"Ruby on Rails"</span><span class="p">,</span> <span class="s">"Elixir"</span><span class="p">,</span> <span class="s">"Clojure"</span><span class="p">,</span> <span class="s">"Git"</span><span class="p">,</span> <span class="s">"PHPunit"</span><span class="p">,</span> <span class="s">"Composer"</span><span class="p">,</span> <span class="s">"Bower"</span><span class="p">,</span> <span class="s">"Java"</span><span class="p">,</span> <span class="s">".NET"</span><span class="p">,</span> <span class="s">"C#"</span><span class="p">,</span> <span class="s">"C++"</span><span class="p">,</span> <span class="s">"MySQL"</span><span class="p">,</span> <span class="s">"SQL"</span><span class="p">,</span> <span class="s">"SQLServer"</span><span class="p">,</span> <span class="s">"Redis"</span><span class="p">,</span> <span class="s">"PostgreSQL"</span><span class="p">,</span> <span class="s">"BeMean"</span><span class="p">,</span> <span class="s">"Be MEAN"</span><span class="p">,</span> <span class="s">"Azure"</span><span class="p">,</span> <span class="s">"Big Date"</span><span class="p">,</span> <span class="s">"Cloud"</span><span class="p">,</span> <span class="s">"Excel"</span><span class="p">,</span> <span class="s">"Photoshop"</span><span class="p">,</span> <span class="s">"Perl"</span><span class="p">,</span> <span class="s">"Packet Tracer"</span><span class="p">,</span> <span class="s">"Powershell"</span><span class="p">,</span> <span class="s">"Active Directory"</span><span class="p">,</span> <span class="s">"Windows Server 2012"</span><span class="p">,</span> <span class="s">"Windows Server 2016"</span><span class="p">,</span> <span class="s">"Redes"</span><span class="p">,</span> <span class="s">"Pentest"</span><span class="p">,</span> <span class="s">"Segurança da informação"</span><span class="p">,</span> <span class="s">"sqlmap"</span><span class="p">,</span> <span class="s">"nmap"</span><span class="p">,</span> <span class="s">"kali linux"</span><span class="p">,</span> <span class="s">"Google dorcks"</span><span class="p">,</span> <span class="s">"Inglês"</span><span class="p">,</span> <span class="s">"Análise Forense Computacional"</span><span class="p">,</span> <span class="s">"Nmap"</span><span class="p">,</span> <span class="s">"Shodan"</span><span class="p">,</span> <span class="s">"Vuln Scan"</span><span class="p">,</span> <span class="s">"Brute Force"</span><span class="p">,</span> <span class="s">"Metasploit"</span><span class="p">,</span> <span class="s">"pfsense"</span><span class="p">,</span> <span class="s">"esxi"</span><span class="p">,</span> <span class="s">"hyper-v"</span><span class="p">,</span> <span class="s">"Samba 4"</span><span class="p">]</span></code></pre></figure>
+
+<p>Como você pode ver a nossa busca no Youtube vai ser baseada em palavras chaves. Feito isso, vamos filtrar palavra por palavra para que não venha tudo só de uma única vez.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">termos</span> <span class="ow">in</span> <span class="n">categorias</span><span class="p">:</span>
+    <span class="n">buscanoyoutube</span><span class="p">(</span><span class="s">"Curso de "</span> <span class="o">+</span> <span class="n">termos</span><span class="p">,</span> <span class="n">termos</span><span class="p">)</span></code></pre></figure>
+
+<p>Uma vez filtradas as palavras chaves, precisamos aplicar ela na URL para que nos traga o resultado de que precisamos.</p>
+
+<h3 id="filtrando-resultados">Filtrando resultados</h3>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">buscanoyoutube</span><span class="p">(</span><span class="n">result_term</span><span class="p">,</span> <span class="n">categoria</span><span class="p">):</span>
+    <span class="n">dt</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">quote</span><span class="p">(</span><span class="n">result_term</span><span class="p">)</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s">"https://www.youtube.com/results?q="</span> <span class="o">+</span> <span class="n">query</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="s">"html.parser"</span><span class="p">)</span></code></pre></figure>
+
+<p>Aqui eu estou transformando a palavra chave e um url, depois armazenando ela na variável “query”, para só depois ser adicionada junto a URL do youtube. Analisando mais de perto, o resultado da URL para o browser ficaria assim. <a href="https://www.youtube.com/results?q=Curso%20de%20NodeJS" class="link-exteno">https://www.youtube.com/results?q=Curso%20de%20NodeJS</a>
+Com a nossa URL pronta, o soup irá para esse URL, e então precisamos filtrar agora o que exatamente queremos dessa página.</p>
+
+<h3 id="coletando-título-do-vídeo">Coletando título do vídeo</h3>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">"div"</span><span class="p">,{</span><span class="s">"class"</span><span class="p">:</span><span class="s">"yt-lockup-content"</span><span class="p">})</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s">"a"</span><span class="p">,{</span><span class="s">"class"</span><span class="p">:</span><span class="s">"yt-uix-tile-link"</span><span class="p">}):</span>
+    <span class="n">titulo</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s">"title"</span><span class="p">]</span> <span class="c">#TITULO DO VIDEO</span>
+    <span class="n">contador</span> <span class="o">=</span> <span class="mi">0</span></code></pre></figure>
+
+<p>Nesse trecho o que estou pegando é isso:</p>
+
+<p><img src="img/posts/2017-08-11-usando-beatifulsoup-no-meu-dia-a-dia/01.PNG" alt="scraping" /></p>
+
+<p>Com o titulo do nosso curso em mãos, agora vamos precisar pegar a URL da Playlist, para que possamos deixar tudo organizado.</p>
+
+<h3 id="coletando-url-da-playlist">Coletando URL da playlist</h3>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">"ul"</span><span class="p">,{</span><span class="s">"class"</span><span class="p">:</span><span class="s">"yt-lockup-meta-info"</span><span class="p">})</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s">"a"</span><span class="p">,{</span><span class="s">"class"</span><span class="p">:</span><span class="s">"yt-uix-sessionlink"</span><span class="p">}):</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="p">(</span><span class="s">'https://youtube.com'</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="s">"href"</span><span class="p">])</span>
+    <span class="n">respostaplaylist</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">canal</span> <span class="o">=</span> <span class="n">respostaplaylist</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">playlis</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">canal</span><span class="p">,</span> <span class="s">"html.parser"</span><span class="p">)</span></code></pre></figure>
+
+<p>Ficando mais ou menos assim <a href="https://youtube.com/playlist?list=PLQCmSnNFVYnTD5p2fR4EXmtlR6jQJMbPb" class="link-exteno">https://youtube.com/playlist?list=PLQCmSnNFVYnTD5p2fR4EXmtlR6jQJMbPb</a>. Com isso o nosso script vai pegar a seguinte informação, a URL da playlist.</p>
+
+<p><img src="img/posts/2017-08-11-usando-beatifulsoup-no-meu-dia-a-dia/02.PNG" alt="scraping" /></p>
+
+<p>Agora, para poder centralizar mais informações vamos pegar a URL do canal, que o resultado ficaria assim <a href="https://youtube.com/user/rodrigobranas" class="link-exteno">https://youtube.com/user/rodrigobranas</a>.</p>
+
+<h3 id="coletando-url-do-canal">Coletando URL do canal</h3>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">playlis</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">"ul"</span><span class="p">,</span> <span class="p">{</span><span class="s">'class'</span> <span class="p">:</span> <span class="s">'pl-header-details'</span><span class="p">})</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s">"a"</span><span class="p">,{</span><span class="s">"class"</span><span class="p">:</span><span class="s">"g-hovercard"</span><span class="p">}):</span>
+    <span class="n">canalurl</span> <span class="o">=</span> <span class="p">(</span><span class="s">'https://youtube.com'</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="s">'href'</span><span class="p">])</span>
+    <span class="n">respostacanal</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">canalurl</span><span class="p">)</span>
+    <span class="n">entranocanal</span> <span class="o">=</span> <span class="n">respostacanal</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">resultadocanal</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">entranocanal</span><span class="p">,</span> <span class="s">"html.parser"</span><span class="p">)</span></code></pre></figure>
+
+<p>O nosso script vai pegar a seguinte informação:</p>
+
+<p><img src="img/posts/2017-08-11-usando-beatifulsoup-no-meu-dia-a-dia/03.PNG" alt="scraping" /></p>
+
+<p>Com o URL precisamos pegar também o nome do canal, que o resultado seria <a href="Rodrigo Branas" class="link-exteno">Rodrigo Branas</a> e também o url da imagem do pefil que está no canal <a href="https://yt3.ggpht.com/-Ntp-JsprCos/AAAAAAAAAAI/AAAAAAAAAAA/DSKegEltT_M/s100-c-k-no-mo-rj-c0xffffff/photo.jpg" class="link-exteno">https://yt3.ggpht.com/-Ntp-JsprCos/AAAAAAAAAAI/AAAAAAAAAAA/DSKegEltT_M/s100-c-k-no-mo-rj-c0xffffff/photo.jpg</a>.</p>
+
+<h3 id="url-do-canal">URL do canal</h3>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">resultadocanal</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">"img"</span><span class="p">,</span> <span class="p">{</span><span class="s">'class'</span> <span class="p">:</span> <span class="s">'channel-header-profile-image'</span><span class="p">}):</span>
+    <span class="n">nomedocanal</span> <span class="o">=</span> <span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s">'title'</span><span class="p">])</span>
+
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">resultadocanal</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">"img"</span><span class="p">,{</span><span class="s">"class"</span><span class="p">:</span><span class="s">"channel-header-profile-image"</span><span class="p">}):</span>
+        <span class="n">urlimg</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s">"src"</span><span class="p">]</span> <span class="c">#PEGA O URL DA IMAGEM</span></code></pre></figure>
+
+<p>Na página, o que estamos pegando é:</p>
+
+<p><img src="img/posts/2017-08-11-usando-beatifulsoup-no-meu-dia-a-dia/04.PNG" alt="scraping" /></p>
+
+<p>Com todas as informações coletadas, vamos enviar tudo isso par aum aqruivo json, para ser interpretado no HTML com JavaScript, o nosso arquivo Json, deve ficar assim:</p>
+
+<h3 id="arquivo-json">Arquivo Json</h3>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>
+    <span class="s1">'name'</span>      : <span class="s1">'Tudo sobre AngularJS'</span>,
+    <span class="s1">'urlplay'</span>   : <span class="s1">'https://youtube.com/playlist?list=PLQCmSnNFVYnTD5p2fR4EXmtlR6jQJMbPb'</span>,
+    <span class="s1">'nomecanal'</span> : <span class="s1">'Rodrigo Branas'</span>,
+    <span class="s1">'urlcanal'</span>  : <span class="s1">'https://youtube.com/user/rodrigobranas'</span>,
+    <span class="s1">'img'</span>       : <span class="s1">'https://yt3.ggpht.com/-Ntp-JsprCos/AAAAAAAAAAI/AAAAAAAAAAA/DSKegEltT_M/s100-c-k-no-mo-rj-c0xffffff/photo.jpg'</span>
+<span class="o">}</span></code></pre></figure>
+
+<h2 id="resultado-final">Resultado Final</h2>
+
+<p>E por fim com tudo pronto, vamos só interpretar em uma página HTML bonita, para que fique facil encontrar nossos cursos.</p>
+
+<p><img src="img/projetos/cortexiphan.png" alt="scraping" /></p>
+
+<p>Você pode fazer um clone do script aqui <a href="https://github.com/andreyglauzer/cortexiphan" class="link-exteno">https://github.com/andreyglauzer/cortexiphan</a></p>
+
+<h2 id="um-pouco-mais">Um pouco mais..</h2>
+
+<p>Eu fiz outras coizinhas também, como o Pybook</p>
+
+<ul>
+  <li><a href="https://github.com/andreyglauzer/homebook" class="link-exteno">https://github.com/andreyglauzer/homebook</a></li>
+  <li><a href="http://andreyglauzer.com/homebook" class="link-exteno">http://andreyglauzer.com/homebook</a></li>
+</ul>
+
+<p>Que basicamente faz raspagem dos livros mais lidos no Skoob, juntando informações como preço, download do livro em PDF entre outras informações.</p>
+
+<p><img src="img/projetos/pybook.png" alt="scraping" /></p>
+
+<p>flw,vlw. Até à próxima.</p>
+
+		<div id="coment" class="comments">
+	<div class="content-coment">
+		<h3 data-v-dd8644c2="">Comentários para: <span class="opacity">"Usando BeatifulSoup no meu dia-a-dia"</span></h3>
+		<div id="disqus_thread"></div>
+		<script>
+
+		/**
+		 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+		 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
+		/*
+		var disqus_config = function () {
+		    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+		    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		};
+		*/
+		(function() { // DON'T EDIT BELOW THIS LINE
+		    var d = document, s = d.createElement('script');
+		    s.src = '//andreyglauzer-1.disqus.com/embed.js';
+		    s.setAttribute('data-timestamp', +new Date());
+		    (d.head || d.body).appendChild(s);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                    
+	</div>
+</div>
+
+<style type="text/css">
+
+.comments{
+    background-color: #fff;
+    border-top: 1.12px solid rgba(64,71,86,.1);
+    border-top: .07rem solid rgba(64,71,86,.1);
+    padding: 30px 0 0;
+    padding: 1.875rem 0 0;
+    margin-top: 30px;
+    margin-top: 1.875rem;
+
+div.alinhamento-header-posts{
+    padding-top: 3rem;
+}
+
+div#coment{
+    background-color: #fff;
+    padding: 30px 0;
+    margin-top: 15px;
+}
+div.content-coment h3 span.opacity{
+        opacity: .6;
+    font-weight: 500;
+}
+div.content-coment{
+    max-width: 768px;
+    max-width: 48rem;
+    display: block;
+    margin:0 auto;
+}
+</style>
+	</div>
+</article>
+
+
+          </div>
+    		
+    		  <!-- Definicação de paginação -->
+          
+
+    	  </div>
+    	    
+    	    <!-- Footer -->
+    	    <footer>
+	Made with ♥ by <a target="_blank" href="https:/github.com/andreyglauzer/">Andrey Glauzer</a>, using <a href="">Jekyll</a>. This is an open <a target="_blank" href="https:/github.com/andreyglauzer/andreyglauzer.github.io/">source code</a>. Version 1.1.0.
+</footer>
+
+    	    <!-- Script -->
+          <script src="/js/main.js"></script>	
+
+  	</div>
+  </body>
+</html>

