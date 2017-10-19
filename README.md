@@ -1,6 +1,6 @@
 # [andreyglauzer.com](https://andreyglauzer.com/)
 
-[![Build Status](https://travis-ci.org/andreyglauzer/andreyglauzer.github.io.svg?branch=source)](https://travis-ci.org/andreyglauzer/andreyglauzer.github.io) [![Waffle.io - Columns and their card count](https://badge.waffle.io/andreyglauzer/andreyglauzer.github.io.svg?columns=all)](http://waffle.io/andreyglauzer/andreyglauzer.github.io)
+[![Build Status](https://travis-ci.org/andreyglauzer/andreyglauzer.github.io.svg?branch=source)](https://travis-ci.org/andreyglauzer/andreyglauzer.github.io) [![Waffle.io - Columns and their card count](https://badge.waffle.io/andreyglauzer/andreyglauzer.github.io.svg?columns=In%20Progress,Done)](http://waffle.io/andreyglauzer/andreyglauzer.github.io) [![Coverage Status](https://coveralls.io/repos/github/andreyglauzer/andreyglauzer.github.io/badge.svg?branch=master)](https://coveralls.io/github/andreyglauzer/andreyglauzer.github.io?branch=master) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
 ![alt text](img/projetos/andreyglauzer.png "Screenshot")
