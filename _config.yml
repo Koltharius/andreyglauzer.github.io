@@ -8,7 +8,7 @@ author:
 
 # Configurações da Build
 
-baseurl: ""
+baseurl: "/"
 markdown: kramdown
 source: .
 destination: ./_site
