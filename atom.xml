@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>Andrey Glauzer | Analista de Suporte / Analista de Segurança da Informação em Barueri/SP</title>
- <link href="http://www.jacoporabolini.com/emerald/atom.xml" rel="self"/>
- <id>http://www.jacoporabolini.com/emerald</id>
- <updated>2017-10-19T23:14:15+00:00</updated>
+ <link href="/atom.xml" rel="self"/>
+ <id></id>
+ <updated>2017-10-20T03:08:39+00:00</updated>
  <author>
    <name>Andrey Glauzer</name>
    <uri></uri>
@@ -15,8 +15,8 @@
 
  <entry>
    <title>Automatizando Login com Python</title>
-   <link href="http://www.jacoporabolini.com/emerald/automatizando-login-com-pythton"/>
-   <id>http://www.jacoporabolini.com/emerald/automatizando-login-com-pythton</id>
+   <link href="/automatizando-login-com-pythton"/>
+   <id>/automatizando-login-com-pythton</id>
    <updated>2017-10-13T00:00:00+00:00</updated>
    <content type="html">&lt;hr /&gt; &lt;h2 id=&quot;executando-o-auto-login&quot;&gt;Executando o Auto Login&lt;/h2&gt; &lt;p&gt;Antes de mais nada precisamos instalar tudo que vamos utilizar para que o script funcione, eu utilizo linux, mas você pode procurar no Google como fazer a instalação dos mesmo em Windows, caso esteja utilizando um.&lt;/p&gt; &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;yum &lt;span...</content>
  </entry>
@@ -25,8 +25,8 @@
 
  <entry>
    <title>Fazendo Backup de OST/PST do Outlook</title>
-   <link href="http://www.jacoporabolini.com/emerald/fazendo-backup-de-ost-pst-do-outlook"/>
-   <id>http://www.jacoporabolini.com/emerald/fazendo-backup-de-ost-pst-do-outlook</id>
+   <link href="/fazendo-backup-de-ost-pst-do-outlook"/>
+   <id>/fazendo-backup-de-ost-pst-do-outlook</id>
    <updated>2017-10-12T00:00:00+00:00</updated>
    <content type="html">&lt;h3 id=&quot;utilizando&quot;&gt;Utilizando&lt;/h3&gt; &lt;p&gt;Para fazer Backup dos Contatos/Grupos de contatos do Outlook, caso quando você fizer a troca de perfil e reconfigurar e não ter voltados os contatos, existe uma pequena solução. Para isso volte à máquina onde está o perfil antigo do Outlook, e faça os procedimentos à baixo.&lt;/p&gt; &lt;h3...</content>
  </entry>
@@ -35,8 +35,8 @@
 
  <entry>
    <title>Monitorando SonicWall com Zabbix</title>
-   <link href="http://www.jacoporabolini.com/emerald/monitorando-sonicwall-com-zabbix"/>
-   <id>http://www.jacoporabolini.com/emerald/monitorando-sonicwall-com-zabbix</id>
+   <link href="/monitorando-sonicwall-com-zabbix"/>
+   <id>/monitorando-sonicwall-com-zabbix</id>
    <updated>2017-10-10T00:00:00+00:00</updated>
    <content type="html">&lt;h2 id=&quot;sonicwall--zabbix&quot;&gt;SonicWall &amp;amp; Zabbix&lt;/h2&gt; &lt;p&gt;Se você trabalha com gerenciamento de Redes, o monitoramento se torna algo essencial na sua vida, para que você possa prevenir e acompanhar erros/problemas que venha acontecer na sua rede.&lt;/p&gt; &lt;p&gt;Hoje eu vou mostrar para você como monitorar o SonicWall via SNMP no Zabbix. Para quem...</content>
  </entry>
@@ -45,8 +45,8 @@
 
  <entry>
    <title>Limitar banda de internet no SonicWall</title>
-   <link href="http://www.jacoporabolini.com/emerald/limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall"/>
-   <id>http://www.jacoporabolini.com/emerald/limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall</id>
+   <link href="/limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall"/>
+   <id>/limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall</id>
    <updated>2017-09-25T00:00:00+00:00</updated>
    <content type="html">&lt;h2 id=&quot;a-história-por-traz-disso&quot;&gt;A história por traz disso.&lt;/h2&gt; &lt;p&gt;Algumas semanas à traz estava com um pequeno problema que de alguma maneira, a minha internet estava horrivelmente lenta, e eu não conseguia encontrar onde estava o problema, no monitoramento do meu link estava sempre consumindo quase que 100% da banda.&lt;/p&gt; &lt;h2 id=&quot;o-foco-da-situação&quot;&gt;O foco...</content>
  </entry>
@@ -55,8 +55,8 @@
 
  <entry>
    <title>Quebrando senhas com o THC Hydra</title>
-   <link href="http://www.jacoporabolini.com/emerald/quebrando-senhas-com-o-thc-hydra"/>
-   <id>http://www.jacoporabolini.com/emerald/quebrando-senhas-com-o-thc-hydra</id>
+   <link href="/quebrando-senhas-com-o-thc-hydra"/>
+   <id>/quebrando-senhas-com-o-thc-hydra</id>
    <updated>2017-08-15T00:00:00+00:00</updated>
    <content type="html">&lt;h2 id=&quot;thc-hydra&quot;&gt;THC Hydra&lt;/h2&gt; &lt;p&gt;Vou falar hoje sobre uma ferramenta que também é muito utilizada para realização de auditoriais em pentest que é o &lt;code class=&quot;highlighter-rouge&quot;&gt;THC – Hydra&lt;/code&gt; que tem como objetivo realizar ataques de &lt;code class=&quot;highlighter-rouge&quot;&gt;força bruta&lt;/code&gt; ou como muitos falam &lt;code class=&quot;highlighter-rouge&quot;&gt;brute force&lt;/code&gt;, ou seja, ele faz diversas tentativas...</content>
  </entry>
@@ -65,8 +65,8 @@
 
  <entry>
    <title>Usando BeatifulSoup no meu dia-a-dia</title>
-   <link href="http://www.jacoporabolini.com/emerald/usando-beatifulsoup-no-meu-dia-a-dia"/>
-   <id>http://www.jacoporabolini.com/emerald/usando-beatifulsoup-no-meu-dia-a-dia</id>
+   <link href="/usando-beatifulsoup-no-meu-dia-a-dia"/>
+   <id>/usando-beatifulsoup-no-meu-dia-a-dia</id>
    <updated>2017-08-11T00:00:00+00:00</updated>
    <content type="html">&lt;h2 id=&quot;python&quot;&gt;Python&lt;/h2&gt; &lt;p&gt;Fala jovens, tudo em ordem? Hoje vou mostrar para vocês como raspagem de dados usando Python anda me ajudando com algumas tarefas, principalmente com as que incluem coleta de informação para usar em outros locais.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;img/posts/2017-08-11-usando-beatifulsoup-no-meu-dia-a-dia/scraping.jpg&quot; alt=&quot;scraping&quot; /&gt;&lt;/p&gt; &lt;h2 id=&quot;introdução&quot;&gt;Introdução&lt;/h2&gt; &lt;p&gt;Como assim raspagem? Simples, vamos supor que...</content>
  </entry>
@@ -75,8 +75,8 @@
 
  <entry>
    <title>Relatório do Active Directory com Powershell</title>
-   <link href="http://www.jacoporabolini.com/emerald/relatorio-do-active-directory-com-powershell"/>
-   <id>http://www.jacoporabolini.com/emerald/relatorio-do-active-directory-com-powershell</id>
+   <link href="/relatorio-do-active-directory-com-powershell"/>
+   <id>/relatorio-do-active-directory-com-powershell</id>
    <updated>2017-07-17T00:00:00+00:00</updated>
    <content type="html">&lt;h2 id=&quot;active-directory&quot;&gt;Active Directory&lt;/h2&gt; &lt;p&gt;É sempre bom fazer auditoria dos servidores que você gerencia, para ter tudo documentado, e sempre que necessário já ter tudo pronto, e organizado. Para facilitar um pouco essa questão eu criei alguns scripts em Powershell para facilitar essa minha tarefa de auditoria, aos poucos vou colocando...</content>
  </entry>
@@ -85,8 +85,8 @@
 
  <entry>
    <title>Automatizando tarefas diarias com python</title>
-   <link href="http://www.jacoporabolini.com/emerald/automatizando-tarefas-diarias-com-python"/>
-   <id>http://www.jacoporabolini.com/emerald/automatizando-tarefas-diarias-com-python</id>
+   <link href="/automatizando-tarefas-diarias-com-python"/>
+   <id>/automatizando-tarefas-diarias-com-python</id>
    <updated>2017-07-14T00:00:00+00:00</updated>
    <content type="html">&lt;h3 id=&quot;como-usar-o-pontopy&quot;&gt;Como usar o ponto.py&lt;/h3&gt; &lt;p&gt;Esse script eu criei pensando em um ambiente Windows, já que no meu trabalho eu uso windows como sistema operacional padrão, e eu sempre acabo me esquecendo, ou as vezes eu tenho preguiça de bater o ponto, então resolvi criar um script para facilitar as...</content>
  </entry>
@@ -95,8 +95,8 @@
 
  <entry>
    <title>Como criar regras no SonicWall</title>
-   <link href="http://www.jacoporabolini.com/emerald/criando-regras-de-redirecionamento-no-sonicwall"/>
-   <id>http://www.jacoporabolini.com/emerald/criando-regras-de-redirecionamento-no-sonicwall</id>
+   <link href="/criando-regras-de-redirecionamento-no-sonicwall"/>
+   <id>/criando-regras-de-redirecionamento-no-sonicwall</id>
    <updated>2017-07-11T00:00:00+00:00</updated>
    <content type="html">&lt;h2 id=&quot;o-sonicwall&quot;&gt;O SonicWall&lt;/h2&gt; &lt;p&gt;A minha ideia é fazer uma série de posts falando um pouco sobre o SonicWall da dell, que eu utilizo bastante no ambiente do meu trabalho e, para começar vou explicar como fazer um redirecionamento de portas.&lt;/p&gt; &lt;p&gt;O ambiente que temos é o seguinte, o SonicWall modelo...</content>
  </entry>
@@ -105,8 +105,8 @@
 
  <entry>
    <title>Vou voltar aos poucos com o BLOG!</title>
-   <link href="http://www.jacoporabolini.com/emerald/voltando-aos-pucos"/>
-   <id>http://www.jacoporabolini.com/emerald/voltando-aos-pucos</id>
+   <link href="/voltando-aos-pucos"/>
+   <id>/voltando-aos-pucos</id>
    <updated>2017-07-10T00:00:00+00:00</updated>
    <content type="html">&lt;p&gt;Já faz um bom tempo que eu havia abandonado a ideia do blog, estava um pouco desanimado e quase sem tempo para estudar e praticar coisas novas.&lt;/p&gt; &lt;p&gt;Então meu domínio venceu não renovei e as coisas foram ficando para trás, o blog já tem quase 2 anos, então resolvi fazer...</content>
  </entry>
