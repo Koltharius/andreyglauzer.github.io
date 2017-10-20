@@ -3,7 +3,9 @@ layout: default
 header: home
 ---
 
-{% include nav-galeria.html %}
+<div class="galeria">
+   {% include nav-galeria.html %}
+</div>
 <!-- Posts -->
 {% for post in paginator.posts %}
 <div class="grid__column">

@@ -1,5 +1,5 @@
 ---
 <!-- layout: galeria -->
-title: Jekyll Themes
+title: SonicWall
 ---
 
