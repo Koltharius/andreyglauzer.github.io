@@ -1,7 +1,7 @@
 # Configurações do Site.
 title: Andrey Glauzer | Analista de Suporte / Analista de Segurança da Informação em Barueri/SP
 description: "Um blog sobre coisas novas que estou aprendendo ou interessado, e para fixar tudo que estou praticando."
-url: "http://www.jacoporabolini.com/emerald"
+url: ""
 author:
   name: "Andrey Glauzer"
   email: "nglauzer@gmail.com"
@@ -56,6 +56,6 @@ projetos:
   - nome: pybook
     imagem: pybook.png
     descricao: Projeto escrito em Python, que coleta o maximo de informações de outros sites, com base nos livros mais lidos do site Skoob, coletando como link para download do arquivo, descrição Livro/Autor, menor preço etc..
-    url: https://github.com/andreyglauzer/pyboob
+    url: https://github.com/andreyglauzer/pybook
     data: Setembro de 2016
     invert: true
