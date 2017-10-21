@@ -34,8 +34,7 @@ E o que eu não sei, aprendo rápido! :P
 
 ### Sobre esse site
 
-Esse meu projeto já tem um tempo, mas eu só consigo postar coisas novas nele quando me sobre tempo, então é normal ele demorar um pouco para ser atualizado. Comecei o projeto com o intuito de ter um lugar fixo e com uma documentação legivel, onde eu poderia consultar coisas que eu estou aprendendo e fixar na cabeça.
+Esse meu projeto já tem um tempo, mas eu só consigo postar coisas novas nele quando me sobra tempo, então é normal ele demorar um pouco para ser atualizado. Comecei o projeto com o intuito de ter um lugar fixo e com uma documentação legivel, onde eu poderia consultar coisas que eu estou aprendendo e fixar na cabeça.
 
 Hoje esse site está hospedado no [GitHub Pages](https://github.com), usando [Jekyll](https://jekyllthemes.io/), o código é totalmente Open Source sob licença [MIT](https://github.com/andreyglauzer/andreyglauzer.github.io/blob/source/LICENSE) e você pode _"forcar"_ ele [aqui](https://github.com/andreyglauzer/andreyglauzer.github.io), fique à vontade para contribuir também :).
 
-O código é totalmente Open Source sob licença [MIT](https://github.com/andreyglauzer/andreyglauzer.github.io/blob/source/LICENSE) e você pode _"forcar"_ ele [aqui](https://github.com/andreyglauzer/andreyglauzer.github.io), fique à vontade para contribuir também :).
