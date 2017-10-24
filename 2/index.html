@@ -45,15 +45,15 @@
     <div id="wrap">
         <!-- IF para definir o HEADER -->
         
-          <header data-v-ae5c0adc="" class="header">
-   <a data-v-ae5c0adc="" href="/" class="header__back nuxt-link-active">
-      <svg data-v-ae5c0adc="" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left">
-         <line data-v-ae5c0adc="" x1="20" y1="12" x2="4" y2="12"></line>
-         <polyline data-v-ae5c0adc="" points="10 18 4 12 10 6"></polyline>
+          <header class="header">
+   <a href="/" class="header__back nuxt-link-active">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left">
+         <line x1="20" y1="12" x2="4" y2="12"></line>
+         <polyline points="10 18 4 12 10 6"></polyline>
       </svg>
       <span>Ir para Home</span>
    </a>
-   <div data-v-ae5c0adc="">
+   <div>
       <nav role="navigation" class="navbar">
          <ul role="menu" class="navbar__nav">
             <li class="navbar__nav-item navbar__nav-item--search">
@@ -83,16 +83,14 @@ SimpleJekyllSearch({
 })
 </script>
             </li>
-            <li data-v-2651ba95="" role="menuitem" class="navbar__nav-item">
+            <li role="menuitem" class="navbar__nav-item">
             	<a href="/" class="navbar__nav-link" title="Sobre" role="link">Home</a>
             </li>
-            <li data-v-2651ba95="" role="menuitem" class="navbar__nav-item">
-               <a href="/projetos" class="navbar__nav-link" title="Sobre" role="link">Projetos</a>
+            <li role="menuitem" class="navbar__nav-item">
+               <a href="/projetos" class="navbar__nav-link" title="Projetos" role="link">Projetos</a>
             </li>
             <!-- FOR para gerar os intens do menu. -->
             
-			    
-			 
 			    
 			 
 			    
@@ -120,7 +118,34 @@ SimpleJekyllSearch({
 </header>
 
 
-
+<a class="menu__mobile" id="nav-menu">
+    <div id="menu"></div>
+</a>
+<nav id="nav">
+    <div id="nav-list">
+        <a href="/">Home</a>
+        <a href="/projetos" title="Projetos" role="link">Projetos</a>
+        
+            
+        
+            
+            <a href="/about" title="Sobre">Sobre</a>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+</nav>
 <style type="text/css">.header__back{opacity: 0;}header#header{padding: 4rem 0 5rem !important;}</style>
 <header id="header">
 	<article itemscope="itemscope" itemtype="http://schema.org/NewsArticle" class="article">
@@ -197,116 +222,92 @@ SimpleJekyllSearch({
         <!-- Main content -->
     	  <div class="container">
           <div class="grid grid--1of2">
-        			<div class="galeria">
-   
-	
+        			<!-- Posts -->
 
-	
 
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-</div>
-<!-- Posts -->
-
-<div class="grid__column">
-   <article  class="article__posts">
-      <header class="article__header">
-         <h2 class="article__title">
-         	<a class="" title="Como criar regras no SonicWall" href="/criando-regras-de-redirecionamento-no-sonicwall">Como criar regras no SonicWall</a>
-         </h2>
-         <div class="article__meta">
-         	<span  itemprop="datePublished" content="2017-01-01">Publicado em 11 Jul 2017 </span><span>por <span itemprop="author">Andrey Glauzer</span></span>
+   <div class="grid__column">
+      <article  class="article__posts">
+         <header class="article__header">
+            <h2 class="article__title">
+            	<a class="" title="Como criar regras no SonicWall" href="/criando-regras-de-redirecionamento-no-sonicwall">Como criar regras no SonicWall</a>
+            </h2>
+            <div class="article__meta">
+            	<span  itemprop="datePublished" content="2017-01-01">Publicado em 11 Jul 2017 </span><span>por <span itemprop="author">Andrey Glauzer</span></span>
+            </div>
+         </header>
+         <p itemprop="description" class="article__description">
+         	<a href="/criando-regras-de-redirecionamento-no-sonicwall" class="" title="Como criar regras no SonicWall">O SonicWall A minha ideia é fazer uma série de posts falando um pouco sobre o SonicWall da dell, que eu utilizo bastante no ambiente do meu trabalho e, para começar vou explicar como fazer um redirecionamento de portas. O ambiente que temos é o seguinte, o SonicWall modelo SOHO...</a>
+         </p>
+         <div class="article__button">
+         	<a  href="/criando-regras-de-redirecionamento-no-sonicwall" class="nuxt-link-button nuxt-link-button--ghost" title="Como criar regras no SonicWall">Continue lendo</a>
          </div>
-      </header>
-      <p itemprop="description" class="article__description">
-      	<a href="/criando-regras-de-redirecionamento-no-sonicwall" class="" title="Como criar regras no SonicWall">O SonicWall A minha ideia é fazer uma série de posts falando um pouco sobre o SonicWall da dell, que eu utilizo bastante no ambiente do meu trabalho e, para começar vou explicar como fazer um redirecionamento de portas. O ambiente que temos é o seguinte, o SonicWall modelo SOHO...</a>
-      </p>
-      <div class="article__button">
-      	<a  href="/criando-regras-de-redirecionamento-no-sonicwall" class="nuxt-link-button nuxt-link-button--ghost" title="Como criar regras no SonicWall">Continue lendo</a>
-      </div>
-      <!---->
-      <figure class="article__image" data-v-7cb2a31e=""><img src="\img/posts/2017-07-11-criando-regras-de-redirecionamento-no-sonicwall/banner.jpg"></figure>
-   </article>
-</div>
+         <!---->
+         <figure class="article__image" data-v-7cb2a31e=""><img src="\img/posts/2017-07-11-criando-regras-de-redirecionamento-no-sonicwall/banner.jpg"></figure>
+      </article>
+   </div>
 
-
-<div class="grid__column">
-   <article  class="article__posts">
-      <header class="article__header">
-         <h2 class="article__title">
-         	<a class="" title="Vou voltar aos poucos com o BLOG!" href="/voltando-aos-pucos">Vou voltar aos poucos com o BLOG!</a>
-         </h2>
-         <div class="article__meta">
-         	<span  itemprop="datePublished" content="2017-01-01">Publicado em 10 Jul 2017 </span><span>por <span itemprop="author">Andrey Glauzer</span></span>
+   <div class="grid__column">
+      <article  class="article__posts">
+         <header class="article__header">
+            <h2 class="article__title">
+            	<a class="" title="Vou voltar aos poucos com o BLOG!" href="/voltando-aos-pucos">Vou voltar aos poucos com o BLOG!</a>
+            </h2>
+            <div class="article__meta">
+            	<span  itemprop="datePublished" content="2017-01-01">Publicado em 10 Jul 2017 </span><span>por <span itemprop="author">Andrey Glauzer</span></span>
+            </div>
+         </header>
+         <p itemprop="description" class="article__description">
+         	<a href="/voltando-aos-pucos" class="" title="Vou voltar aos poucos com o BLOG!">Já faz um bom tempo que eu havia abandonado a ideia do blog, estava um pouco desanimado e quase sem tempo para estudar e praticar coisas novas. Então meu domínio venceu não renovei e as coisas foram ficando para trás, o blog já tem quase 2 anos, então resolvi fazer...</a>
+         </p>
+         <div class="article__button">
+         	<a  href="/voltando-aos-pucos" class="nuxt-link-button nuxt-link-button--ghost" title="Vou voltar aos poucos com o BLOG!">Continue lendo</a>
          </div>
-      </header>
-      <p itemprop="description" class="article__description">
-      	<a href="/voltando-aos-pucos" class="" title="Vou voltar aos poucos com o BLOG!">Já faz um bom tempo que eu havia abandonado a ideia do blog, estava um pouco desanimado e quase sem tempo para estudar e praticar coisas novas. Então meu domínio venceu não renovei e as coisas foram ficando para trás, o blog já tem quase 2 anos, então resolvi fazer...</a>
-      </p>
-      <div class="article__button">
-      	<a  href="/voltando-aos-pucos" class="nuxt-link-button nuxt-link-button--ghost" title="Vou voltar aos poucos com o BLOG!">Continue lendo</a>
-      </div>
-      <!---->
-      <figure class="article__image" data-v-7cb2a31e=""><img src="\img/posts/2017-07-10-voltando-aos-pucos/desanimo.gif"></figure>
-   </article>
-</div>
+         <!---->
+         <figure class="article__image" data-v-7cb2a31e=""><img src="\img/posts/2017-07-10-voltando-aos-pucos/desanimo.gif"></figure>
+      </article>
+   </div>
 
-
-<div class="grid__column">
-   <article  class="article__posts">
-      <header class="article__header">
-         <h2 class="article__title">
-         	<a class="" title="Analisando vulnerabilidades com sqlmap" href="/analisando-vulnerabilidades-com-sqlmap">Analisando vulnerabilidades com sqlmap</a>
-         </h2>
-         <div class="article__meta">
-         	<span  itemprop="datePublished" content="2017-01-01">Publicado em 19 Apr 2016 </span><span>por <span itemprop="author">Andrey Glauzer</span></span>
+   <div class="grid__column">
+      <article  class="article__posts">
+         <header class="article__header">
+            <h2 class="article__title">
+            	<a class="" title="Analisando vulnerabilidades com sqlmap" href="/analisando-vulnerabilidades-com-sqlmap">Analisando vulnerabilidades com sqlmap</a>
+            </h2>
+            <div class="article__meta">
+            	<span  itemprop="datePublished" content="2017-01-01">Publicado em 19 Apr 2016 </span><span>por <span itemprop="author">Andrey Glauzer</span></span>
+            </div>
+         </header>
+         <p itemprop="description" class="article__description">
+         	<a href="/analisando-vulnerabilidades-com-sqlmap" class="" title="Analisando vulnerabilidades com sqlmap">SQL Injection Hoje vou falar um pouco sobre uma ótima ferramenta para fazer pentest, que é muito utilizada para fazer SQL injection, vou falar sobre o sqlmap que tem como foco buscar vulnerabilidades no SQLi que podem trazer uma grande dor de cabeça, vulnerabilidades que geralmente são causadas por falhas...</a>
+         </p>
+         <div class="article__button">
+         	<a  href="/analisando-vulnerabilidades-com-sqlmap" class="nuxt-link-button nuxt-link-button--ghost" title="Analisando vulnerabilidades com sqlmap">Continue lendo</a>
          </div>
-      </header>
-      <p itemprop="description" class="article__description">
-      	<a href="/analisando-vulnerabilidades-com-sqlmap" class="" title="Analisando vulnerabilidades com sqlmap">SQL Injection Hoje vou falar um pouco sobre uma ótima ferramenta para fazer pentest, que é muito utilizada para fazer SQL injection, vou falar sobre o sqlmap que tem como foco buscar vulnerabilidades no SQLi que podem trazer uma grande dor de cabeça, vulnerabilidades que geralmente são causadas por falhas...</a>
-      </p>
-      <div class="article__button">
-      	<a  href="/analisando-vulnerabilidades-com-sqlmap" class="nuxt-link-button nuxt-link-button--ghost" title="Analisando vulnerabilidades com sqlmap">Continue lendo</a>
-      </div>
-      <!---->
-      <figure class="article__image" data-v-7cb2a31e=""><img src="\img/posts/2016-04-19-analisando-vulnerabilidades-com-sqlmap/syringe-code2.jpg"></figure>
-   </article>
-</div>
+         <!---->
+         <figure class="article__image" data-v-7cb2a31e=""><img src="\img/posts/2016-04-19-analisando-vulnerabilidades-com-sqlmap/syringe-code2.jpg"></figure>
+      </article>
+   </div>
 
-
-<div class="grid__column">
-   <article  class="article__posts">
-      <header class="article__header">
-         <h2 class="article__title">
-         	<a class="" title="Redes Wi-Fi e seus aspectos de segurança" href="/redes-wifi-aspectos-de-seguranca">Redes Wi-Fi e seus aspectos de segurança</a>
-         </h2>
-         <div class="article__meta">
-         	<span  itemprop="datePublished" content="2017-01-01">Publicado em 21 Feb 2016 </span><span>por <span itemprop="author">Andrey Glauzer</span></span>
+   <div class="grid__column">
+      <article  class="article__posts">
+         <header class="article__header">
+            <h2 class="article__title">
+            	<a class="" title="Redes Wi-Fi e seus aspectos de segurança" href="/redes-wifi-aspectos-de-seguranca">Redes Wi-Fi e seus aspectos de segurança</a>
+            </h2>
+            <div class="article__meta">
+            	<span  itemprop="datePublished" content="2017-01-01">Publicado em 21 Feb 2016 </span><span>por <span itemprop="author">Andrey Glauzer</span></span>
+            </div>
+         </header>
+         <p itemprop="description" class="article__description">
+         	<a href="/redes-wifi-aspectos-de-seguranca" class="" title="Redes Wi-Fi e seus aspectos de segurança">Um pouco sobre Wi-Fi O mundo da tecnologia está cada vez mais exigente e solicitando novos recursos ou métodos para se conectar. E cada vez mais necessitamos de informações de forma dinâmica e rápida, para que possamos acessá-la de maneira eficiente em qualquer lugar ou qualquer hora, por esse motivo,...</a>
+         </p>
+         <div class="article__button">
+         	<a  href="/redes-wifi-aspectos-de-seguranca" class="nuxt-link-button nuxt-link-button--ghost" title="Redes Wi-Fi e seus aspectos de segurança">Continue lendo</a>
          </div>
-      </header>
-      <p itemprop="description" class="article__description">
-      	<a href="/redes-wifi-aspectos-de-seguranca" class="" title="Redes Wi-Fi e seus aspectos de segurança">Um pouco sobre Wi-Fi O mundo da tecnologia está cada vez mais exigente e solicitando novos recursos ou métodos para se conectar. E cada vez mais necessitamos de informações de forma dinâmica e rápida, para que possamos acessá-la de maneira eficiente em qualquer lugar ou qualquer hora, por esse motivo,...</a>
-      </p>
-      <div class="article__button">
-      	<a  href="/redes-wifi-aspectos-de-seguranca" class="nuxt-link-button nuxt-link-button--ghost" title="Redes Wi-Fi e seus aspectos de segurança">Continue lendo</a>
-      </div>
-      <!---->
-      <figure class="article__image" data-v-7cb2a31e=""><img src="\img/posts/2016-02-21-redes-wifi-aspectos-de-seguranca/Essential-Guide.png"></figure>
-   </article>
-</div>
-
+         <!---->
+         <figure class="article__image" data-v-7cb2a31e=""><img src="\img/posts/2016-02-21-redes-wifi-aspectos-de-seguranca/Essential-Guide.png"></figure>
+      </article>
+   </div>
 
 
           </div>

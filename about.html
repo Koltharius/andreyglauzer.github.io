@@ -45,15 +45,15 @@
     <div id="wrap">
         <!-- IF para definir o HEADER -->
         
-          <header data-v-ae5c0adc="" class="header">
-   <a data-v-ae5c0adc="" href="/" class="header__back nuxt-link-active">
-      <svg data-v-ae5c0adc="" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left">
-         <line data-v-ae5c0adc="" x1="20" y1="12" x2="4" y2="12"></line>
-         <polyline data-v-ae5c0adc="" points="10 18 4 12 10 6"></polyline>
+          <header class="header">
+   <a href="/" class="header__back nuxt-link-active">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left">
+         <line x1="20" y1="12" x2="4" y2="12"></line>
+         <polyline points="10 18 4 12 10 6"></polyline>
       </svg>
       <span>Ir para Home</span>
    </a>
-   <div data-v-ae5c0adc="">
+   <div>
       <nav role="navigation" class="navbar">
          <ul role="menu" class="navbar__nav">
             <li class="navbar__nav-item navbar__nav-item--search">
@@ -83,16 +83,14 @@ SimpleJekyllSearch({
 })
 </script>
             </li>
-            <li data-v-2651ba95="" role="menuitem" class="navbar__nav-item">
+            <li role="menuitem" class="navbar__nav-item">
             	<a href="/" class="navbar__nav-link" title="Sobre" role="link">Home</a>
             </li>
-            <li data-v-2651ba95="" role="menuitem" class="navbar__nav-item">
-               <a href="/projetos" class="navbar__nav-link" title="Sobre" role="link">Projetos</a>
+            <li role="menuitem" class="navbar__nav-item">
+               <a href="/projetos" class="navbar__nav-link" title="Projetos" role="link">Projetos</a>
             </li>
             <!-- FOR para gerar os intens do menu. -->
             
-			    
-			 
 			    
 			 
 			    
@@ -120,7 +118,34 @@ SimpleJekyllSearch({
 </header>
 
 
-
+<a class="menu__mobile" id="nav-menu">
+    <div id="menu"></div>
+</a>
+<nav id="nav">
+    <div id="nav-list">
+        <a href="/">Home</a>
+        <a href="/projetos" title="Projetos" role="link">Projetos</a>
+        
+            
+        
+            
+            <a href="/about" title="Sobre">Sobre</a>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+</nav>
 <header id="header" class="pageHeader pageHeader--background">
 	<article itemscope="itemscope" itemtype="http://schema.org/NewsArticle" class="article">
 		<figure itemprop="image" itemscope="itemscope" itemtype="http://schema.org/ImageObject" class="pageHeader__image">
@@ -147,9 +172,9 @@ SimpleJekyllSearch({
 
 			</ol>
 			<p itemprop="description" class="pageHeader__description">Um pouco mais sobre o escritor do blog, seus conhecimentos e habilidade e acima de tudo de onde venho a inspiração.</p>
-			<div data-v-669fd401="" class="pageHeader__meta">
+			<div class="pageHeader__meta">
 
-				<span data-v-669fd401="">Publicado em Outubro de 2017, por <span data-v-669fd401="" itemprop="author">Andrey Glauzer</span>
+				<span>Publicado em Outubro de 2017, por <span itemprop="author">Andrey Glauzer</span>
 			</div>
 		</div>
 	</span>
@@ -166,34 +191,30 @@ SimpleJekyllSearch({
   <img src="/img/blog-author.jpg" alt="Foto de Andrey Glauzer" width="230" height="261" />
 </div>
 
-<h3 id="quem-sou-eu">Quem sou eu?</h3>
+<h2 id="quem-sou-eu">Quem sou eu?</h2>
 
-<p>Meu nome é <strong>Andrey Glauzer</strong>, tenho 22 anos, nasci e cresci em Barueri/São Paulo, onde eu moro até hoje, e por ser uma cidade um pouco longe do centro de São Paulo, eu quase não fico em Barueri.</p>
+<p>Olá, eu sou o Andrey Glauzer, trabalho como Analista de Suporte/Segurança da Informação, prevenindo invasões físicas e/ou lógicas, com o gerenciamento de servidores e Firewall’s como <a href="https://www.sonicwall.com/en-us/home">SonicWall</a> e <a href="https://www.pfsense.org/">Pfsense</a>.</p>
 
 <div class="clearfix"></div>
 
 <h3 id="histórico-profissional">Histórico profissional</h3>
 
-<p>Eu comecei a <em>“brincar”</em> com computadores quando eu ganhei o meu primeiro, que era um Windows 98, dai em diante eu quebrei diversas vezes o meu computador, devido a minha curiosidade de entender como tudo funcionada, hoje em dia eu não quebro mais nada eu <em>“juro”</em>.</p>
-
-<p>Sempre fui uma pessoa muito autodidata e aprendi muitas coisas sozinho, mas eu ainda tinha sede de mais conhecimento, então comecei a fazer faculdade de <a href="http://anhanguera.com/graduacao/cursos/superior-de-tecnologia-em-redes-de-computadores.php">Tecnologia em Redes de Computadores</a>, na faculdade <a href="http://anhanguera.com">Anhanguera/Osasco</a>, porque <strong>infra</strong> sempre foi uma das coisas que eu mais gostei em T.I.</p>
-
-<p>Depois da faculdade, fiz algumas certificações como <strong>LPI 101</strong>, <strong>Advanced Pentest</strong> e <strong>Introdução à segurança da informação</strong>, hoje o meu foco está em tirar certificações Microsoft, então estou me empenhando/estudando muito.</p>
+<p>Sempre gostei muito de tecnologia, e desde quando ganhei o meu primeiro computador, me tornei um eterno curioso, para entender como tudo funciona, e como uma coisa como a tecnologia pode mover o mundo. Então me Formei em <a href="http://anhanguera.com/graduacao/cursos/superior-de-tecnologia-em-redes-de-computadores.php">Tecnologia em Redes de Computadores</a>, na faculdade <a href="http://anhanguera.com">Anhanguera/Osasco</a>, e tirei algumas certificações, como <a href="img/cert/intro_Certificado.pdf">Introdução à Segurança da Informação</a>, <a href="img/cet/pentester_Certificado.pdf">Pentest</a>, <a href="img/cert/UC-5I2BZ82J.pdf">pfSense</a>, entre outras.</p>
 
 <h3 id="e-o-que-faço-hoje">E o que faço hoje?</h3>
 
-<p>Hoje eu sou Analista de Suporte, focado na parte de administração de servidores <em>Windows</em> e <em>Linux</em>, mas como diz o ditado, eu sou <em>“pau pra toda obra”</em>, por tanto eu tenho experiência em gerenciamento de redes, criação de políticas de segurança GPO e Active Directory, prevenções contra invasões Físicas/ou Lógicas.</p>
+<p>Hoje eu sou Analista de Suporte, focado na parte de administração de servidores Windows e Linux, mas como diz o ditado, eu sou “pau pra toda obra”, por tanto eu tenho experiência em gerenciamento de redes, criação de políticas de segurança GPO e Active Directory, prevenções contra invasões Físicas/ou Lógicas.</p>
 
-<p>Redes de computadores, roteadores/UbiquitiUnifi - Redes Wireless, Switchs, servidores proxy e Firewalls SonicWall/Pfsense. Virtualizações em ESXI, Hyper-v e Docker.</p>
-
-<p>E o que eu não sei, aprendo rápido! :P</p>
+<p>Redes de computadores, roteadores/UbiquitiUnifi - Redes Wireless, Switchs, servidores proxy e Firewalls SonicWall/Pfsense. Virtualizações em ESXI, Hyper-v e Docker.
+E o que eu não sei, aprendo rápido! :P</p>
 
 <h3 id="sobre-esse-site">Sobre esse site</h3>
 
-<p>Esse meu projeto já tem um tempo, mas eu só consigo postar coisas novas nele quando me sobra tempo, então é normal ele demorar um pouco para ser atualizado. Comecei o projeto com o intuito de ter um lugar fixo e com uma documentação legivel, onde eu poderia consultar coisas que eu estou aprendendo e fixar na cabeça.</p>
+<p>O site é inspirado no Desing do Blog do <a href="https://nandomoreira.me/">nandomoreira.me</a>, que usa Vuljs e eu acabei convertendo para Jekyll que é mais prático <em>“na minha visão”</em>, mas o blog se trata de coisas novas que estou aprendendo e principalmente para documentar tudo e deixar em um lugar mais organizado e o mais importante, compartilhar conhecimento.</p>
 
 <p>Hoje esse site está hospedado no <a href="https://github.com">GitHub Pages</a>, usando <a href="https://jekyllthemes.io/">Jekyll</a>, o código é totalmente Open Source sob licença <a href="https://github.com/andreyglauzer/andreyglauzer.github.io/blob/source/LICENSE">MIT</a> e você pode <em>“forcar”</em> ele <a href="https://github.com/andreyglauzer/andreyglauzer.github.io">aqui</a>, fique à vontade para contribuir também :).</p>
 
+<p>O código é totalmente Open Source sob licença <a href="https://github.com/andreyglauzer/andreyglauzer.github.io/blob/source/LICENSE">MIT</a> e você pode <em>“forcar”</em> ele <a href="https://github.com/andreyglauzer/andreyglauzer.github.io">aqui</a>, fique à vontade para contribuir também :).</p>
 
 	</div>
 </article>

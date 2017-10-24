@@ -45,15 +45,15 @@
     <div id="wrap">
         <!-- IF para definir o HEADER -->
         
-          <header data-v-ae5c0adc="" class="header">
-   <a data-v-ae5c0adc="" href="/" class="header__back nuxt-link-active">
-      <svg data-v-ae5c0adc="" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left">
-         <line data-v-ae5c0adc="" x1="20" y1="12" x2="4" y2="12"></line>
-         <polyline data-v-ae5c0adc="" points="10 18 4 12 10 6"></polyline>
+          <header class="header">
+   <a href="/" class="header__back nuxt-link-active">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left">
+         <line x1="20" y1="12" x2="4" y2="12"></line>
+         <polyline points="10 18 4 12 10 6"></polyline>
       </svg>
       <span>Ir para Home</span>
    </a>
-   <div data-v-ae5c0adc="">
+   <div>
       <nav role="navigation" class="navbar">
          <ul role="menu" class="navbar__nav">
             <li class="navbar__nav-item navbar__nav-item--search">
@@ -83,16 +83,14 @@ SimpleJekyllSearch({
 })
 </script>
             </li>
-            <li data-v-2651ba95="" role="menuitem" class="navbar__nav-item">
+            <li role="menuitem" class="navbar__nav-item">
             	<a href="/" class="navbar__nav-link" title="Sobre" role="link">Home</a>
             </li>
-            <li data-v-2651ba95="" role="menuitem" class="navbar__nav-item">
-               <a href="/projetos" class="navbar__nav-link" title="Sobre" role="link">Projetos</a>
+            <li role="menuitem" class="navbar__nav-item">
+               <a href="/projetos" class="navbar__nav-link" title="Projetos" role="link">Projetos</a>
             </li>
             <!-- FOR para gerar os intens do menu. -->
             
-			    
-			 
 			    
 			 
 			    
@@ -120,7 +118,34 @@ SimpleJekyllSearch({
 </header>
 
 
-
+<a class="menu__mobile" id="nav-menu">
+    <div id="menu"></div>
+</a>
+<nav id="nav">
+    <div id="nav-list">
+        <a href="/">Home</a>
+        <a href="/projetos" title="Projetos" role="link">Projetos</a>
+        
+            
+        
+            
+            <a href="/about" title="Sobre">Sobre</a>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+</nav>
 <style type="text/css">.header__back{opacity: 0;}header#header{padding: 4rem 0 5rem !important;}</style>
 <header id="header">
 	<article itemscope="itemscope" itemtype="http://schema.org/NewsArticle" class="article">
@@ -197,204 +222,176 @@ SimpleJekyllSearch({
         <!-- Main content -->
     	  <div class="container">
           <div class="grid grid--1of2">
-        			<div class="galeria">
-   
-	
+        			<!-- Posts -->
 
-	
 
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	
-
-</div>
-<!-- Posts -->
-
-<div class="grid__column">
-   <article  class="article__posts">
-      <header class="article__header">
-         <h2 class="article__title">
-         	<a class="" title="Automatizando Login com Python" href="/automatizando-login-com-pythton">Automatizando Login com Python</a>
-         </h2>
-         <div class="article__meta">
-         	<span  itemprop="datePublished" content="2017-01-01">Publicado em 13 Oct 2017 </span><span>por <span itemprop="author">Andrey Glauzer</span></span>
+   <div class="grid__column">
+      <article  class="article__posts">
+         <header class="article__header">
+            <h2 class="article__title">
+            	<a class="" title="Automatizando Login com Python" href="/automatizando-login-com-pythton">Automatizando Login com Python</a>
+            </h2>
+            <div class="article__meta">
+            	<span  itemprop="datePublished" content="2017-01-01">Publicado em 13 Oct 2017 </span><span>por <span itemprop="author">Andrey Glauzer</span></span>
+            </div>
+         </header>
+         <p itemprop="description" class="article__description">
+         	<a href="/automatizando-login-com-pythton" class="" title="Automatizando Login com Python">Executando o Auto Login Antes de mais nada precisamos instalar tudo que vamos utilizar para que o script funcione, eu utilizo linux, mas você pode procurar no Google como fazer a instalação dos mesmo em Windows, caso esteja utilizando um. sudo yum -y install ipython python-pip python-yaml git mkdir /root/bin...</a>
+         </p>
+         <div class="article__button">
+         	<a  href="/automatizando-login-com-pythton" class="nuxt-link-button nuxt-link-button--ghost" title="Automatizando Login com Python">Continue lendo</a>
          </div>
-      </header>
-      <p itemprop="description" class="article__description">
-      	<a href="/automatizando-login-com-pythton" class="" title="Automatizando Login com Python">Executando o Auto Login Antes de mais nada precisamos instalar tudo que vamos utilizar para que o script funcione, eu utilizo linux, mas você pode procurar no Google como fazer a instalação dos mesmo em Windows, caso esteja utilizando um. sudo yum -y install ipython python-pip python-yaml git mkdir /root/bin...</a>
-      </p>
-      <div class="article__button">
-      	<a  href="/automatizando-login-com-pythton" class="nuxt-link-button nuxt-link-button--ghost" title="Automatizando Login com Python">Continue lendo</a>
-      </div>
-      <!---->
-      <figure class="article__image" data-v-7cb2a31e=""><img src="\img\posts\2017-07-14-automatizando-tarefas-diarias-com-python\banner.png"></figure>
-   </article>
-</div>
+         <!---->
+         <figure class="article__image" data-v-7cb2a31e=""><img src="\img\posts\2017-07-14-automatizando-tarefas-diarias-com-python\banner.png"></figure>
+      </article>
+   </div>
 
-
-<div class="grid__column">
-   <article  class="article__posts">
-      <header class="article__header">
-         <h2 class="article__title">
-         	<a class="" title="Fazendo Backup de OST/PST do Outlook" href="/fazendo-backup-de-ost-pst-do-outlook">Fazendo Backup de OST/PST do Outlook</a>
-         </h2>
-         <div class="article__meta">
-         	<span  itemprop="datePublished" content="2017-01-01">Publicado em 12 Oct 2017 </span><span>por <span itemprop="author">Andrey Glauzer</span></span>
+   <div class="grid__column">
+      <article  class="article__posts">
+         <header class="article__header">
+            <h2 class="article__title">
+            	<a class="" title="Fazendo Backup de OST/PST do Outlook" href="/fazendo-backup-de-ost-pst-do-outlook">Fazendo Backup de OST/PST do Outlook</a>
+            </h2>
+            <div class="article__meta">
+            	<span  itemprop="datePublished" content="2017-01-01">Publicado em 12 Oct 2017 </span><span>por <span itemprop="author">Andrey Glauzer</span></span>
+            </div>
+         </header>
+         <p itemprop="description" class="article__description">
+         	<a href="/fazendo-backup-de-ost-pst-do-outlook" class="" title="Fazendo Backup de OST/PST do Outlook">Utilizando Para fazer Backup dos Contatos/Grupos de contatos do Outlook, caso quando você fizer a troca de perfil e reconfigurar e não ter voltados os contatos, existe uma pequena solução. Para isso volte à máquina onde está o perfil antigo do Outlook, e faça os procedimentos à baixo. Python Antes...</a>
+         </p>
+         <div class="article__button">
+         	<a  href="/fazendo-backup-de-ost-pst-do-outlook" class="nuxt-link-button nuxt-link-button--ghost" title="Fazendo Backup de OST/PST do Outlook">Continue lendo</a>
          </div>
-      </header>
-      <p itemprop="description" class="article__description">
-      	<a href="/fazendo-backup-de-ost-pst-do-outlook" class="" title="Fazendo Backup de OST/PST do Outlook">Utilizando Para fazer Backup dos Contatos/Grupos de contatos do Outlook, caso quando você fizer a troca de perfil e reconfigurar e não ter voltados os contatos, existe uma pequena solução. Para isso volte à máquina onde está o perfil antigo do Outlook, e faça os procedimentos à baixo. Python Antes...</a>
-      </p>
-      <div class="article__button">
-      	<a  href="/fazendo-backup-de-ost-pst-do-outlook" class="nuxt-link-button nuxt-link-button--ghost" title="Fazendo Backup de OST/PST do Outlook">Continue lendo</a>
-      </div>
-      <!---->
-      <figure class="article__image" data-v-7cb2a31e=""><img src="\img/posts/2017-10-12-fazendo-backup-de-ost-pst-do-outlook/outlook.jpg"></figure>
-   </article>
-</div>
+         <!---->
+         <figure class="article__image" data-v-7cb2a31e=""><img src="\img/posts/2017-10-12-fazendo-backup-de-ost-pst-do-outlook/outlook.jpg"></figure>
+      </article>
+   </div>
 
-
-<div class="grid__column">
-   <article  class="article__posts">
-      <header class="article__header">
-         <h2 class="article__title">
-         	<a class="" title="Monitorando SonicWall com Zabbix" href="/monitorando-sonicwall-com-zabbix">Monitorando SonicWall com Zabbix</a>
-         </h2>
-         <div class="article__meta">
-         	<span  itemprop="datePublished" content="2017-01-01">Publicado em 10 Oct 2017 </span><span>por <span itemprop="author">Andrey Glauzer</span></span>
+   <div class="grid__column">
+      <article  class="article__posts">
+         <header class="article__header">
+            <h2 class="article__title">
+            	<a class="" title="Monitorando SonicWall com Zabbix" href="/monitorando-sonicwall-com-zabbix">Monitorando SonicWall com Zabbix</a>
+            </h2>
+            <div class="article__meta">
+            	<span  itemprop="datePublished" content="2017-01-01">Publicado em 10 Oct 2017 </span><span>por <span itemprop="author">Andrey Glauzer</span></span>
+            </div>
+         </header>
+         <p itemprop="description" class="article__description">
+         	<a href="/monitorando-sonicwall-com-zabbix" class="" title="Monitorando SonicWall com Zabbix">SonicWall &amp; Zabbix Se você trabalha com gerenciamento de Redes, o monitoramento se torna algo essencial na sua vida, para que você possa prevenir e acompanhar erros/problemas que venha acontecer na sua rede. Hoje eu vou mostrar para você como monitorar o SonicWall via SNMP no Zabbix. Para quem não...</a>
+         </p>
+         <div class="article__button">
+         	<a  href="/monitorando-sonicwall-com-zabbix" class="nuxt-link-button nuxt-link-button--ghost" title="Monitorando SonicWall com Zabbix">Continue lendo</a>
          </div>
-      </header>
-      <p itemprop="description" class="article__description">
-      	<a href="/monitorando-sonicwall-com-zabbix" class="" title="Monitorando SonicWall com Zabbix">SonicWall &amp; Zabbix Se você trabalha com gerenciamento de Redes, o monitoramento se torna algo essencial na sua vida, para que você possa prevenir e acompanhar erros/problemas que venha acontecer na sua rede. Hoje eu vou mostrar para você como monitorar o SonicWall via SNMP no Zabbix. Para quem não...</a>
-      </p>
-      <div class="article__button">
-      	<a  href="/monitorando-sonicwall-com-zabbix" class="nuxt-link-button nuxt-link-button--ghost" title="Monitorando SonicWall com Zabbix">Continue lendo</a>
-      </div>
-      <!---->
-      <figure class="article__image" data-v-7cb2a31e=""><img src="\img/posts/2017-10-10-monitorando-sonicwall-com-zabbix/Zabbix-Banner.jpg"></figure>
-   </article>
-</div>
+         <!---->
+         <figure class="article__image" data-v-7cb2a31e=""><img src="\img/posts/2017-10-10-monitorando-sonicwall-com-zabbix/Zabbix-Banner.jpg"></figure>
+      </article>
+   </div>
 
-
-<div class="grid__column">
-   <article  class="article__posts">
-      <header class="article__header">
-         <h2 class="article__title">
-         	<a class="" title="Limitar banda de internet no SonicWall" href="/limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall">Limitar banda de internet no SonicWall</a>
-         </h2>
-         <div class="article__meta">
-         	<span  itemprop="datePublished" content="2017-01-01">Publicado em 25 Sep 2017 </span><span>por <span itemprop="author">Andrey Glauzer</span></span>
+   <div class="grid__column">
+      <article  class="article__posts">
+         <header class="article__header">
+            <h2 class="article__title">
+            	<a class="" title="Limitar banda de internet no SonicWall" href="/limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall">Limitar banda de internet no SonicWall</a>
+            </h2>
+            <div class="article__meta">
+            	<span  itemprop="datePublished" content="2017-01-01">Publicado em 25 Sep 2017 </span><span>por <span itemprop="author">Andrey Glauzer</span></span>
+            </div>
+         </header>
+         <p itemprop="description" class="article__description">
+         	<a href="/limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall" class="" title="Limitar banda de internet no SonicWall">A história por traz disso. Algumas semanas à traz estava com um pequeno problema que de alguma maneira, a minha internet estava horrivelmente lenta, e eu não conseguia encontrar onde estava o problema, no monitoramento do meu link estava sempre consumindo quase que 100% da banda. O foco da situação...</a>
+         </p>
+         <div class="article__button">
+         	<a  href="/limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall" class="nuxt-link-button nuxt-link-button--ghost" title="Limitar banda de internet no SonicWall">Continue lendo</a>
          </div>
-      </header>
-      <p itemprop="description" class="article__description">
-      	<a href="/limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall" class="" title="Limitar banda de internet no SonicWall">A história por traz disso. Algumas semanas à traz estava com um pequeno problema que de alguma maneira, a minha internet estava horrivelmente lenta, e eu não conseguia encontrar onde estava o problema, no monitoramento do meu link estava sempre consumindo quase que 100% da banda. O foco da situação...</a>
-      </p>
-      <div class="article__button">
-      	<a  href="/limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall" class="nuxt-link-button nuxt-link-button--ghost" title="Limitar banda de internet no SonicWall">Continue lendo</a>
-      </div>
-      <!---->
-      <figure class="article__image" data-v-7cb2a31e=""><img src="\img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/sonicwall-banner.png"></figure>
-   </article>
-</div>
+         <!---->
+         <figure class="article__image" data-v-7cb2a31e=""><img src="\img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/sonicwall-banner.png"></figure>
+      </article>
+   </div>
 
-
-<div class="grid__column">
-   <article  class="article__posts">
-      <header class="article__header">
-         <h2 class="article__title">
-         	<a class="" title="Quebrando senhas com o THC Hydra" href="/quebrando-senhas-com-o-thc-hydra">Quebrando senhas com o THC Hydra</a>
-         </h2>
-         <div class="article__meta">
-         	<span  itemprop="datePublished" content="2017-01-01">Publicado em 15 Aug 2017 </span><span>por <span itemprop="author">Andrey Glauzer</span></span>
+   <div class="grid__column">
+      <article  class="article__posts">
+         <header class="article__header">
+            <h2 class="article__title">
+            	<a class="" title="Quebrando senhas com o THC Hydra" href="/quebrando-senhas-com-o-thc-hydra">Quebrando senhas com o THC Hydra</a>
+            </h2>
+            <div class="article__meta">
+            	<span  itemprop="datePublished" content="2017-01-01">Publicado em 15 Aug 2017 </span><span>por <span itemprop="author">Andrey Glauzer</span></span>
+            </div>
+         </header>
+         <p itemprop="description" class="article__description">
+         	<a href="/quebrando-senhas-com-o-thc-hydra" class="" title="Quebrando senhas com o THC Hydra">THC Hydra Vou falar hoje sobre uma ferramenta que também é muito utilizada para realização de auditoriais em pentest que é o THC – Hydra que tem como objetivo realizar ataques de força bruta ou como muitos falam brute force, ou seja, ele faz diversas tentativas de acesso com a...</a>
+         </p>
+         <div class="article__button">
+         	<a  href="/quebrando-senhas-com-o-thc-hydra" class="nuxt-link-button nuxt-link-button--ghost" title="Quebrando senhas com o THC Hydra">Continue lendo</a>
          </div>
-      </header>
-      <p itemprop="description" class="article__description">
-      	<a href="/quebrando-senhas-com-o-thc-hydra" class="" title="Quebrando senhas com o THC Hydra">THC Hydra Vou falar hoje sobre uma ferramenta que também é muito utilizada para realização de auditoriais em pentest que é o THC – Hydra que tem como objetivo realizar ataques de força bruta ou como muitos falam brute force, ou seja, ele faz diversas tentativas de acesso com a...</a>
-      </p>
-      <div class="article__button">
-      	<a  href="/quebrando-senhas-com-o-thc-hydra" class="nuxt-link-button nuxt-link-button--ghost" title="Quebrando senhas com o THC Hydra">Continue lendo</a>
-      </div>
-      <!---->
-      <figure class="article__image" data-v-7cb2a31e=""><img src="\img\posts\2017-08-15-quebrando-senhas-com-o-thc-hydra\header.jpg"></figure>
-   </article>
-</div>
+         <!---->
+         <figure class="article__image" data-v-7cb2a31e=""><img src="\img\posts\2017-08-15-quebrando-senhas-com-o-thc-hydra\header.jpg"></figure>
+      </article>
+   </div>
 
-
-<div class="grid__column">
-   <article  class="article__posts">
-      <header class="article__header">
-         <h2 class="article__title">
-         	<a class="" title="Usando BeatifulSoup no meu dia-a-dia" href="/usando-beatifulsoup-no-meu-dia-a-dia">Usando BeatifulSoup no meu dia-a-dia</a>
-         </h2>
-         <div class="article__meta">
-         	<span  itemprop="datePublished" content="2017-01-01">Publicado em 11 Aug 2017 </span><span>por <span itemprop="author">Andrey Glauzer</span></span>
+   <div class="grid__column">
+      <article  class="article__posts">
+         <header class="article__header">
+            <h2 class="article__title">
+            	<a class="" title="Usando BeatifulSoup no meu dia-a-dia" href="/usando-beatifulsoup-no-meu-dia-a-dia">Usando BeatifulSoup no meu dia-a-dia</a>
+            </h2>
+            <div class="article__meta">
+            	<span  itemprop="datePublished" content="2017-01-01">Publicado em 11 Aug 2017 </span><span>por <span itemprop="author">Andrey Glauzer</span></span>
+            </div>
+         </header>
+         <p itemprop="description" class="article__description">
+         	<a href="/usando-beatifulsoup-no-meu-dia-a-dia" class="" title="Usando BeatifulSoup no meu dia-a-dia">Python Fala jovens, tudo em ordem? Hoje vou mostrar para vocês como raspagem de dados usando Python anda me ajudando com algumas tarefas, principalmente com as que incluem coleta de informação para usar em outros locais. Introdução Como assim raspagem? Simples, vamos supor que você acessa um determinado site todos...</a>
+         </p>
+         <div class="article__button">
+         	<a  href="/usando-beatifulsoup-no-meu-dia-a-dia" class="nuxt-link-button nuxt-link-button--ghost" title="Usando BeatifulSoup no meu dia-a-dia">Continue lendo</a>
          </div>
-      </header>
-      <p itemprop="description" class="article__description">
-      	<a href="/usando-beatifulsoup-no-meu-dia-a-dia" class="" title="Usando BeatifulSoup no meu dia-a-dia">Python Fala jovens, tudo em ordem? Hoje vou mostrar para vocês como raspagem de dados usando Python anda me ajudando com algumas tarefas, principalmente com as que incluem coleta de informação para usar em outros locais. Introdução Como assim raspagem? Simples, vamos supor que você acessa um determinado site todos...</a>
-      </p>
-      <div class="article__button">
-      	<a  href="/usando-beatifulsoup-no-meu-dia-a-dia" class="nuxt-link-button nuxt-link-button--ghost" title="Usando BeatifulSoup no meu dia-a-dia">Continue lendo</a>
-      </div>
-      <!---->
-      <figure class="article__image" data-v-7cb2a31e=""><img src="\img/posts/2017-08-11-usando-beatifulsoup-no-meu-dia-a-dia/scraping.jpg"></figure>
-   </article>
-</div>
+         <!---->
+         <figure class="article__image" data-v-7cb2a31e=""><img src="\img/posts/2017-08-11-usando-beatifulsoup-no-meu-dia-a-dia/scraping.jpg"></figure>
+      </article>
+   </div>
 
-
-<div class="grid__column">
-   <article  class="article__posts">
-      <header class="article__header">
-         <h2 class="article__title">
-         	<a class="" title="Relatório do Active Directory com Powershell" href="/relatorio-do-active-directory-com-powershell">Relatório do Active Directory com Powershell</a>
-         </h2>
-         <div class="article__meta">
-         	<span  itemprop="datePublished" content="2017-01-01">Publicado em 17 Jul 2017 </span><span>por <span itemprop="author">Andrey Glauzer</span></span>
+   <div class="grid__column">
+      <article  class="article__posts">
+         <header class="article__header">
+            <h2 class="article__title">
+            	<a class="" title="Relatório do Active Directory com Powershell" href="/relatorio-do-active-directory-com-powershell">Relatório do Active Directory com Powershell</a>
+            </h2>
+            <div class="article__meta">
+            	<span  itemprop="datePublished" content="2017-01-01">Publicado em 17 Jul 2017 </span><span>por <span itemprop="author">Andrey Glauzer</span></span>
+            </div>
+         </header>
+         <p itemprop="description" class="article__description">
+         	<a href="/relatorio-do-active-directory-com-powershell" class="" title="Relatório do Active Directory com Powershell">Active Directory É sempre bom fazer auditoria dos servidores que você gerencia, para ter tudo documentado, e sempre que necessário já ter tudo pronto, e organizado. Para facilitar um pouco essa questão eu criei alguns scripts em Powershell para facilitar essa minha tarefa de auditoria, aos poucos vou colocando todos...</a>
+         </p>
+         <div class="article__button">
+         	<a  href="/relatorio-do-active-directory-com-powershell" class="nuxt-link-button nuxt-link-button--ghost" title="Relatório do Active Directory com Powershell">Continue lendo</a>
          </div>
-      </header>
-      <p itemprop="description" class="article__description">
-      	<a href="/relatorio-do-active-directory-com-powershell" class="" title="Relatório do Active Directory com Powershell">Active Directory É sempre bom fazer auditoria dos servidores que você gerencia, para ter tudo documentado, e sempre que necessário já ter tudo pronto, e organizado. Para facilitar um pouco essa questão eu criei alguns scripts em Powershell para facilitar essa minha tarefa de auditoria, aos poucos vou colocando todos...</a>
-      </p>
-      <div class="article__button">
-      	<a  href="/relatorio-do-active-directory-com-powershell" class="nuxt-link-button nuxt-link-button--ghost" title="Relatório do Active Directory com Powershell">Continue lendo</a>
-      </div>
-      <!---->
-      <figure class="article__image" data-v-7cb2a31e=""><img src="\img/posts/2017-07-17-relatorio-do-active-directory-com-powershell/banner.jpg"></figure>
-   </article>
-</div>
+         <!---->
+         <figure class="article__image" data-v-7cb2a31e=""><img src="\img/posts/2017-07-17-relatorio-do-active-directory-com-powershell/banner.jpg"></figure>
+      </article>
+   </div>
 
-
-<div class="grid__column">
-   <article  class="article__posts">
-      <header class="article__header">
-         <h2 class="article__title">
-         	<a class="" title="Automatizando tarefas diarias com python" href="/automatizando-tarefas-diarias-com-python">Automatizando tarefas diarias com python</a>
-         </h2>
-         <div class="article__meta">
-         	<span  itemprop="datePublished" content="2017-01-01">Publicado em 14 Jul 2017 </span><span>por <span itemprop="author">Andrey Glauzer</span></span>
+   <div class="grid__column">
+      <article  class="article__posts">
+         <header class="article__header">
+            <h2 class="article__title">
+            	<a class="" title="Automatizando tarefas diarias com python" href="/automatizando-tarefas-diarias-com-python">Automatizando tarefas diarias com python</a>
+            </h2>
+            <div class="article__meta">
+            	<span  itemprop="datePublished" content="2017-01-01">Publicado em 14 Jul 2017 </span><span>por <span itemprop="author">Andrey Glauzer</span></span>
+            </div>
+         </header>
+         <p itemprop="description" class="article__description">
+         	<a href="/automatizando-tarefas-diarias-com-python" class="" title="Automatizando tarefas diarias com python">Como usar o ponto.py Esse script eu criei pensando em um ambiente Windows, já que no meu trabalho eu uso windows como sistema operacional padrão, e eu sempre acabo me esquecendo, ou as vezes eu tenho preguiça de bater o ponto, então resolvi criar um script para facilitar as coisas....</a>
+         </p>
+         <div class="article__button">
+         	<a  href="/automatizando-tarefas-diarias-com-python" class="nuxt-link-button nuxt-link-button--ghost" title="Automatizando tarefas diarias com python">Continue lendo</a>
          </div>
-      </header>
-      <p itemprop="description" class="article__description">
-      	<a href="/automatizando-tarefas-diarias-com-python" class="" title="Automatizando tarefas diarias com python">Como usar o ponto.py Esse script eu criei pensando em um ambiente Windows, já que no meu trabalho eu uso windows como sistema operacional padrão, e eu sempre acabo me esquecendo, ou as vezes eu tenho preguiça de bater o ponto, então resolvi criar um script para facilitar as coisas....</a>
-      </p>
-      <div class="article__button">
-      	<a  href="/automatizando-tarefas-diarias-com-python" class="nuxt-link-button nuxt-link-button--ghost" title="Automatizando tarefas diarias com python">Continue lendo</a>
-      </div>
-      <!---->
-      <figure class="article__image" data-v-7cb2a31e=""><img src="\img\posts\2017-07-14-automatizando-tarefas-diarias-com-python\banner.png"></figure>
-   </article>
-</div>
-
+         <!---->
+         <figure class="article__image" data-v-7cb2a31e=""><img src="\img\posts\2017-07-14-automatizando-tarefas-diarias-com-python\banner.png"></figure>
+      </article>
+   </div>
 
 
           </div>
@@ -412,12 +409,12 @@ SimpleJekyllSearch({
                 
               
                 
-                  <a href="/page2/" class="page-item">2</a>
+                  <a href="/2/" class="page-item">2</a>
                 
               
             
               
-                <a href="/page2/" class="page-item">&raquo;</a>
+                <a href="/2/" class="page-item">&raquo;</a>
               
             </div>
             

@@ -45,15 +45,15 @@
     <div id="wrap">
         <!-- IF para definir o HEADER -->
         
-          <header data-v-ae5c0adc="" class="header">
-   <a data-v-ae5c0adc="" href="/" class="header__back nuxt-link-active">
-      <svg data-v-ae5c0adc="" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left">
-         <line data-v-ae5c0adc="" x1="20" y1="12" x2="4" y2="12"></line>
-         <polyline data-v-ae5c0adc="" points="10 18 4 12 10 6"></polyline>
+          <header class="header">
+   <a href="/" class="header__back nuxt-link-active">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left">
+         <line x1="20" y1="12" x2="4" y2="12"></line>
+         <polyline points="10 18 4 12 10 6"></polyline>
       </svg>
       <span>Ir para Home</span>
    </a>
-   <div data-v-ae5c0adc="">
+   <div>
       <nav role="navigation" class="navbar">
          <ul role="menu" class="navbar__nav">
             <li class="navbar__nav-item navbar__nav-item--search">
@@ -83,16 +83,14 @@ SimpleJekyllSearch({
 })
 </script>
             </li>
-            <li data-v-2651ba95="" role="menuitem" class="navbar__nav-item">
+            <li role="menuitem" class="navbar__nav-item">
             	<a href="/" class="navbar__nav-link" title="Sobre" role="link">Home</a>
             </li>
-            <li data-v-2651ba95="" role="menuitem" class="navbar__nav-item">
-               <a href="/projetos" class="navbar__nav-link" title="Sobre" role="link">Projetos</a>
+            <li role="menuitem" class="navbar__nav-item">
+               <a href="/projetos" class="navbar__nav-link" title="Projetos" role="link">Projetos</a>
             </li>
             <!-- FOR para gerar os intens do menu. -->
             
-			    
-			 
 			    
 			 
 			    
@@ -120,7 +118,34 @@ SimpleJekyllSearch({
 </header>
 
 
-
+<a class="menu__mobile" id="nav-menu">
+    <div id="menu"></div>
+</a>
+<nav id="nav">
+    <div id="nav-list">
+        <a href="/">Home</a>
+        <a href="/projetos" title="Projetos" role="link">Projetos</a>
+        
+            
+        
+            
+            <a href="/about" title="Sobre">Sobre</a>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+</nav>
 <header id="header" class="pageHeader pageHeader--background">
 	<article itemscope="itemscope" itemtype="http://schema.org/NewsArticle" class="article">
 		<figure itemprop="image" itemscope="itemscope" itemtype="http://schema.org/ImageObject" class="pageHeader__image">
@@ -147,9 +172,9 @@ SimpleJekyllSearch({
 
 			</ol>
 			<p itemprop="description" class="pageHeader__description">Como fazer auditória de Active Directory usando o powershell.</p>
-			<div data-v-669fd401="" class="pageHeader__meta">
+			<div class="pageHeader__meta">
 
-				<span data-v-669fd401="">Publicado em Julho de 2017, por <span data-v-669fd401="" itemprop="author">Andrey Glauzer</span>
+				<span>Publicado em Julho de 2017, por <span itemprop="author">Andrey Glauzer</span>
 			</div>
 		</div>
 	</span>
