@@ -2,9 +2,26 @@
 @media screen and (max-width: 48rem){
 	
 	// CONTENT POST
+
+	.pageHeader__image, .pageHeader__image img {
+    width: 480% !important;
+	}
+
+	a {
+	word-wrap: break-word;
+	}
+
+	h1.pageHeader__title {
+    font-size: 2.0rem !important;
+    font-size: 33px !important;
+	}
+	code.highlighter-rouge {
+    white-space: inherit;
+	}
+
     .container .grid article#post-page {
-	    max-width: 23rem !important;
-	    max-width: 380px !important;
+	    max-width: 20rem !important;
+	    max-width: 310px !important;
     }
     // RESULTADO DE BUSCAS
     .infor__search{
@@ -29,5 +46,22 @@
 	    text-decoration: none;
 	    margin: 0;
 	    margin: 0;
+	}
+
+	// HEADER
+	header.header{
+	display:none !important;
+	}
+
+	// Menu
+	#nav-menu{
+		display:block !important;
+	}
+
+	// Projetos
+
+	.project-list .grid{
+		margin-left: -52.5px !important;
+	    margin-left: -5.25rem !important
 	}
 }	

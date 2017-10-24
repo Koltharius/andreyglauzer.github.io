@@ -1,5 +1,5 @@
 {% include nav-menu.html %}
-
+{% include nav-menu-mobile.html %}
 <header id="header" class="pageHeader pageHeader--background">
 	<article itemscope="itemscope" itemtype="http://schema.org/NewsArticle" class="article">
 		<figure itemprop="image" itemscope="itemscope" itemtype="http://schema.org/ImageObject" class="pageHeader__image">
@@ -26,9 +26,9 @@
 
 			</ol>
 			<p itemprop="description" class="pageHeader__description">{{ page.description }}</p>
-			<div data-v-669fd401="" class="pageHeader__meta">
+			<div class="pageHeader__meta">
 
-				<span data-v-669fd401="">Publicado em {{ page.data }}, por <span data-v-669fd401="" itemprop="author">Andrey Glauzer</span>
+				<span>Publicado em {{ page.data }}, por <span itemprop="author">Andrey Glauzer</span>
 			</div>
 		</div>
 	</span>

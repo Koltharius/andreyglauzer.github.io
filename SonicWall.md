@@ -1,5 +1,0 @@
----
-<!-- layout: galeria -->
-title: SonicWall
----
-

@@ -6,6 +6,9 @@ author:
   name: "Andrey Glauzer"
   email: "nglauzer@gmail.com"
 
+# Analise de Dados Quantcast
+ID: p-BTQDD6C697r5P
+
 # Configurações da Build
 
 baseurl: "/"
@@ -14,7 +17,7 @@ source: .
 destination: ./_site
 permalink: /:title
 paginate: 8
-paginate_path: /page:num/
+paginate_path: /:num/
 
 # Convigurações Padrões
 defaults:
@@ -31,12 +34,6 @@ gems:
 
 # Versão do site.
 version: "1.1.0"
-
-collections:
-    themes:
-        output: true
-        permalink: /jekyll-themes/:path/
-
 
 # Projetos
 projetos:
@@ -59,3 +56,9 @@ projetos:
     url: https://github.com/andreyglauzer/pybook
     data: Setembro de 2016
     invert: true
+
+  - nome: Alidoces Oficial
+    imagem: alidoces.png
+    descricao: Projeto desenvolvido para um amigo, para o mesmo poder divulgar o trabalho que sua esposa faz de venda de bolos no pote, e bolos sobre encomendas.
+    url: https://alidocesoficial.com
+    data: Janeiro de 2017
