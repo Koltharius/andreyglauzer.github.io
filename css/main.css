@@ -1741,7 +1741,7 @@ header.header {
   to {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1); } }
-#nav-menu {
+a#nav-menu {
   display: none; }
 
 @media screen and (max-width: 48rem) {
