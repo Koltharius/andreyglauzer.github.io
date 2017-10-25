@@ -33,3 +33,7 @@ O site é inspirado no Desing do Blog do [nandomoreira.me](https://nandomoreira.
 Hoje esse site está hospedado no [GitHub Pages](https://github.com), usando [Jekyll](https://jekyllthemes.io/), o código é totalmente Open Source sob licença [MIT](https://github.com/andreyglauzer/andreyglauzer.github.io/blob/source/LICENSE) e você pode _"forcar"_ ele [aqui](https://github.com/andreyglauzer/andreyglauzer.github.io), fique à vontade para contribuir também :).
 
 O código é totalmente Open Source sob licença [MIT](https://github.com/andreyglauzer/andreyglauzer.github.io/blob/source/LICENSE) e você pode _"forcar"_ ele [aqui](https://github.com/andreyglauzer/andreyglauzer.github.io), fique à vontade para contribuir também :).
+
+
+{% include social.html %}
+<style type="text/css">li.social__item svg{fill:#404756}</style>

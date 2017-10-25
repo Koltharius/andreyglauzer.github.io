@@ -6,13 +6,13 @@ layout: default
 	<div class="container__colecao">
 		{% for infocolecoes in site.infocolecoes %}
 	    <article class="postItem postItem--featured">
-	        <a class="postItem__image-link" href="{{ infocolecoes.permalink }}">
+	        <a class="postItem__image-link" href="{% if site.baseurl == "/" %}{{ infocolecoes.permalink }}{% else %}{{ infocolecoes.permalink | prepend: site.baseurl }}{% endif %}">
 	            <div class="postItem__image" style="background-image:url({{ infocolecoes.img }})">
 	            </div><img src="{{ infocolecoes.img }}" alt="{{ infocolecoes.titulo }}"></a>
 			<div class="postItem__content">
 	          <header class="postItem__header">
-	                <h2 class="postItem__title"><a href="{{ infocolecoes.permalink }}" title="{{ infocolecoes.titulo }}" class="">{{ infocolecoes.titulo }}</a></h2></header>
-	            <p itemprop="description" class="postItem__description"><a href="{{ infocolecoes.permalink }}" title="Programador a comunidade precisa de você!" class="">{{ infocolecoes.descricao }}</a></p>
+	                <h2 class="postItem__title"><a href="{% if site.baseurl == "/" %}{{ infocolecoes.permalink }}{% else %}{{ infocolecoes.permalink | prepend: site.baseurl }}{% endif %}" title="{{ infocolecoes.titulo }}" class="">{{ infocolecoes.titulo }}</a></h2></header>
+	            <p itemprop="description" class="postItem__description"><a href="{% if site.baseurl == "/" %}{{ infocolecoes.permalink }}{% else %}{{ infocolecoes.permalink | prepend: site.baseurl }}{% endif %}" title="Programador a comunidade precisa de você!" class="">{{ infocolecoes.descricao }}</a></p>
 	            <footer class="postItem__footer"><small class="postItem__meta"><span itemprop="datePublished" content="2017-03-12">Publicado em Março de 2017 </span><span>por <strong itemprop="author">Andrey Glauzer</strong></span></small></footer>
 	        </div>
 		</article>
