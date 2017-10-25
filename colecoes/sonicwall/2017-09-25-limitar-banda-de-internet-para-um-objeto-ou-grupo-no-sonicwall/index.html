@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 	<meta name="generator" content="Jekyll">
 
-	<title>Relatório do Active Directory com Powershell</title>
+	<title>Limitar banda de internet no SonicWall</title>
 	<link rel="stylesheet"  href="/css/font-awesome/css/font-awesome.min.css">
 
 	<!-- CSS & fonts -->
@@ -172,11 +172,11 @@ SimpleJekyllSearch({
 <header id="header" class="pageHeader pageHeader--background">
 	<article itemscope="itemscope" itemtype="http://schema.org/NewsArticle" class="article">
 		<figure itemprop="image" itemscope="itemscope" itemtype="http://schema.org/ImageObject" class="pageHeader__image">
-			<meta itemprop="url" content="img/posts/2017-07-17-relatorio-do-active-directory-com-powershell/banner.jpg">
-			<img src="img/posts/2017-07-17-relatorio-do-active-directory-com-powershell/banner.jpg" alt="Relatório do Active Directory com Powershell" />
+			<meta itemprop="url" content="img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/sonicwall-banner.png">
+			<img src="img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/sonicwall-banner.png" alt="Limitar banda de internet no SonicWall" />
 		</figure>
 		<div class="info-header">
-			<h1 class="pageHeader__title">Relatório do Active Directory com Powershell</h1>
+			<h1 class="pageHeader__title">Limitar banda de internet no SonicWall</h1>
 			<ol itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList" class="breadcrumb">
 				<li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem" class="breadcrumb__item">
 					<a  href="/" class="breadcrumb__link nuxt-link-active" title="Home" itemprop="item">
@@ -187,17 +187,17 @@ SimpleJekyllSearch({
 				</li>
 				
 				<li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem" class="breadcrumb__item">
-					<a class="breadcrumb__link nuxt-link-exact-active nuxt-link-active breadcrumb__link--active" title="Relatório do Active Directory com Powershell" itemprop="item" href="/relatorio-do-active-directory-com-powershell">
-					<span itemprop="name">Relatório do Active Directory com Powershell</span>
+					<a class="breadcrumb__link nuxt-link-exact-active nuxt-link-active breadcrumb__link--active" title="Limitar banda de internet no SonicWall" itemprop="item" href="/colecoes/sonicwall/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/">
+					<span itemprop="name">Limitar banda de internet no SonicWall</span>
 					<meta itemprop="position" content="2">
 					</a>
 				</li>
 
 			</ol>
-			<p itemprop="description" class="pageHeader__description">Como fazer auditória de Active Directory usando o powershell.</p>
+			<p itemprop="description" class="pageHeader__description">Passo à passo de como criar regras de BWM no Sonicwall, deixando a rede bem segmentada e com menos gargalo, evitando o consumo descessário da banda de internet.</p>
 			<div class="pageHeader__meta">
 
-				<span>Publicado em Julho de 2017, por <span itemprop="author">Andrey Glauzer</span>
+				<span>Publicado em Setembro de 2017, por <span itemprop="author">Andrey Glauzer</span>
 			</div>
 		</div>
 	</span>
@@ -210,129 +210,76 @@ SimpleJekyllSearch({
           <div class="grid grid--1of2">
         			<article id="post-page">
 	<div class="content">
-		<h2 id="active-directory">Active Directory</h2>
+		<h2 id="a-história-por-traz-disso">A história por traz disso.</h2>
 
-<p>É sempre bom fazer auditoria dos servidores que você gerencia, para ter tudo documentado, e sempre que necessário já ter tudo pronto, e organizado.
-Para facilitar um pouco essa questão eu criei alguns scripts em Powershell para facilitar essa minha tarefa de auditoria, aos poucos vou colocando todos os que eu já criei.
-Esse primeiro é um bem simples que é justamente para ter controle dos usuários do <code class="highlighter-rouge">Active Directory</code>, coletando informações de senha nome, departamento entre outras coisas.</p>
+<p>Algumas semanas à traz estava com um pequeno problema que de alguma maneira, a minha internet estava horrivelmente lenta, e eu não conseguia encontrar onde estava o problema, no monitoramento do meu link estava sempre consumindo quase que 100% da banda.</p>
 
-<h2 id="ao-script">Ao script</h2>
+<h2 id="o-foco-da-situação">O foco da situação</h2>
 
-<p>Primeiro antes de mais nada, é preciso definir algumas vaiáveis, então aqui eu estou colocando as variáveis que eu vou utilizar ao decorrer do script.</p>
+<p>Então dando uma fuçada no SonicWall Analyzer, consegui identificar o foco do problema, que era uma máquina que ficava na portaria cujo seu foco era somente controlar o DVR, porém ela estava enviando diariamente mais de 60GB, como é possível ver na figura à baixo</p>
 
-<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="nv">$relatorio</span> <span class="o">=</span> <span class="nv">$null</span>
-<span class="nv">$tabela</span> <span class="o">=</span> <span class="nv">$null</span>
-<span class="nv">$data</span> <span class="o">=</span> <span class="nb">Get-Date</span> -format <span class="s2">"dd/MM/yyyy"</span>
-<span class="nv">$arquivo</span> <span class="o">=</span> <span class="s2">"user-ad-list.html"</span>
-<span class="nv">$total</span> <span class="o">=</span> <span class="o">(</span><span class="nb">Get-ADUser</span> -filter <span class="k">*</span><span class="o">)</span>.count <span class="c1"># Total de usuários que existem do AD</span>
-<span class="nv">$dominio</span> <span class="o">=</span> <span class="o">(</span><span class="nb">Get-ADDomain</span><span class="o">)</span>.Forest <span class="c1"># Domínio</span>
-<span class="nv">$analista</span> <span class="o">=</span> <span class="s2">"Andrey Glauzer"</span> <span class="c1"># Analista</span>
-<span class="nv">$empresa</span> <span class="o">=</span> <span class="s2">"ECOFRESH"</span> <span class="c1"># Empresa</span></code></pre></figure>
+<p><img src="/img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/01.PNG" alt="SonicWall" /></p>
 
-<h3 id="importando-módulos-do-powershell">Importando módulos do powershell</h3>
+<p>Essa máquina estava enviando tudo isso, porque em outro site, se faz a necessidade de monitorar as câmeras, da matriz, então eu não poderia simplesmente desligar à máquina, logo a solução mais simples foi reduzir o consumo de banda só dessa máquina.</p>
 
-<p>Para poder coletar todas as informações do <code class="highlighter-rouge">AD</code> vamos utilizar o módulo do powershell, para isso usamos.</p>
+<h2 id="iniciando-o-processo-de-criação-da-regra">Iniciando o processo de criação da regra.</h2>
 
-<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell">Import-Module ActiveDirectory</code></pre></figure>
+<p>Bom para começar fiz esse procedimento em um TZ105, que eu acredito que não tenha muita diferença dos outros, primeiro será necessário ativar o BWM (Bandwidth Management), para isso você tem que ir em <code class="highlighter-rouge">Firewall Settings &gt; BWM</code> e marcar a opção <code class="highlighter-rouge">Advanced</code> e depois <code class="highlighter-rouge">Accept</code> , como na imagem à baixo.</p>
 
-<h3 id="coletando-e-filtrando-resultados">Coletando e filtrando resultados</h3>
+<p><img src="/img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/02.PNG" alt="SonicWall" /></p>
 
-<p>Aqui vamos coletar tudo, filtrando apenas os objetos que eu desejo.</p>
+<h3 id="ativando-bwm">Ativando BWM</h3>
 
-<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="nv">$usuarios</span> <span class="o">=</span> @<span class="o">(</span><span class="nb">Get-ADUser</span> -filter <span class="k">*</span> -Properties Company, SamAccountName, Name, Mail, Department, Title, PasswordNeverExpires, Enabled, Created<span class="o">)</span></code></pre></figure>
+<p>Após ativar o modo <code class="highlighter-rouge">Advanced</code> do BWM, precisamos definir a largura de banda direto na interface, para isso você deve ir em <code class="highlighter-rouge">Network &gt; Interfaces</code>, como mostra a imagem à baixo:</p>
 
-<p>E aqui eu vou selecionar os objetos que eu filtrei.</p>
+<p><img src="/img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/03.PNG" alt="SonicWall" /></p>
 
-<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="nv">$resultado</span> <span class="o">=</span> @<span class="o">(</span><span class="nv">$usuarios</span> | <span class="nb">Select-Object </span>Company, SamAccountName, Name, Mail, Department, Title, PasswordNeverExpires, Enabled, Created<span class="o">)</span></code></pre></figure>
+<h3 id="configurando-a-interface">Configurando a interface.</h3>
 
-<p>Vou ordenar o meu resultado pela company.</p>
+<p>Clique em <code class="highlighter-rouge">Editar</code>, na interface de WAN da sua rede, caso você tenha mais de um LINK recomendo que faça nos dois, caso aconteça um Failover e o outro LINK assuma, já como a janela de edição do LINK aberta, vá até a aba <code class="highlighter-rouge">Advanced</code> marque <code class="highlighter-rouge">Enable Interface Egress Bandwith Limitatios &amp; Enable Interface Ingress Bandwitdh Limitarion</code> e determine qual será o uso da Interface.</p>
 
-<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="nv">$resultado</span> <span class="o">=</span> <span class="nv">$resultado</span> | <span class="nb">Sort</span> <span class="s2">"Company"</span></code></pre></figure>
+<p><img src="/img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/04.PNG" alt="SonicWall" /></p>
 
-<h3 id="convertendo-o-resultado-para-html">Convertendo o resultado para HTML</h3>
+<h3 id="criando-objetos-bwm">Criando objetos BWM</h3>
 
-<p>E converter tudo para HTML.
-$tabela += $resultado | ConvertTo-Html -Fragment
-Aqui eu vou adicionar a minha personalização, da tabela e o formato que vou utilizar ela.</p>
+<p>Com o <code class="highlighter-rouge">BWM</code> ativado e a interface WAN configurada, vamos criar um Objeto, que determine a quantidade que nossa máquina alvo vai poder usar, para isso vá em <code class="highlighter-rouge">Firewall &gt; Bandwitdh Objects</code>.</p>
 
-<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="nv">$formatacao</span><span class="o">=</span>
-		<span class="s2">"
-		&lt;html&gt;
-		&lt;body&gt;
-		&lt;style&gt;
-		BODY{font-family: Calibri; font-size: 12pt;margin: 0;border: 0;color:#2d3643;}
-		TABLE{border-collapse: collapse; font-size: 12pt; text-align:center;margin-left:auto;margin-right:auto; width='1000px';}
-		TH{border: 1px solid #c1c1c1;background: #0c59a0;padding: 5px;color: white;}
-		TD{border: 1px solid rgba(210, 210, 210, 0.95);padding: 5px;}
-		.total{padding: 0;font-weight: 300;color: #888;}
-		.titulo{border:0 !important;}
-		#header h3 {padding: 0;font-weight: 300;color: #888;}
-		#header h1 {font-weight: 100 !important;color: #0c59a0;}
-		#header a {text-decoration: none;color: #343434;display: inline-block;}
-		#header span {font-weight: 700;}
-		#header i{color: #0c59a0;font-size:1.5em;}
-		footer .fa-heart{color:red;}
-		figure {margin: 0;}
-		#header a {margin: 0em;text-align: center;vertical-align: middle;}
-		.animate {animation-name: LogoAnimate;animation-duration: .9s;}
-		@keyframes LogoAnimate {from {transform: scale(0);opacity: 0;  }
-		  50% {transform: scale(0);opacity: 0;  }
-		  82.5% {transform: scale(1.03);animation-timing-function: ease-out;opacity: 1;}
-		  to {transform: scale(1);}}
-		   footer {background-color: #0c59a0;color: #FDFDFD;text-align: center;padding: 0.6667em 0;margin-top: 1em;}
-		footer a {color:white;}
-		&lt;/style&gt; 
-		"</span>
-<span class="nv">$titulo</span><span class="o">=</span>
-		<span class="s2">"
-		&lt;table width='100%' border='0' cellpadding='0' cellspacing='0'&gt;
-		&lt;tr&gt;
-		&lt;td class='titulo'&gt;
-		&lt;header id='header'&gt;
-			&lt;a class='teste' href='#'&gt;&lt;h1 class='animate'&gt;&lt;span&gt;Active Directory - Lista de Usu&amp;aacute;rios&lt;/span&gt;&lt;/h1&gt;&lt;/a&gt;
-			&lt;h3&gt;Empresa: </span><span class="nv">$empresa</span><span class="s2"> - Dominio: </span><span class="nv">$dominio</span><span class="s2"> - Relatorio: </span><span class="nv">$data</span><span class="s2"> - Responsavel: </span><span class="nv">$analista</span><span class="s2">&lt;/h3&gt;
-		&lt;/header&gt;
-		&lt;/td&gt;
-		&lt;/tr&gt;
-		&lt;/table&gt;
-		&lt;/body&gt;
-		&lt;/html&gt;
-		"</span>
-<span class="nv">$footer</span><span class="o">=</span><span class="s2">"&lt;footer&gt;&lt;span&gt;Feito com muito cafe - Andrey Glauzer @2017&lt;/footer&gt;"</span></code></pre></figure>
+<p><img src="/img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/06.PNG" alt="SonicWall" /></p>
 
-<h3 id="formatando-o-resultado">Formatando o resultado</h3>
+<p>Clique em adicionar, e defina de acordo com a maneira que você deseja limitar à banda.</p>
 
-<p>Agora tenho que juntar tudo o que eu fiz, na ordem que eu desejo.</p>
+<p><img src="/img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/07.PNG" alt="SonicWall" /></p>
 
-<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="nv">$relatorio</span> <span class="o">=</span> <span class="nv">$formatacao</span> + <span class="nv">$titulo</span> + <span class="nv">$tabela</span> + <span class="nv">$footer</span></code></pre></figure>
+<p><img src="/img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/08.PNG" alt="SonicWall" /></p>
 
-<p>Novamente vou converter tudo para o HTML.</p>
+<p>Após criar o Objeto determinando a quantidade de banda que à máquina vai usar, será necessário criar a regra, apontando justamente para os processos que fizemos á cima, para isso vá em <code class="highlighter-rouge">Firewall &gt; Access Rules</code>, e clique em LAN to WAN.</p>
 
-<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="nv">$relatorio</span> | <span class="nb">Out-File</span> <span class="nv">$arquivo</span> -Encoding Utf8</code></pre></figure>
+<p><img src="/img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/09.PNG" alt="SonicWall" /></p>
 
-<p>E também vou salvar o resultado em CSV.</p>
+<p><img src="/img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/10.PNG" alt="SonicWall" /></p>
 
-<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="nv">$resultado</span> | <span class="nb">Sort </span>Company | <span class="nb">Export-Csv </span>ad-lista.csv -NoTypeInformation -Encoding Utf8</code></pre></figure>
+<h3 id="aplicando-a-regra">Aplicando a regra</h3>
 
-<hr />
+<p>Agora vamos criar a nossa regra, então portas de destino são todas, serviços são todos, a origem é o objeto com o IP/MAC da portaria, os destinos são todos, com isso parte da nossa regra está criada.</p>
 
-<h2 id="resultado">Resultado</h2>
+<p><img src="/img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/12.PNG" alt="SonicWall" /></p>
 
-<p>Com todo o scrip montado, vamos à parte que nos intereça, a execução dele. Para executar é possivel que você precisa habilitar a execução de scripts do powershell, para fazer isso, abra ele em modo de administrador e execute o comando à baixo:</p>
+<p>Agora vá na aba <code class="highlighter-rouge">BWM</code>, marque as duas opções e selecione em ambas o objeto que criamos, onde determinamos qual será o tamanho da banda que a máquina vai utilizar.</p>
 
-<figure class="highlight"><pre><code class="language-powershell" data-lang="powershell"><span class="nb">Set-ExecutionPolicy </span>RemoteSigned</code></pre></figure>
+<p><img src="/img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/13.PNG" alt="SonicWall" /></p>
 
-<p>Feito isso, partimos para a ação. Ao executar o script ele vai gerar dois arquivos no mesmo diretório onde ele está, um HTML e o outro CSV. Se tudo der certo, devemos receber o seguinte resultado.</p>
+<p>E abaixo é possível ver como a regra fica.</p>
 
-<p><img src="img/posts/2017-07-17-relatorio-do-active-directory-com-powershell/01.PNG" alt="Fluxograma do ambiênte" /></p>
+<p><img src="/img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/14.PNG" alt="SonicWall" /></p>
 
-<hr />
+<h2 id="conclusão">Conclusão.</h2>
 
-<p>É possivel ver o script completo no meu github <a href="https://github.com/andreyglauzer/reletorio-ad" class="link-exteno">Andrey Glauzer</a></p>
+<p>Criando regras assim bem segmentadas, conseguimos deixar a nossa rede com menos gargalo e consumo, principalmente onde a origem não tem a necessidade de uma banda maior que o necessário.</p>
+
 
 		<div id="coment" class="comments">
 	<div class="content-coment">
-		<h3 data-v-dd8644c2="">Comentários para: <span class="opacity">"Relatório do Active Directory com Powershell"</span></h3>
+		<h3 data-v-dd8644c2="">Comentários para: <span class="opacity">"Limitar banda de internet no SonicWall"</span></h3>
 		<div id="disqus_thread"></div>
 		<script>
 

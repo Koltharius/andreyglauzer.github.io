@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 	<meta name="generator" content="Jekyll">
 
-	<title>Fazendo Backup de OST/PST do Outlook</title>
+	<title>pfSense</title>
 	<link rel="stylesheet"  href="/css/font-awesome/css/font-awesome.min.css">
 
 	<!-- CSS & fonts -->
@@ -172,11 +172,11 @@ SimpleJekyllSearch({
 <header id="header" class="pageHeader pageHeader--background">
 	<article itemscope="itemscope" itemtype="http://schema.org/NewsArticle" class="article">
 		<figure itemprop="image" itemscope="itemscope" itemtype="http://schema.org/ImageObject" class="pageHeader__image">
-			<meta itemprop="url" content="img/posts/2017-10-12-fazendo-backup-de-ost-pst-do-outlook/outlook.jpg">
-			<img src="img/posts/2017-10-12-fazendo-backup-de-ost-pst-do-outlook/outlook.jpg" alt="Fazendo Backup de OST/PST do Outlook" />
+			<meta itemprop="url" content="">
+			<img src="" alt="pfSense" />
 		</figure>
 		<div class="info-header">
-			<h1 class="pageHeader__title">Fazendo Backup de OST/PST do Outlook</h1>
+			<h1 class="pageHeader__title">pfSense</h1>
 			<ol itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList" class="breadcrumb">
 				<li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem" class="breadcrumb__item">
 					<a  href="/" class="breadcrumb__link nuxt-link-active" title="Home" itemprop="item">
@@ -187,17 +187,17 @@ SimpleJekyllSearch({
 				</li>
 				
 				<li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem" class="breadcrumb__item">
-					<a class="breadcrumb__link nuxt-link-exact-active nuxt-link-active breadcrumb__link--active" title="Fazendo Backup de OST/PST do Outlook" itemprop="item" href="/fazendo-backup-de-ost-pst-do-outlook">
-					<span itemprop="name">Fazendo Backup de OST/PST do Outlook</span>
+					<a class="breadcrumb__link nuxt-link-exact-active nuxt-link-active breadcrumb__link--active" title="pfSense" itemprop="item" href="/colecoes/pfsense">
+					<span itemprop="name">pfSense</span>
 					<meta itemprop="position" content="2">
 					</a>
 				</li>
 
 			</ol>
-			<p itemprop="description" class="pageHeader__description">Script em python, para fazer backup de arquivos do Outlook tanto como contatos e até OST, convertendo eles para PST</p>
+			<p itemprop="description" class="pageHeader__description">Configurações e procedimentos referente ao pfSense, e soluções que já apresentei em algumas empresas.</p>
 			<div class="pageHeader__meta">
 
-				<span>Publicado em Outubro de 2017, por <span itemprop="author">Andrey Glauzer</span>
+				<span>Publicado em , por <span itemprop="author">Andrey Glauzer</span>
 			</div>
 		</div>
 	</span>
@@ -208,111 +208,7 @@ SimpleJekyllSearch({
         <!-- Main content -->
     	  <div class="container">
           <div class="grid grid--1of2">
-        			<article id="post-page">
-	<div class="content">
-		<h3 id="utilizando">Utilizando</h3>
-
-<p>Para fazer Backup dos Contatos/Grupos de contatos do Outlook, caso quando você fizer a troca de perfil e reconfigurar e não ter voltados os contatos, existe uma pequena solução.
-Para isso volte à máquina onde está o perfil antigo do Outlook, e faça os procedimentos à baixo.</p>
-
-<h3 id="python">Python</h3>
-
-<p>Antes de tudo é necessário fazer a instalação do Python, faça download dele (https://www.python.org/downloads/) - Versão 3.6.1.  Não esqueça de marcar a opção (Add python Patch)</p>
-
-<h3 id="pip">PIP</h3>
-
-<p>Após instalar o python é necessário instalar o PIP, para isso vá ao site (https://bootstrap.pypa.io/get-pip.py) e faça download do mesmo, e em seguida vá ao diretório do donwload pelo CMD e execute</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Python get-pip.py</code></pre></figure>
-
-<p>Após fazer a instalação do PIP é necessário instalar os requerimentos, nesse scrip temos apenas um, o restante é padrão. Então pelo CMD em qualquer diretório execute.</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">Pip install pypiwin32</code></pre></figure>
-
-<h3 id="executando">Executando</h3>
-
-<p>Com tudo instalado, basta acessar o diretório onde está o script e execute.</p>
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">python backup-outlook.py</code></pre></figure>
-
-<p>Deve abrir uma janela do Outlook, onde você deve selecionar o que deseja fazer backup, você pode selecionar todos os e-mails ou somente a caixa o objeto que deseja fazer backup.</p>
-
-<p><img src="https://user-images.githubusercontent.com/4019334/27830268-090bd58a-609c-11e7-820b-8a863816a776.PNG" alt="01" /></p>
-
-<p>Após selecionar o que deseja, basta clicar em OK e em seguida ele já deve iniciar o Backup.
-No Outlook:</p>
-
-<p><img src="https://user-images.githubusercontent.com/4019334/27830269-090bdd46-609c-11e7-8721-d59786f6f853.PNG" alt="02" /></p>
-
-<p>No CMD:</p>
-
-<p><img src="https://user-images.githubusercontent.com/4019334/27830270-090dcd36-609c-11e7-98fb-500d7ac30faa.PNG" alt="03" /></p>
-
-<p>Basta aguardar o processo de backup. Após acabar basta fazer a importação pelo próprio Outlook, selecionando a opção de pst.</p>
-
-<p>Você pode fazer download do script aqui <a href="https://github.com/andreyglauzer/backup-group-outlook">https://github.com/andreyglauzer/backup-group-outlook</a></p>
-
-
-		<div id="coment" class="comments">
-	<div class="content-coment">
-		<h3 data-v-dd8644c2="">Comentários para: <span class="opacity">"Fazendo Backup de OST/PST do Outlook"</span></h3>
-		<div id="disqus_thread"></div>
-		<script>
-
-		/**
-		 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-		 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
-		/*
-		var disqus_config = function () {
-		    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-		    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-		};
-		*/
-		(function() { // DON'T EDIT BELOW THIS LINE
-		    var d = document, s = d.createElement('script');
-		    s.src = '//andreyglauzer-1.disqus.com/embed.js';
-		    s.setAttribute('data-timestamp', +new Date());
-		    (d.head || d.body).appendChild(s);
-		})();
-		</script>
-		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                                    
-	</div>
-</div>
-
-<style type="text/css">
-
-.comments{
-    background-color: #fff;
-    border-top: 1.12px solid rgba(64,71,86,.1);
-    border-top: .07rem solid rgba(64,71,86,.1);
-    padding: 30px 0 0;
-    padding: 1.875rem 0 0;
-    margin-top: 30px;
-    margin-top: 1.875rem;
-
-div.alinhamento-header-posts{
-    padding-top: 3rem;
-}
-
-div#coment{
-    background-color: #fff;
-    padding: 30px 0;
-    margin-top: 15px;
-}
-div.content-coment h3 span.opacity{
-        opacity: .6;
-    font-weight: 500;
-}
-div.content-coment{
-    max-width: 768px;
-    max-width: 48rem;
-    display: block;
-    margin:0 auto;
-}
-</style>
-	</div>
-</article>
+        			<div class="alert">Olá, se você precisa de auditoria e/ou implantação de Firewall pfSense entre em contato.</div>
 
 
           </div>
