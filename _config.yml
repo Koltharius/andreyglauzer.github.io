@@ -79,19 +79,19 @@ infocolecoes:
     titulo: SonicWall
     descricao: Um pouco mais sobre novas coisas que estou aprendendo sobre o SonicWall, e sistuações que venho enfrentando.
     img: /img/collections/sonicwall.jpg
-    permalink: /colecoes/sonicwall/
+    permalink: /colecoes/sonicwall
   - pfsense:
     titulo: pfSense
     descricao: Configurações e procedimentos referente ao pfSense, e soluções que já apresentei em algumas empresas.
     img: /img/collections/pfsense.jpg
-    permalink: /colecoes/pfsense/
+    permalink: /colecoes/pfsense
   - windowsserver:
     titulo: Windows Server
     descricao: Administração, configuração e gerencimando de Servidores Windows, o melhor para trabalhar com client.
     img: /img/collections/windowsserver.jpg
-    permalink: /colecoes/windowsserver/
+    permalink: /colecoes/windowsserver
   - linux:
     titulo: Sistemas Linux
     descricao: Administração e configurações de Servidores/Desktops Linux, e sistuações que já enfrentei mediante ao mesmo.
     img: /img/collections/linux.jpg
-    permalink: /colecoes/linux/
+    permalink: /colecoes/linux
