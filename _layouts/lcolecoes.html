@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+ <div  class="alert">Oops, essa página ainda está sendo construida, por favor entre mas não repare na bagunça.</div>
+	<div class="container__colecao">
+		{% for infocolecoes in site.infocolecoes %}
+	    <article class="postItem postItem--featured">
+	        <a class="postItem__image-link" href="{{ infocolecoes.permalink }}">
+	            <div class="postItem__image" style="background-image:url({{ infocolecoes.img }})">
+	            </div><img src="{{ infocolecoes.img }}" alt="{{ infocolecoes.titulo }}"></a>
+			<div class="postItem__content">
+	          <header class="postItem__header">
+	                <h2 class="postItem__title"><a href="{{ infocolecoes.permalink }}" title="{{ infocolecoes.titulo }}" class="">{{ infocolecoes.titulo }}</a></h2></header>
+	            <p itemprop="description" class="postItem__description"><a href="{{ infocolecoes.permalink }}" title="Programador a comunidade precisa de você!" class="">{{ infocolecoes.descricao }}</a></p>
+	            <footer class="postItem__footer"><small class="postItem__meta"><span itemprop="datePublished" content="2017-03-12">Publicado em Março de 2017 </span><span>por <strong itemprop="author">Andrey Glauzer</strong></span></small></footer>
+	        </div>
+		</article>
+		{% endfor %} 
+	</div>
+
+
+
+<style type="text/css">
+.grid{display: initial !important;}
+
+
+
+
+.container__colecao {
+    max-width: 1260px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 18px;
+    padding-right: 1rem;
+    padding-left: 18px;
+    padding-left: 1rem;
+}
+.postItem{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-flex:1;-ms-flex:1 1 300px;flex:1 1 300px;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;overflow:hidden;margin:0 20px 30px;margin:0 1.25rem 1.875rem;min-height:300px;background:#fff 50%;background-size:cover;border-radius:5px;-webkit-box-shadow:8px 14px 38px rgba(39,44,49,.06),1px 3px 8px rgba(39,44,49,.03);box-shadow:8px 14px 38px rgba(39,44,49,.06),1px 3px 8px rgba(39,44,49,.03);-webkit-transition:-webkit-box-shadow .2s ease,-webkit-transform .2s ease;transition:-webkit-box-shadow .2s ease,-webkit-transform .2s ease;transition:box-shadow .2s ease,transform .2s ease;transition:box-shadow .2s ease,transform .2s ease,-webkit-box-shadow .2s ease,-webkit-transform .2s ease}.postItem:focus,.postItem:hover{-webkit-box-shadow:0 0 1px rgba(39,44,49,.1),0 3px 16px rgba(39,44,49,.07);box-shadow:0 0 1px rgba(39,44,49,.1),0 3px 16px rgba(39,44,49,.07);-webkit-transform:translate3D(0,-1px,0);transform:translate3D(0,-1px,0)}.postItem a{color:#435466;text-decoration:none}.postItem__content{-ms-flex-positive:1;-webkit-box-flex:1;flex-grow:1;display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-direction:column;-webkit-box-orient:vertical;-webkit-box-direction:normal;flex-direction:column;-ms-flex-pack:justify;-webkit-box-pack:justify;justify-content:space-between}.postItem__description,.postItem__footer,.postItem__header{position:relative;display:block;padding:0 20px;padding:0 1.25rem}.postItem__footer{margin:0;padding-bottom:20px;padding-bottom:1.25rem}.postItem__meta{display:block;opacity:.6;font-size:10.4px;font-size:.65rem;line-height:1.2em;text-transform:uppercase;margin:0}.postItem__meta span{display:block}.postItem__title{font-size:22.4px;font-size:1.4rem;margin-bottom:8px;margin-bottom:.5rem}.postItem__description{font-size:16px;font-size:1rem;line-height:1.4em}.postItem__image-link{position:relative}.postItem__image-link img{display:none}.postItem__image{width:100%;height:250px;background:#c5d2d9 no-repeat 50%;background-size:cover}@media screen and (min-width:64rem){.postItem--featured{-webkit-box-flex:1;-ms-flex:1 1 100%;flex:1 1 100%;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}.postItem--featured .postItem__image-link{-webkit-box-flex:1;-ms-flex:1 1 auto;flex:1 1 auto}.postItem--featured .postItem__image{position:absolute;width:100%;height:100%}.postItem--featured .postItem__content{-webkit-box-flex:0;-ms-flex:0 1 357px;flex:0 1 357px}}
+</style>

@@ -62,3 +62,36 @@ projetos:
     descricao: Projeto desenvolvido para um amigo, para o mesmo poder divulgar o trabalho que sua esposa faz de venda de bolos no pote, e bolos sobre encomendas.
     url: https://alidocesoficial.com
     data: Janeiro de 2017
+
+
+collections:
+    sonicwall:
+        output: true
+        permalink: /colecoes/sonicwall/:path/
+        
+    pfsense:
+        output: true
+        permalink: /colecoes/pfsense/:path/
+        
+
+infocolecoes:
+  - sonicwall:
+    titulo: SonicWall
+    descricao: Um pouco mais sobre novas coisas que estou aprendendo sobre o SonicWall, e sistuações que venho enfrentando.
+    img: /img/collections/sonicwall.jpg
+    permalink: /colecoes/sonicwall/
+  - pfsense:
+    titulo: pfSense
+    descricao: Configurações e procedimentos referente ao pfSense, e soluções que já apresentei em algumas empresas.
+    img: /img/collections/pfsense.jpg
+    permalink: /colecoes/pfsense/
+  - windowsserver:
+    titulo: Windows Server
+    descricao: Administração, configuração e gerencimando de Servidores Windows, o melhor para trabalhar com client.
+    img: /img/collections/windowsserver.jpg
+    permalink: /colecoes/windowsserver/
+  - linux:
+    titulo: Sistemas Linux
+    descricao: Administração e configurações de Servidores/Desktops Linux, e sistuações que já enfrentei mediante ao mesmo.
+    img: /img/collections/linux.jpg
+    permalink: /colecoes/linux/
