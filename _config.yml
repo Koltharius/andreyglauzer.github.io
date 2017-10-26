@@ -68,10 +68,15 @@ collections:
     sonicwall:
         output: true
         permalink: /colecoes/sonicwall/:path/
-        
     pfsense:
         output: true
         permalink: /colecoes/pfsense/:path/
+    windowsserver:
+        output: true
+        permalink: /colecoes/windowsserver/:path/
+    linux:
+        output: true
+        permalink: /colecoes/linux/:path/
         
 
 infocolecoes:
