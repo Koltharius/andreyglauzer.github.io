@@ -4,12 +4,32 @@
  <title>Andrey Glauzer | Analista de Suporte / Analista de Segurança da Informação em Barueri/SP</title>
  <link href="/atom.xml" rel="self"/>
  <id></id>
- <updated>2017-10-25T18:36:49+00:00</updated>
+ <updated>2017-10-26T18:45:41+00:00</updated>
  <author>
    <name>Andrey Glauzer</name>
    <uri></uri>
    <email>nglauzer@gmail.com</email>
  </author>
+
+ 
+
+ <entry>
+   <title>Habilitando execução de scripts no PowerShell</title>
+   <link href="/Habilitando-execucao-de-scripts-no-PowerShell"/>
+   <id>/Habilitando-execucao-de-scripts-no-PowerShell</id>
+   <updated>2017-10-26T00:00:00+00:00</updated>
+   <content type="html">&lt;p&gt;Já faz um tempo que estou com um problema para executar scripts em Powershell em Windows Server, mesmo alterando as permissões de script no console, e estando logado como &lt;code class=&quot;highlighter-rouge&quot;&gt;Administrador&lt;/code&gt;, ele insistia em não me deixar executar scripts, sempre me dando o seguinte erro.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/img/posts/2017-10-26-Habilitando-execucao-de-scripts-no-PowerShell/001.PNG&quot; alt=&quot;Fonte da imagem:...</content>
+ </entry>
+
+ 
+
+ <entry>
+   <title>Analisando diretórios de sites, http e https</title>
+   <link href="/webls-analisando-enderecos-de-sites"/>
+   <id>/webls-analisando-enderecos-de-sites</id>
+   <updated>2017-10-25T00:00:00+00:00</updated>
+   <content type="html">&lt;h2 id=&quot;webls&quot;&gt;WebLS&lt;/h2&gt; &lt;p&gt;As vezes para fazer um pentest é necessário analisar o quanto um site está acessível e quais diretórios estão públicos, para ter certeza que dados sensíveis não estejam de fácil acesso.&lt;/p&gt; &lt;p&gt;Então para isso resolvi criar um script em Python, bem simples que varre possíveis diretórios de qualquer...</content>
+ </entry>
 
  
 
@@ -89,26 +109,6 @@
    <id>/automatizando-tarefas-diarias-com-python</id>
    <updated>2017-07-14T00:00:00+00:00</updated>
    <content type="html">&lt;h3 id=&quot;como-usar-o-pontopy&quot;&gt;Como usar o ponto.py&lt;/h3&gt; &lt;p&gt;Esse script eu criei pensando em um ambiente Windows, já que no meu trabalho eu uso windows como sistema operacional padrão, e eu sempre acabo me esquecendo, ou as vezes eu tenho preguiça de bater o ponto, então resolvi criar um script para facilitar as...</content>
- </entry>
-
- 
-
- <entry>
-   <title>Como criar regras no SonicWall</title>
-   <link href="/criando-regras-de-redirecionamento-no-sonicwall"/>
-   <id>/criando-regras-de-redirecionamento-no-sonicwall</id>
-   <updated>2017-07-11T00:00:00+00:00</updated>
-   <content type="html">&lt;h2 id=&quot;o-sonicwall&quot;&gt;O SonicWall&lt;/h2&gt; &lt;p&gt;A minha ideia é fazer uma série de posts falando um pouco sobre o SonicWall da dell, que eu utilizo bastante no ambiente do meu trabalho e, para começar vou explicar como fazer um redirecionamento de portas.&lt;/p&gt; &lt;p&gt;O ambiente que temos é o seguinte, o SonicWall modelo...</content>
- </entry>
-
- 
-
- <entry>
-   <title>Vou voltar aos poucos com o BLOG!</title>
-   <link href="/voltando-aos-pucos"/>
-   <id>/voltando-aos-pucos</id>
-   <updated>2017-07-10T00:00:00+00:00</updated>
-   <content type="html">&lt;p&gt;Já faz um bom tempo que eu havia abandonado a ideia do blog, estava um pouco desanimado e quase sem tempo para estudar e praticar coisas novas.&lt;/p&gt; &lt;p&gt;Então meu domínio venceu não renovei e as coisas foram ficando para trás, o blog já tem quase 2 anos, então resolvi fazer...</content>
  </entry>
 
  

@@ -1,6 +1,26 @@
 [
   
     {
+      "tags" : "Powershell",
+      "title" : "Habilitando execução de scripts no PowerShell",
+      "url" : "/Habilitando-execucao-de-scripts-no-PowerShell",
+      "date" : "Outubro de 2017",
+      "description" : "",
+      "content" : "Já faz um tempo que estou com um problema para executar scripts em Powershell em Windows Server, mesmo alterando as permissões de script no console, e estando logado como Administrador, ele insistia em não me deixar executar scripts, sempre me dando o seguinte erro."
+      
+    } ,
+  
+    {
+      "tags" : "Segurança, Python",
+      "title" : "Analisando diretórios de sites, http e https",
+      "url" : "/webls-analisando-enderecos-de-sites",
+      "date" : "Outubro de 2017",
+      "description" : "",
+      "content" : "WebLS"
+      
+    } ,
+  
+    {
       "tags" : "Scripts",
       "title" : "Automatizando Login com Python",
       "url" : "/automatizando-login-com-pythton",
