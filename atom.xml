@@ -4,7 +4,7 @@
  <title>Andrey Glauzer | Analista de Suporte / Analista de Segurança da Informação em Barueri/SP</title>
  <link href="/atom.xml" rel="self"/>
  <id></id>
- <updated>2017-10-26T18:45:41+00:00</updated>
+ <updated>2017-10-26T18:51:45+00:00</updated>
  <author>
    <name>Andrey Glauzer</name>
    <uri></uri>
@@ -18,7 +18,7 @@
    <link href="/Habilitando-execucao-de-scripts-no-PowerShell"/>
    <id>/Habilitando-execucao-de-scripts-no-PowerShell</id>
    <updated>2017-10-26T00:00:00+00:00</updated>
-   <content type="html">&lt;p&gt;Já faz um tempo que estou com um problema para executar scripts em Powershell em Windows Server, mesmo alterando as permissões de script no console, e estando logado como &lt;code class=&quot;highlighter-rouge&quot;&gt;Administrador&lt;/code&gt;, ele insistia em não me deixar executar scripts, sempre me dando o seguinte erro.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/img/posts/2017-10-26-Habilitando-execucao-de-scripts-no-PowerShell/001.PNG&quot; alt=&quot;Fonte da imagem:...</content>
+   <content type="html">&lt;p&gt;Já faz um tempo que estou com um problema para executar scripts em Powershell em Windows Server, mesmo alterando as permissões de script no console, e estando logado como &lt;code class=&quot;highlighter-rouge&quot;&gt;Administrador&lt;/code&gt;, ele insistia em não me deixar executar scripts, sempre me dando o seguinte erro.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/img/posts/2017-10-26-habilitando-execucao-de-scripts-no-powershell/001.PNG&quot; alt=&quot;Fonte da imagem:...</content>
  </entry>
 
  
