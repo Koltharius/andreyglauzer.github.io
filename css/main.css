@@ -665,6 +665,22 @@ footer {
 
 /* Literal.Number.Integer.Long */
 /*- Imports -*/
+.project__thumbnail-browser:focus, .project__thumbnail-browser:hover {
+  -webkit-box-shadow: 0 0 1px rgba(39, 44, 49, 0.1), 0 3px 16px rgba(39, 44, 49, 0.07);
+  box-shadow: 0 0 1px rgba(39, 44, 49, 0.1), 0 3px 16px rgba(39, 44, 49, 0.07);
+  -webkit-transform: translate3D(0, -1px, 0);
+  transform: translate3D(0, -1px, 0); }
+
+.project__thumbnail-browser {
+  display: block;
+  background-color: #fff;
+  -webkit-box-shadow: 8px 14px 38px rgba(39, 44, 49, 0.06), 1px 3px 8px rgba(39, 44, 49, 0.03);
+  box-shadow: 8px 14px 38px rgba(39, 44, 49, 0.06), 1px 3px 8px rgba(39, 44, 49, 0.03);
+  -webkit-transition: -webkit-box-shadow .2s ease,-webkit-transform .2s ease;
+  transition: -webkit-box-shadow .2s ease,-webkit-transform .2s ease;
+  transition: box-shadow .2s ease,transform .2s ease;
+  transition: box-shadow .2s ease,transform .2s ease,-webkit-box-shadow .2s ease,-webkit-transform .2s ease; }
+
 .galeria .navbar__nav-link.nuxt-link-exact-active:after, .galeria .navbar__nav-link:hover:after {
   width: 50%;
   left: 0;
