@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 	<meta name="generator" content="Jekyll">
 
-	<title>Windows Server | Andrey Glauzer | Analista de Suporte / Analista de Segurança da Informação em Barueri/SP</title>
+	<title>Habilitando execução de scripts no PowerShell | Andrey Glauzer | Analista de Suporte / Analista de Segurança da Informação em Barueri/SP</title>
 	<link rel="stylesheet"  href="/css/font-awesome/css/font-awesome.min.css">
 
 	<!-- CSS & fonts -->
@@ -172,11 +172,11 @@ SimpleJekyllSearch({
 <header id="header" class="pageHeader pageHeader--background">
 	<article itemscope="itemscope" itemtype="http://schema.org/NewsArticle" class="article">
 		<figure itemprop="image" itemscope="itemscope" itemtype="http://schema.org/ImageObject" class="pageHeader__image">
-			<meta itemprop="url" content="">
-			<img src="" alt="Windows Server" />
+			<meta itemprop="url" content="/img/posts/2017-10-26-habilitando-execucao-de-scripts-no-powershell/banner.png">
+			<img src="/img/posts/2017-10-26-habilitando-execucao-de-scripts-no-powershell/banner.png" alt="Habilitando execução de scripts no PowerShell" />
 		</figure>
 		<div class="info-header">
-			<h1 class="pageHeader__title">Windows Server</h1>
+			<h1 class="pageHeader__title">Habilitando execução de scripts no PowerShell</h1>
 			<ol itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList" class="breadcrumb">
 				<li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem" class="breadcrumb__item">
 					<a  href="/" class="breadcrumb__link nuxt-link-active" title="Home" itemprop="item">
@@ -187,17 +187,17 @@ SimpleJekyllSearch({
 				</li>
 				
 				<li itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem" class="breadcrumb__item">
-					<a class="breadcrumb__link nuxt-link-exact-active nuxt-link-active breadcrumb__link--active" title="Windows Server" itemprop="item" href="/colecoes/windowsserver">
-					<span itemprop="name">Windows Server</span>
+					<a class="breadcrumb__link nuxt-link-exact-active nuxt-link-active breadcrumb__link--active" title="Habilitando execução de scripts no PowerShell" itemprop="item" href="/colecoes/windowsserver/2017-10-26-Habilitando-execucao-de-scripts-no-PowerShell/">
+					<span itemprop="name">Habilitando execução de scripts no PowerShell</span>
 					<meta itemprop="position" content="2">
 					</a>
 				</li>
 
 			</ol>
-			<p itemprop="description" class="pageHeader__description">Administração, configuração e gerencimando de Servidores Windows, o melhor para trabalhar com client.</p>
+			<p itemprop="description" class="pageHeader__description">Mesmo o powershell não deixando você executar os seus scripts, podemos da uma força para que ele aceite todos os scripts.</p>
 			<div class="pageHeader__meta">
 
-				<span>Publicado em , por <span itemprop="author">Andrey Glauzer</span>
+				<span>Publicado em Outubro de 2017, por <span itemprop="author">Andrey Glauzer</span>
 			</div>
 		</div>
 	</span>
@@ -208,28 +208,113 @@ SimpleJekyllSearch({
         <!-- Main content -->
     	  <div class="container">
           <div class="grid grid--1of2">
-        			<div class="alert">Olá, se você precisa de auditoria e/ou implantação de servidor Windows entre em contato.</div>
+        			<article id="post-page">
+	<div class="content">
+		<p>Já faz um tempo que estou com um problema para executar scripts em Powershell em Windows Server, mesmo alterando as permissões de script no console, e estando logado como <code class="highlighter-rouge">Administrador</code>, ele insistia em não me deixar executar scripts, sempre me dando o seguinte erro.</p>
 
-<div class="grid__column">
-      <article class="article__posts">
-         <header class="article__header">
-            <h2 class="article__title">
-            	<a class="" title="Habilitando execução de scripts no PowerShell" href="/colecoes/windowsserver/2017-10-26-Habilitando-execucao-de-scripts-no-PowerShell/">Habilitando execução de scripts no PowerShell</a>
-            </h2>
-            <div class="article__meta">
-            	<span itemprop="datePublished" content="2017-01-01">Publicado em 26 Oct 2017 </span><span>por <span itemprop="author">Andrey Glauzer</span></span>
-            </div>
-         </header>
-         <p itemprop="description" class="article__description">
-         	<a href="/colecoes/windowsserver/2017-10-26-Habilitando-execucao-de-scripts-no-PowerShell/" class="" title="Habilitando execução de scripts no PowerShell">Já faz um tempo que estou com um problema para executar scripts em Powershell em Windows Server, mesmo alterando as permissões de script no console, e estando logado como Administrador, ele insistia em não me deixar executar scripts, sempre me dando o seguinte erro. Quebrei muita a cabeça achando que...</a>
-         </p>
-         <div class="article__button">
-         	<a href="/colecoes/windowsserver/2017-10-26-Habilitando-execucao-de-scripts-no-PowerShell/" class="nuxt-link-button nuxt-link-button--ghost" title="Habilitando execução de scripts no PowerShell">Continue lendo</a>
-         </div>
-         <!---->
-         <figure class="article__image" data-v-7cb2a31e=""><img src="\/img/posts/2017-10-26-habilitando-execucao-de-scripts-no-powershell/banner.png" /></figure>
-      </article>
-   </div>
+<p><img src="/img/posts/2017-10-26-habilitando-execucao-de-scripts-no-powershell/001.PNG" alt="Fonte da imagem: andreyglauzer.com" /></p>
+
+<p>Quebrei muita a cabeça achando que era um possível problema com os meus scripts, foi então que eu percebi que era um problema do Windows em não deixar executar todos os scripts no modo <code class="highlighter-rouge">Unrestricted</code>, indiferente da política que foi aplicada para o usuário, o que vai prevalecer é a <code class="highlighter-rouge">Local Group Policy</code>.</p>
+
+<h2 id="alterando-a-política-de-execução-do-grupo-local">Alterando a Política de Execução do Grupo Local</h2>
+
+<p>Para fazermos isso será necessário abrir o <code class="highlighter-rouge">Local Group Policy Editor</code>, siga os passo à baixo:</p>
+
+<p>1 – Pressione <code class="highlighter-rouge">Windows + R</code></p>
+
+<p><img src="/img/posts/2017-10-26-habilitando-execucao-de-scripts-no-powershell/01.PNG" alt="Fonte da imagem: andreyglauzer.com" /></p>
+
+<p>2 – Vá em <code class="highlighter-rouge">File -&gt; Add Remove Snap In..</code></p>
+
+<p><img src="/img/posts/2017-10-26-habilitando-execucao-de-scripts-no-powershell/02.PNG" alt="Fonte da imagem: andreyglauzer.com" /></p>
+
+<p>3 – No Painel esquerdo, encontre <code class="highlighter-rouge">Group Policy Object Editor</code> e adicione.</p>
+
+<p><img src="/img/posts/2017-10-26-habilitando-execucao-de-scripts-no-powershell/03.PNG" alt="Fonte da imagem: andreyglauzer.com" /></p>
+
+<p>4 – Ele vai pedir uma confirmação, aceite.</p>
+
+<p><img src="/img/posts/2017-10-26-habilitando-execucao-de-scripts-no-powershell/04.PNG" alt="Fonte da imagem: andreyglauzer.com" /></p>
+
+<p>Então, no painel esquerdo, o editor de grupo pode ser expandido. Expanda e navegue até <code class="highlighter-rouge">Computer Configuration -&gt; Administrative Templates -&gt; Windows Components</code></p>
+
+<p><img src="/img/posts/2017-10-26-habilitando-execucao-de-scripts-no-powershell/05.PNG" alt="Fonte da imagem: andreyglauzer.com" /></p>
+
+<p>E então vá em <code class="highlighter-rouge">Windows PowerShell</code>.</p>
+
+<p><img src="/img/posts/2017-10-26-habilitando-execucao-de-scripts-no-powershell/06.PNG" alt="Fonte da imagem: andreyglauzer.com" /></p>
+
+<p>Então selecione <code class="highlighter-rouge">Turn on Script Execution</code>. Altere a configuração <code class="highlighter-rouge">Enabled</code>e especifique <code class="highlighter-rouge">Allow all scripts</code> em <code class="highlighter-rouge">Execution Policy</code>.</p>
+
+<p><img src="/img/posts/2017-10-26-habilitando-execucao-de-scripts-no-powershell/07.PNG" alt="Fonte da imagem: andreyglauzer.com" /></p>
+
+<p>Confirme clicando <code class="highlighter-rouge">Ok</code> e feche o Console de Gerenciamento.</p>
+
+<p>Após realizar esses passos, você vai conseguir executar os seus scripts no Powershell normalmente.</p>
+
+<p>/end</p>
+
+		<div id="coment" class="comments">
+	<div class="content-coment">
+		<h3 data-v-dd8644c2="">Comentários para: <span class="opacity">"Habilitando execução de scripts no PowerShell"</span></h3>
+		<div id="disqus_thread"></div>
+		<script>
+
+		/**
+		 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+		 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
+		/*
+		var disqus_config = function () {
+		    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+		    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		};
+		*/
+		(function() { // DON'T EDIT BELOW THIS LINE
+		    var d = document, s = d.createElement('script');
+		    s.src = '//andreyglauzer-1.disqus.com/embed.js';
+		    s.setAttribute('data-timestamp', +new Date());
+		    (d.head || d.body).appendChild(s);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                    
+	</div>
+</div>
+
+<style type="text/css">
+
+.comments{
+    background-color: #fff;
+    border-top: 1.12px solid rgba(64,71,86,.1);
+    border-top: .07rem solid rgba(64,71,86,.1);
+    padding: 30px 0 0;
+    padding: 1.875rem 0 0;
+    margin-top: 30px;
+    margin-top: 1.875rem;
+
+div.alinhamento-header-posts{
+    padding-top: 3rem;
+}
+
+div#coment{
+    background-color: #fff;
+    padding: 30px 0;
+    margin-top: 15px;
+}
+div.content-coment h3 span.opacity{
+        opacity: .6;
+    font-weight: 500;
+}
+div.content-coment{
+    max-width: 768px;
+    max-width: 48rem;
+    display: block;
+    margin:0 auto;
+}
+</style>
+	</div>
+</article>
+
 
           </div>
     		
