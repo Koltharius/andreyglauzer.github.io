@@ -2,7 +2,7 @@
 layout: post
 title: Automatizando tarefas diarias com python
 data: Julho de 2017
-img_background: img\posts\2017-07-14-automatizando-tarefas-diarias-com-python\banner.png
+img_background: /img/posts/2017-07-14-automatizando-tarefas-diarias-com-python/banner.png
 description: Script bem simples que eu desenvolvi, para bater o ponto no meu trabalho.
 categories:
 - Python

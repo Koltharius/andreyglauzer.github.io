@@ -2,7 +2,7 @@
 layout: post
 title: Usando BeatifulSoup no meu dia-a-dia
 data: Agosto de 2017
-img_background: img/posts/2017-08-11-usando-beatifulsoup-no-meu-dia-a-dia/scraping.jpg
+img_background: /img/posts/2017-08-11-usando-beatifulsoup-no-meu-dia-a-dia/scraping.jpg
 description: Um pouco de como ando utilizando o BeatifulSoup no meu dia-a-dia!
 categories:
 - Python

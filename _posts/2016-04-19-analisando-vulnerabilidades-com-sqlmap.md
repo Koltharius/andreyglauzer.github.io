@@ -2,7 +2,7 @@
 layout: post
 title: "Analisando vulnerabilidades com sqlmap"
 data: Fevereiro de 2016
-img_background: img/posts/2016-04-19-analisando-vulnerabilidades-com-sqlmap/syringe-code2.jpg
+img_background: /img/posts/2016-04-19-analisando-vulnerabilidades-com-sqlmap/syringe-code2.jpg
 description: 'Vamos analisar uma pequena falha encontrada em um banco de dado Mysql, com o sqlmap'
 tags: [Segurança, Dicas]
 categories:

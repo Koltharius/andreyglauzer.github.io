@@ -2,7 +2,7 @@
 layout: post
 title: Quebrando senhas com o THC Hydra
 data: Agosto de 2017
-img_background: img\posts\2017-08-15-quebrando-senhas-com-o-thc-hydra\header.jpg
+img_background: /img/posts/2017-08-15-quebrando-senhas-com-o-thc-hydra/header.jpg
 description: Um pouco de como ando utilizando o BeatifulSoup no meu dia-a-dia!
 categories:
 - Security

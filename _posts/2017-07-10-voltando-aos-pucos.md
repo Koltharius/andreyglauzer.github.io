@@ -2,7 +2,7 @@
 layout: post
 title: 'Vou voltar aos poucos com o BLOG!'
 data: Julho de 2016
-img_background: img/posts/2017-07-10-voltando-aos-pucos/desanimo.gif
+img_background: /img/posts/2017-07-10-voltando-aos-pucos/desanimo.gif
 description: 'Depois de quase dois anos de abandono estou de volta.'
 categories:
 - Informações

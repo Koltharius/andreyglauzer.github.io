@@ -23,7 +23,7 @@ description: Administração e configurações de Servidores/Desktops Linux, e s
          	<a  href="{% if site.baseurl == "/" %}{{ linux.url }}{% else %}{{ linux.url | prepend: site.baseurl }}{% endif %}" class="nuxt-link-button nuxt-link-button--ghost" title="{{ linux.title }}">Continue lendo</a>
          </div>
          <!---->
-         <figure class="article__image" data-v-7cb2a31e=""><img src="\{{ linux.img_background }}"></figure>
+         <figure class="article__image" data-v-7cb2a31e=""><img src="{{ linux.img_background }}"></figure>
       </article>
    </div>
 {% endfor %}

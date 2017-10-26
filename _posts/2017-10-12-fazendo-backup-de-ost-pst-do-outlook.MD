@@ -2,7 +2,7 @@
 layout: post
 title: Fazendo Backup de OST/PST do Outlook
 data: Outubro de 2017
-img_background: img/posts/2017-10-12-fazendo-backup-de-ost-pst-do-outlook/outlook.jpg
+img_background: /img/posts/2017-10-12-fazendo-backup-de-ost-pst-do-outlook/outlook.jpg
 description: Script em python, para fazer backup de arquivos do Outlook tanto como contatos e até OST, convertendo eles para PST
 categories:
 - Scripts

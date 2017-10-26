@@ -24,7 +24,7 @@ description: Um pouco mais sobre novas coisas que estou aprendendo sobre o Sonic
          	<a  href="{% if site.baseurl == "/" %}{{ sonicwall.url }}{% else %}{{ sonicwall.url | prepend: site.baseurl }}{% endif %}" class="nuxt-link-button nuxt-link-button--ghost" title="{{ sonicwall.title }}">Continue lendo</a>
          </div>
          <!---->
-         <figure class="article__image" data-v-7cb2a31e=""><img src="\{{ sonicwall.img_background }}"></figure>
+         <figure class="article__image" data-v-7cb2a31e=""><img src="{{ sonicwall.img_background }}"></figure>
       </article>
    </div>
 {% endfor %}

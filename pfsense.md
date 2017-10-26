@@ -24,7 +24,7 @@ description: Configurações e procedimentos referente ao pfSense, e soluções 
          	<a  href="{% if site.baseurl == "/" %}{{ pfsense.url }}{% else %}{{ pfsense.url | prepend: site.baseurl }}{% endif %}" class="nuxt-link-button nuxt-link-button--ghost" title="{{ pfsense.title }}">Continue lendo</a>
          </div>
          <!---->
-         <figure class="article__image" data-v-7cb2a31e=""><img src="\{{ pfsense.img_background }}"></figure>
+         <figure class="article__image" data-v-7cb2a31e=""><img src="/{{ pfsense.img_background }}"></figure>
       </article>
    </div>
 {% endfor %}

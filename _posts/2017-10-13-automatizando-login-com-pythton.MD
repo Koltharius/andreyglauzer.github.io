@@ -2,7 +2,7 @@
 layout: post
 title: Automatizando Login com Python
 data: Outubro de 2017
-img_background: img\posts\2017-07-14-automatizando-tarefas-diarias-com-python\banner.png
+img_background: /img/posts/2017-07-14-automatizando-tarefas-diarias-com-python/banner.png
 description: Fazendo login em uma página do Citrix, com python.
 categories:
 - Python

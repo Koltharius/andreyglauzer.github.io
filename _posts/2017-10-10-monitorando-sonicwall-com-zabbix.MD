@@ -2,7 +2,7 @@
 layout: post
 title: Monitorando SonicWall com Zabbix
 data: Outubro de 2017
-img_background: img/posts/2017-10-10-monitorando-sonicwall-com-zabbix/Zabbix-Banner.jpg
+img_background: /img/posts/2017-10-10-monitorando-sonicwall-com-zabbix/Zabbix-Banner.jpg
 description: É isso ai, vou mostrar como podemos monitorar o SonicWall via SNMP utilizando o Zabbix.
 categories:
 - Zabbix

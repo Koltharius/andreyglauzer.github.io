@@ -2,7 +2,7 @@
 layout: post
 title: Relatório do Active Directory com Powershell
 data: Julho de 2017
-img_background: img/posts/2017-07-17-relatorio-do-active-directory-com-powershell/banner.jpg
+img_background: /img/posts/2017-07-17-relatorio-do-active-directory-com-powershell/banner.jpg
 description: Como fazer auditória de Active Directory usando o powershell.
 categories:
 - Powershell

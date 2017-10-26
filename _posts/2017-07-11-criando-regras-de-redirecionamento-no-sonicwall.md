@@ -2,7 +2,7 @@
 layout: post
 title: 'Como criar regras no SonicWall'
 data: Julho de 2017
-img_background: img/posts/2017-07-11-criando-regras-de-redirecionamento-no-sonicwall/banner.jpg
+img_background: /img/posts/2017-07-11-criando-regras-de-redirecionamento-no-sonicwall/banner.jpg
 description: 'Passo-a-passo de como criar regras de redireicionamento de portas em um SonicWall SOHO'
 categories:
 - SonicWall

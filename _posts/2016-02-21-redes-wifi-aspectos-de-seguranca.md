@@ -2,7 +2,7 @@
 layout: post
 title: "Redes Wi-Fi e seus aspectos de segurança"
 data: Fevereiro de 2016
-img_background: img/posts/2016-02-21-redes-wifi-aspectos-de-seguranca/Essential-Guide.png
+img_background: /img/posts/2016-02-21-redes-wifi-aspectos-de-seguranca/Essential-Guide.png
 description: 'Alguns aspectos de segurança em redes Wireless'
 tags: [Segurança, Wirelless]
 categories: 

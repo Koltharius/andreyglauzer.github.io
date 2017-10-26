@@ -24,7 +24,7 @@ description: Administração, configuração e gerencimando de Servidores Window
          	<a  href="{% if site.baseurl == "/" %}{{ windowsserver.url }}{% else %}{{ windowsserver.url | prepend: site.baseurl }}{% endif %}" class="nuxt-link-button nuxt-link-button--ghost" title="{{ windowsserver.title }}">Continue lendo</a>
          </div>
          <!---->
-         <figure class="article__image" data-v-7cb2a31e=""><img src="\{{ windowsserver.img_background }}"></figure>
+         <figure class="article__image" data-v-7cb2a31e=""><img src="{{ windowsserver.img_background }}"></figure>
       </article>
    </div>
 {% endfor %}

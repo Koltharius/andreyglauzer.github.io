@@ -2,7 +2,7 @@
 layout: post
 title: Limitar banda de internet no SonicWall
 data: Setembro de 2017
-img_background: img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/sonicwall-banner.png
+img_background: /img/posts/2017-09-25-limitar-banda-de-internet-para-um-objeto-ou-grupo-no-sonicwall/sonicwall-banner.png
 description: Passo à passo de como criar regras de BWM no Sonicwall, deixando a rede bem segmentada e com menos gargalo, evitando o consumo descessário da banda de internet.
 categories:
 - SonicWall
