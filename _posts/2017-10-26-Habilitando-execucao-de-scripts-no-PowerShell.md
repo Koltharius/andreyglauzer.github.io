@@ -2,7 +2,7 @@
 layout: post
 title: Habilitando execução de scripts no PowerShell
 data: Outubro de 2017
-img_background: /img/posts/2017-10-26-habilitando-execucao-de-scripts-no-powershell/banner.png
+img_background: img/posts/2017-10-26-habilitando-execucao-de-scripts-no-powershell/banner.png
 description: 'Mesmo o powershell não deixando você executar os seus scripts, podemos da uma força para que ele aceite todos os scripts.'
 tags: [Powershell]
 categories: 
