@@ -5,7 +5,7 @@ data: Outubro de 2017
 img_background: /img/posts/2017-10-25-webls-analisando-enderecos-de-sites/01.PNG
 description: 'Script para analisar diretorios que um edenreço web possui'
 tags: [Segurança, Python]
-categories: 
+categories:
   - Python
 ---
 
@@ -32,7 +32,7 @@ cd webls
 Instale as dependências
 
 {% highlight bash %}
-Pip install -r requeriments.txt
+Pip install -r requirements.txt
 {% endhighlight %}
 
 Para executar
